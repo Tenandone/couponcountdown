@@ -1,0 +1,10 @@
+{
+  "coupons": [
+    {
+      "code": "LWVDAY26",
+      "expiresAt": "2026-02-15T23:59:59Z",
+      "firstSeenAt": "2026-02-09T00:00:00Z",
+      "reward": "General coupon"
+    }
+  ]
+}

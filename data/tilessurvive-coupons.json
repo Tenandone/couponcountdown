@@ -1,0 +1,34 @@
+{
+  "coupons": [
+    {
+      "code": "LOVE2026",
+      "expiresAt": "2026-02-20T23:59:59Z",
+      "firstSeenAt": "2026-02-20T00:00:00Z",
+      "reward": "General coupon"
+    },
+    {
+      "code": "TS777",
+      "firstSeenAt": "2026-02-01T00:00:00Z",
+      "reward": "General coupon",
+      "permanent": true
+    },
+    {
+      "code": "TS888",
+      "firstSeenAt": "2026-02-01T00:00:00Z",
+      "reward": "General coupon",
+      "permanent": true
+    },
+    {
+      "code": "TS999",
+      "firstSeenAt": "2026-02-01T00:00:00Z",
+      "reward": "General coupon",
+      "permanent": true
+    },
+    {
+      "code": "welcometots",
+      "firstSeenAt": "2026-02-01T00:00:00Z",
+      "reward": "General coupon",
+      "permanent": true
+    }
+  ]
+}

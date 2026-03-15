@@ -1,0 +1,16 @@
+{
+  "coupons": [
+    {
+      "code": "RAMADAN",
+      "expiresAt": "2026-03-19T23:59:59Z",
+      "firstSeenAt": "2026-03-15T00:00:00Z",
+      "reward": "General coupon"
+    },
+    {
+      "code": "DC500KWEMADEIT",
+      "expiresAt": "2026-03-13T23:59:59Z",
+      "firstSeenAt": "2026-03-09T00:00:00Z",
+      "reward": "General coupon"
+    }
+  ]
+}
