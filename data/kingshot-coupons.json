@@ -7,6 +7,12 @@
       "reward": "General coupon"
     },
     {
+      "code": "KS0315",
+      "expiresAt": "2026-03-17T23:59:00Z",
+      "firstSeenAt": "2026-03-15T00:00:00Z",
+      "reward": "General coupon"
+    },
+    {
       "code": "DC500KWEMADEIT",
       "expiresAt": "2026-03-13T23:59:59Z",
       "firstSeenAt": "2026-03-09T00:00:00Z",
