@@ -1,11 +1,17 @@
 {
   "coupons": [
     {
-      "code": "LOVE2026",
-      "expiresAt": "2026-02-20T23:59:59Z",
-      "firstSeenAt": "2026-02-20T00:00:00Z",
-      "reward": "General coupon"
-    },
+  "code": "STPADDY2026",
+  "expiresAt": "2026-03-24T23:59:59Z",
+  "firstSeenAt": "2026-03-17T00:00:00Z",
+  "reward": "General coupon"
+},
+{
+  "code": "LOVE2026",
+  "expiresAt": "2026-02-28T23:59:59Z",
+  "firstSeenAt": "2026-02-20T00:00:00Z",
+  "reward": "General coupon"
+},
     {
       "code": "TS777",
       "firstSeenAt": "2026-02-01T00:00:00Z",
