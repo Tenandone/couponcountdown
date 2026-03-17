@@ -1,6 +1,12 @@
 {
   "coupons": [
     {
+  "code": "KINGSHOTHBD",
+  "expiresAt": "2026-03-21T23:59:00Z",
+  "firstSeenAt": "2026-03-17T00:00:00Z",
+  "reward": "1st Anniversary gift code"
+},
+    {
   "code": "OFFICIALSTORE",
   "expiresAt": "2026-03-26T00:00:00Z",
   "firstSeenAt": "2026-03-17T00:00:00Z",
