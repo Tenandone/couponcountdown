@@ -1,10 +1,16 @@
 {
   "coupons": [
     {
+    "code": "EIDMUB2026",
+    "expiresAt": "2026-03-23T23:59:59Z",
+    "firstSeenAt": "2026-03-19T00:00:00Z",
+    "reward": "General coupon"
+  },
+    {
   "code": "KINGSHOTHBD",
   "expiresAt": "2026-03-21T23:59:00Z",
   "firstSeenAt": "2026-03-17T00:00:00Z",
-  "reward": "1st Anniversary gift code"
+  "reward": "General coupon"
 },
     {
   "code": "OFFICIALSTORE",
