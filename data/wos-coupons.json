@@ -1,5 +1,11 @@
 {
   "coupons": [
+    {
+  "code": "EidMubarak2026",
+  "expiresAt": "2026-03-23T23:59:00Z",
+  "firstSeenAt": "2026-03-20T00:00:00Z",
+  "reward": "General coupon"
+},
 
     {
   "code": "Shamrock",
