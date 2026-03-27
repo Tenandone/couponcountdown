@@ -1,6 +1,12 @@
 {
   "coupons": [
     {
+  "code": "FIREFRIDAY",
+  "expiresAt": "2026-03-31T23:59:59Z",
+  "firstSeenAt": "2026-03-27T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "syunnbun26jp",
   "expiresAt": "2026-03-23T23:59:59Z",
   "firstSeenAt": "2026-03-20T00:00:00Z",
