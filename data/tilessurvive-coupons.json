@@ -1,14 +1,20 @@
 {
   "coupons": [
     {
+  "code": "NOTAJOKE",
+  "expiresAt": "2026-04-10T00:00:00Z",
+  "firstSeenAt": "2026-04-01T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "STPADDY2026",
-  "expiresAt": "2026-03-30T23:59:59Z",
+  "expiresAt": "2026-03-30T00:00:00Z",
   "firstSeenAt": "2026-03-17T00:00:00Z",
   "reward": "General coupon"
 },
 {
   "code": "LOVE2026",
-  "expiresAt": "2026-02-28T23:59:59Z",
+  "expiresAt": "2026-02-28T00:00:00Z",
   "firstSeenAt": "2026-02-20T00:00:00Z",
   "reward": "General coupon"
 },
