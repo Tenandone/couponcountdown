@@ -1,6 +1,11 @@
 {
   "coupons": [
-    
+        {
+  "code": "AprilFool2026",
+  "expiresAt": "2026-04-05T23:59:00Z",
+  "firstSeenAt": "2026-04-01T00:00:00Z",
+  "reward": "General coupon"
+},
   {
   "code": "WHITEOUTO1",
   "expiresAt": "2026-04-02T00:00:00Z",
