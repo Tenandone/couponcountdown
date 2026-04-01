@@ -2,7 +2,7 @@
   "coupons": [
         {
   "code": "AprilFool2026",
-  "expiresAt": "2026-04-05T23:59:00Z",
+  "expiresAt": "2026-04-03T00:00:00Z",
   "firstSeenAt": "2026-04-01T00:00:00Z",
   "reward": "General coupon"
 },
