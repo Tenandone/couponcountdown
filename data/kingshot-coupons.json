@@ -1,6 +1,12 @@
 {
   "coupons": [  
     {
+  "code": "KSPRAWNING",
+  "expiresAt": "2026-04-21T00:00:00Z",
+  "firstSeenAt": "2026-04-18T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "WEEKENDPLAN",
   "expiresAt": "2026-04-16T00:00:00Z",
   "firstSeenAt": "2026-04-12T00:00:00Z",
