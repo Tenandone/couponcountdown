@@ -2,13 +2,13 @@
   "coupons": [  
     {
   "code": "KS0420",
-  "expiresAt": "2026-04-22T00:00:00Z",
+  "expiresAt": "2026-04-23T00:00:00Z",
   "firstSeenAt": "2026-04-20T00:00:00Z",
   "reward": "General coupon"
 },
     {
   "code": "KSPRAWNING",
-  "expiresAt": "2026-04-20T00:00:00Z",
+  "expiresAt": "2026-04-23T00:00:00Z",
   "firstSeenAt": "2026-04-18T00:00:00Z",
   "reward": "General coupon"
 },
