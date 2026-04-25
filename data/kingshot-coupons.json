@@ -1,6 +1,18 @@
 {
   "coupons": [  
     {
+  "code": "0425FORU",
+  "expiresAt": "2026-04-27T00:00:00Z",
+  "firstSeenAt": "2026-04-25T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KS0425",
+  "expiresAt": "2026-04-27T00:00:00Z",
+  "firstSeenAt": "2026-04-25T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "LOVETHEPLANET",
   "expiresAt": "2026-04-26T00:00:00Z",
   "firstSeenAt": "2026-04-22T00:00:00Z",
