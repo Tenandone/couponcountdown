@@ -1,6 +1,12 @@
 {
   "coupons": [  
     {
+  "code": "OFFICIALSTORE9",
+  "expiresAt": "2026-05-04T00:00:00Z",
+  "firstSeenAt": "2026-04-28T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "KS0426",
   "expiresAt": "2026-04-28T00:00:00Z",
   "firstSeenAt": "2026-04-26T00:00:00Z",
@@ -32,7 +38,7 @@
 },
     {
   "code": "KSPRAWNING",
-  "expiresAt": "2026-04-25T00:00:00Z",
+  "expiresAt": "2026-05-01T00:00:00Z",
   "firstSeenAt": "2026-04-18T00:00:00Z",
   "reward": "General coupon"
 },
