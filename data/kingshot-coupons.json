@@ -1,6 +1,12 @@
 {
   "coupons": [  
     {
+  "code": "KSGW26JP",
+  "expiresAt": "2026-05-03T00:00:00Z",
+  "firstSeenAt": "2026-04-30T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "OFFICIALSTORE9",
   "expiresAt": "2026-05-04T00:00:00Z",
   "firstSeenAt": "2026-04-28T00:00:00Z",
