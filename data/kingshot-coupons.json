@@ -1,6 +1,12 @@
 {
   "coupons": [  
     {
+  "code": "WORKERPOWER",
+  "expiresAt": "2026-05-05T00:00:00Z",
+  "firstSeenAt": "2026-05-01T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "KSGW26JP",
   "expiresAt": "2026-05-03T00:00:00Z",
   "firstSeenAt": "2026-04-30T00:00:00Z",
