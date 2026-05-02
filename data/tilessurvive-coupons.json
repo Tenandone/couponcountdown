@@ -1,6 +1,12 @@
 {
   "coupons": [
     {
+  "code": "WORKPLAYWIN",
+  "expiresAt": "2026-05-15T00:00:00Z",
+  "firstSeenAt": "2026-05-01T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "EASTER2026",
   "expiresAt": "2026-04-15T00:00:00Z",
   "firstSeenAt": "2026-04-05T00:00:00Z",
