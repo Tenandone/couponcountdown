@@ -1,6 +1,12 @@
 {
   "coupons": [  
     {
+  "code": "Childrenday0505",
+  "expiresAt": "2026-05-10T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "WORKERPOWER",
   "expiresAt": "2026-05-05T00:00:00Z",
   "firstSeenAt": "2026-05-01T00:00:00Z",
