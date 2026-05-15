@@ -1,6 +1,12 @@
 {
   "coupons": [  
     {
+  "code": "LOVEFAMILY",
+  "expiresAt": "2026-05-19T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
   "code": "BESTMOM2026",
   "expiresAt": "2026-05-14T00:00:00Z",
   "firstSeenAt": "2026-05-05T00:00:00Z",
