@@ -1,0 +1,2391 @@
+{
+  "checkedAt": "2026-09-19T10:57:39.570Z",
+  "summary": {
+    "total": 238,
+    "validReferral": 238,
+    "modified": 0,
+    "errors": 0
+  },
+  "items": [
+    {
+      "slug": "kingshot",
+      "name": "Kingshot",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/kingshot",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/kingshot",
+      "renderedTitle": "Kingshot 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/kingshot",
+      "referralRetained": true
+    },
+    {
+      "slug": "genshin-impact",
+      "name": "원신·공월의 노래",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/genshin-impact",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/genshin-impact",
+      "renderedTitle": "원신·공월의 노래 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/genshin-impact",
+      "referralRetained": true
+    },
+    {
+      "slug": "honkai-star-rail",
+      "name": "붕괴: 스타레일",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/honkai-star-rail",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/honkai-star-rail",
+      "renderedTitle": "붕괴: 스타레일 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/honkai-star-rail",
+      "referralRetained": true
+    },
+    {
+      "slug": "zenless-zone-zero",
+      "name": "젠레스 존 제로",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/zenless-zone-zero",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/zenless-zone-zero",
+      "renderedTitle": "젠레스 존 제로 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/zenless-zone-zero",
+      "referralRetained": true
+    },
+    {
+      "slug": "last-war-survival",
+      "name": "라스트 워: 서바이벌",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/last-war-survival",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/last-war-survival",
+      "renderedTitle": "라스트 워: 서바이벌 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/last-war-survival",
+      "referralRetained": true
+    },
+    {
+      "slug": "pubg",
+      "name": "배틀그라운드",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pubg",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pubg",
+      "renderedTitle": "배틀그라운드 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pubg",
+      "referralRetained": true
+    },
+    {
+      "slug": "whiteout-survival",
+      "name": "Whiteout Survival",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/whiteout-survival",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/whiteout-survival",
+      "renderedTitle": "Whiteout Survival 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/whiteout-survival",
+      "referralRetained": true
+    },
+    {
+      "slug": "last-z-survival-shooter",
+      "name": "라스트 Z: 서바이벌 슈터",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/last-z-survival-shooter",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/last-z-survival-shooter",
+      "renderedTitle": "라스트 Z: 서바이벌 슈터 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/last-z-survival-shooter",
+      "referralRetained": true
+    },
+    {
+      "slug": "dark-war-survival",
+      "name": "Dark War Survival",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dark-war-survival",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dark-war-survival",
+      "renderedTitle": "Dark War Survival 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dark-war-survival",
+      "referralRetained": true
+    },
+    {
+      "slug": "afk-journey",
+      "name": "AFK 여정",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/afk-journey",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/afk-journey",
+      "renderedTitle": "AFK 여정 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/afk-journey",
+      "referralRetained": true
+    },
+    {
+      "slug": "nikke",
+      "name": "승리의 여신: 니케",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/nikke",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/nikke",
+      "renderedTitle": "승리의 여신: 니케 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/nikke",
+      "referralRetained": true
+    },
+    {
+      "slug": "brawl-stars",
+      "name": "브롤 스타즈",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/brawl-stars",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/brawl-stars",
+      "renderedTitle": "브롤 스타즈 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/brawl-stars",
+      "referralRetained": true
+    },
+    {
+      "slug": "tiles-survive",
+      "name": "타일즈 서바이브",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/tiles-survive",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/tiles-survive",
+      "renderedTitle": "타일즈 서바이브 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/tiles-survive",
+      "referralRetained": true
+    },
+    {
+      "slug": "rise-of-kingdoms",
+      "name": "라이즈 오브 킹덤즈",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/rise-of-kingdoms",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/rise-of-kingdoms",
+      "renderedTitle": "라이즈 오브 킹덤즈 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/rise-of-kingdoms",
+      "referralRetained": true
+    },
+    {
+      "slug": "maplestory-idle-rpg",
+      "name": "메이플스토리: 아이들 RPG",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/maplestory-idle-rpg",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/maplestory-idle-rpg",
+      "renderedTitle": "메이플스토리: 아이들 RPG 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/maplestory-idle-rpg",
+      "referralRetained": true
+    },
+    {
+      "slug": "wuthering-waves",
+      "name": "명조:워더링 웨이브",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/wuthering-waves",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/wuthering-waves",
+      "renderedTitle": "명조:워더링 웨이브 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/wuthering-waves",
+      "referralRetained": true
+    },
+    {
+      "slug": "arknights-endfield",
+      "name": "Arknights: Endfield",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arknights-endfield",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arknights-endfield",
+      "renderedTitle": "Arknights: Endfield 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arknights-endfield",
+      "referralRetained": true
+    },
+    {
+      "slug": "the-seven-deadly-sins-origin",
+      "name": "일곱 개의 대죄: 기원",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/the-seven-deadly-sins-origin",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/the-seven-deadly-sins-origin",
+      "renderedTitle": "일곱 개의 대죄: 기원 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/the-seven-deadly-sins-origin",
+      "referralRetained": true
+    },
+    {
+      "slug": "valorant",
+      "name": "발로란트",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/valorant",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/valorant",
+      "renderedTitle": "발로란트 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/valorant",
+      "referralRetained": true
+    },
+    {
+      "slug": "heartopia",
+      "name": "Heartopia",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/heartopia",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/heartopia",
+      "renderedTitle": "Heartopia 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/heartopia",
+      "referralRetained": true
+    },
+    {
+      "slug": "delta-force",
+      "name": "델타 포스",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/delta-force",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/delta-force",
+      "renderedTitle": "델타 포스 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/delta-force",
+      "referralRetained": true
+    },
+    {
+      "slug": "pokemon-go",
+      "name": "포켓몬 고",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pokemon-go",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pokemon-go",
+      "renderedTitle": "포켓몬 고 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pokemon-go",
+      "referralRetained": true
+    },
+    {
+      "slug": "age-of-empires-mobile",
+      "name": "에이지 오브 엠파이어 모바일",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/age-of-empires-mobile",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/age-of-empires-mobile",
+      "renderedTitle": "에이지 오브 엠파이어 모바일 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/age-of-empires-mobile",
+      "referralRetained": true
+    },
+    {
+      "slug": "top-lords",
+      "name": "톱 로드",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/top-lords",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/top-lords",
+      "renderedTitle": "톱 로드 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/top-lords",
+      "referralRetained": true
+    },
+    {
+      "slug": "mobile-legends-bang-bang",
+      "name": "모바일 레전드: Bang Bang",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mobile-legends-bang-bang",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mobile-legends-bang-bang",
+      "renderedTitle": "모바일 레전드: Bang Bang 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mobile-legends-bang-bang",
+      "referralRetained": true
+    },
+    {
+      "slug": "neverness-to-everness",
+      "name": "Neverness to Everness (Global)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/neverness-to-everness",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/neverness-to-everness",
+      "renderedTitle": "Neverness to Everness (Global) 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/neverness-to-everness",
+      "referralRetained": true
+    },
+    {
+      "slug": "free-fire",
+      "name": "Free Fire",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/free-fire",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/free-fire",
+      "renderedTitle": "Free Fire 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/free-fire",
+      "referralRetained": true
+    },
+    {
+      "slug": "knivesout",
+      "name": "Knives Out",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/knivesout",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/knivesout",
+      "renderedTitle": "Knives Out 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/knivesout",
+      "referralRetained": true
+    },
+    {
+      "slug": "marvel-rivals",
+      "name": "마블 라이벌즈",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/marvel-rivals",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/marvel-rivals",
+      "renderedTitle": "마블 라이벌즈 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/marvel-rivals",
+      "referralRetained": true
+    },
+    {
+      "slug": "where-winds-meet",
+      "name": "Where Winds Meet",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/where-winds-meet",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/where-winds-meet",
+      "renderedTitle": "Where Winds Meet 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/where-winds-meet",
+      "referralRetained": true
+    },
+    {
+      "slug": "last-asylum-plague",
+      "name": "Last Asylum: Plague",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/last-asylum-plague",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/last-asylum-plague",
+      "renderedTitle": "Last Asylum: Plague 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/last-asylum-plague",
+      "referralRetained": true
+    },
+    {
+      "slug": "sword-x-staff",
+      "name": "소드 x 스태프",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sword-x-staff",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sword-x-staff",
+      "renderedTitle": "소드 x 스태프 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sword-x-staff",
+      "referralRetained": true
+    },
+    {
+      "slug": "umamusume-pretty-derby",
+      "name": "우마무스메: 프리티 더비",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/umamusume-pretty-derby",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/umamusume-pretty-derby",
+      "renderedTitle": "우마무스메: 프리티 더비 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/umamusume-pretty-derby",
+      "referralRetained": true
+    },
+    {
+      "slug": "identity-v",
+      "name": "Identity V",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/identity-v",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/identity-v",
+      "renderedTitle": "Identity V 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/identity-v",
+      "referralRetained": true
+    },
+    {
+      "slug": "pokemon-tcg-pocket",
+      "name": "포켓몬 TCG 포켓",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pokemon-tcg-pocket",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pokemon-tcg-pocket",
+      "renderedTitle": "포켓몬 TCG 포켓 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pokemon-tcg-pocket",
+      "referralRetained": true
+    },
+    {
+      "slug": "arknights",
+      "name": "Arknights",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arknights",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arknights",
+      "renderedTitle": "Arknights 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arknights",
+      "referralRetained": true
+    },
+    {
+      "slug": "punishing-gray-raven",
+      "name": "퍼니싱: 그레이 레이븐",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/punishing-gray-raven",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/punishing-gray-raven",
+      "renderedTitle": "퍼니싱: 그레이 레이븐 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/punishing-gray-raven",
+      "referralRetained": true
+    },
+    {
+      "slug": "fate-war",
+      "name": "페이트 워",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/fate-war",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/fate-war",
+      "renderedTitle": "페이트 워 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/fate-war",
+      "referralRetained": true
+    },
+    {
+      "slug": "blood-strike",
+      "name": "블러드 스트라이크",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/blood-strike",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/blood-strike",
+      "renderedTitle": "블러드 스트라이크 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/blood-strike",
+      "referralRetained": true
+    },
+    {
+      "slug": "chaos-zero-nightmare",
+      "name": "카오스 제로 나이트메어",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/chaos-zero-nightmare",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/chaos-zero-nightmare",
+      "renderedTitle": "카오스 제로 나이트메어 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/chaos-zero-nightmare",
+      "referralRetained": true
+    },
+    {
+      "slug": "duck-survival",
+      "name": "Duck Survival",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/duck-survival",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/duck-survival",
+      "renderedTitle": "Duck Survival 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/duck-survival",
+      "referralRetained": true
+    },
+    {
+      "slug": "chatgpt",
+      "name": "ChatGPT",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/chatgpt",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/chatgpt",
+      "renderedTitle": "ChatGPT 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/chatgpt",
+      "referralRetained": true
+    },
+    {
+      "slug": "clash-of-clans",
+      "name": "Clash of Clans",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-of-clans",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-of-clans",
+      "renderedTitle": "Clash of Clans 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-of-clans",
+      "referralRetained": true
+    },
+    {
+      "slug": "clash-royale",
+      "name": "클래시 로얄",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-royale",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-royale",
+      "renderedTitle": "클래시 로얄 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-royale",
+      "referralRetained": true
+    },
+    {
+      "slug": "watcher-of-realms",
+      "name": "영역의 감시자",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/watcher-of-realms",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/watcher-of-realms",
+      "renderedTitle": "영역의 감시자 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/watcher-of-realms",
+      "referralRetained": true
+    },
+    {
+      "slug": "top-heroes-kingdom-saga",
+      "name": "탑 히어로즈: 영웅의 시대",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/top-heroes-kingdom-saga",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/top-heroes-kingdom-saga",
+      "renderedTitle": "탑 히어로즈: 영웅의 시대 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/top-heroes-kingdom-saga",
+      "referralRetained": true
+    },
+    {
+      "slug": "gossip-harbor-merge-story",
+      "name": "Gossip Harbor: Merge & Story",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gossip-harbor-merge-story",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gossip-harbor-merge-story",
+      "renderedTitle": "Gossip Harbor: Merge & Story 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gossip-harbor-merge-story",
+      "referralRetained": true
+    },
+    {
+      "slug": "nte-neverness-to-everness",
+      "name": "異環",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/nte-neverness-to-everness",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/nte-neverness-to-everness",
+      "renderedTitle": "異環 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/nte-neverness-to-everness",
+      "referralRetained": true
+    },
+    {
+      "slug": "bleach-soul-resonance",
+      "name": "Bleach Soul Resonance",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/bleach-soul-resonance",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/bleach-soul-resonance",
+      "renderedTitle": "Bleach Soul Resonance 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/bleach-soul-resonance",
+      "referralRetained": true
+    },
+    {
+      "slug": "palmon-survival",
+      "name": "팔몬: 서바이벌",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/palmon-survival",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/palmon-survival",
+      "renderedTitle": "팔몬: 서바이벌 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/palmon-survival",
+      "referralRetained": true
+    },
+    {
+      "slug": "x-clash-survival-challenge",
+      "name": "X Clash:Survival Challenge",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/x-clash-survival-challenge",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/x-clash-survival-challenge",
+      "renderedTitle": "X Clash:Survival Challenge 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/x-clash-survival-challenge",
+      "referralRetained": true
+    },
+    {
+      "slug": "love-and-deepspace",
+      "name": "사랑과 딥스페이스",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/love-and-deepspace",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/love-and-deepspace",
+      "renderedTitle": "사랑과 딥스페이스 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/love-and-deepspace",
+      "referralRetained": true
+    },
+    {
+      "slug": "infinity-nikki",
+      "name": "인피니티 니키",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/infinity-nikki",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/infinity-nikki",
+      "renderedTitle": "인피니티 니키 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/infinity-nikki",
+      "referralRetained": true
+    },
+    {
+      "slug": "sd-gundam-g-generation-eternal",
+      "name": "SD건담 지 제네레이션 이터널",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sd-gundam-g-generation-eternal",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sd-gundam-g-generation-eternal",
+      "renderedTitle": "SD건담 지 제네레이션 이터널 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sd-gundam-g-generation-eternal",
+      "referralRetained": true
+    },
+    {
+      "slug": "destiny-rising",
+      "name": "운명: 라이징",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/destiny-rising",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/destiny-rising",
+      "renderedTitle": "운명: 라이징 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/destiny-rising",
+      "referralRetained": true
+    },
+    {
+      "slug": "arena-breakout",
+      "name": "아레나 브레이크아웃",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arena-breakout",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arena-breakout",
+      "renderedTitle": "아레나 브레이크아웃 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arena-breakout",
+      "referralRetained": true
+    },
+    {
+      "slug": "reverse-1999",
+      "name": "Reverse: 1999",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/reverse-1999",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/reverse-1999",
+      "renderedTitle": "Reverse: 1999 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/reverse-1999",
+      "referralRetained": true
+    },
+    {
+      "slug": "blueprotocol-starresonance",
+      "name": "Blue Protocol: Star Resonance",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/blueprotocol-starresonance",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/blueprotocol-starresonance",
+      "renderedTitle": "Blue Protocol: Star Resonance 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/blueprotocol-starresonance",
+      "referralRetained": true
+    },
+    {
+      "slug": "dragon-nest-m-classic",
+      "name": "Dragon Nest M: Classic",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragon-nest-m-classic",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragon-nest-m-classic",
+      "renderedTitle": "Dragon Nest M: Classic 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragon-nest-m-classic",
+      "referralRetained": true
+    },
+    {
+      "slug": "foundation-galactic-frontier",
+      "name": "Foundation: Galactic Frontier",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/foundation-galactic-frontier",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/foundation-galactic-frontier",
+      "renderedTitle": "Foundation: Galactic Frontier 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/foundation-galactic-frontier",
+      "referralRetained": true
+    },
+    {
+      "slug": "hay-day",
+      "name": "Hay Day",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hay-day",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hay-day",
+      "renderedTitle": "Hay Day 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hay-day",
+      "referralRetained": true
+    },
+    {
+      "slug": "honor-of-kings",
+      "name": "왕자의 영예",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/honor-of-kings",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/honor-of-kings",
+      "renderedTitle": "왕자의 영예 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/honor-of-kings",
+      "referralRetained": true
+    },
+    {
+      "slug": "roblox-robux",
+      "name": "RBLX",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/roblox-robux",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/roblox-robux",
+      "renderedTitle": "RBLX 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/roblox-robux",
+      "referralRetained": true
+    },
+    {
+      "slug": "league-of-legends-wild-rift",
+      "name": "리그 오브 레전드: 와일드 리프트",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/league-of-legends-wild-rift",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/league-of-legends-wild-rift",
+      "renderedTitle": "리그 오브 레전드: 와일드 리프트 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/league-of-legends-wild-rift",
+      "referralRetained": true
+    },
+    {
+      "slug": "dunk-city-dynasty",
+      "name": "덩크 시티 다이너스티",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dunk-city-dynasty",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dunk-city-dynasty",
+      "renderedTitle": "덩크 시티 다이너스티 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dunk-city-dynasty",
+      "referralRetained": true
+    },
+    {
+      "slug": "once-human",
+      "name": "한때 인간",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/once-human",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/once-human",
+      "renderedTitle": "한때 인간 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/once-human",
+      "referralRetained": true
+    },
+    {
+      "slug": "duet-night-abyss",
+      "name": "듀엣 나이트 어비스",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/duet-night-abyss",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/duet-night-abyss",
+      "renderedTitle": "듀엣 나이트 어비스 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/duet-night-abyss",
+      "referralRetained": true
+    },
+    {
+      "slug": "stella-sora",
+      "name": "스텔라소라",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/stella-sora",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/stella-sora",
+      "renderedTitle": "스텔라소라 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/stella-sora",
+      "referralRetained": true
+    },
+    {
+      "slug": "snowbreak-containment-zone",
+      "name": "Snowbreak: Containment Zone",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/snowbreak-containment-zone",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/snowbreak-containment-zone",
+      "renderedTitle": "Snowbreak: Containment Zone 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/snowbreak-containment-zone",
+      "referralRetained": true
+    },
+    {
+      "slug": "candy-crush-saga",
+      "name": "캔디 크러쉬 사가",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/candy-crush-saga",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/candy-crush-saga",
+      "renderedTitle": "캔디 크러쉬 사가 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/candy-crush-saga",
+      "referralRetained": true
+    },
+    {
+      "slug": "royal-match",
+      "name": "로얄 매치",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/royal-match",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/royal-match",
+      "renderedTitle": "로얄 매치 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/royal-match",
+      "referralRetained": true
+    },
+    {
+      "slug": "evony-the-kings-return",
+      "name": "에보니: 더 킹즈 리턴",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/evony-the-kings-return",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/evony-the-kings-return",
+      "renderedTitle": "에보니: 더 킹즈 리턴 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/evony-the-kings-return",
+      "referralRetained": true
+    },
+    {
+      "slug": "age-of-origin",
+      "name": "Age of Origins:Tower Defense",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/age-of-origin",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/age-of-origin",
+      "renderedTitle": "Age of Origins:Tower Defense 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/age-of-origin",
+      "referralRetained": true
+    },
+    {
+      "slug": "raid-shadow-legends",
+      "name": "RAID: Shadow Legends",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/raid-shadow-legends",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/raid-shadow-legends",
+      "renderedTitle": "RAID: Shadow Legends 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/raid-shadow-legends",
+      "referralRetained": true
+    },
+    {
+      "slug": "seven-knights-re-birth",
+      "name": "세븐 나이츠 Re: BIRTH",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/seven-knights-re-birth",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/seven-knights-re-birth",
+      "renderedTitle": "세븐 나이츠 Re: BIRTH 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/seven-knights-re-birth",
+      "referralRetained": true
+    },
+    {
+      "slug": "limbus-company",
+      "name": "Limbus Company",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/limbus-company",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/limbus-company",
+      "renderedTitle": "Limbus Company 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/limbus-company",
+      "referralRetained": true
+    },
+    {
+      "slug": "efootball",
+      "name": "eFootball (PES)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/efootball",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/efootball",
+      "renderedTitle": "eFootball (PES) 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/efootball",
+      "referralRetained": true
+    },
+    {
+      "slug": "state-of-survival-zombie-war",
+      "name": "S.O.S: 스테이트 오브 서바이벌",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/state-of-survival-zombie-war",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/state-of-survival-zombie-war",
+      "renderedTitle": "S.O.S: 스테이트 오브 서바이벌 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/state-of-survival-zombie-war",
+      "referralRetained": true
+    },
+    {
+      "slug": "monopoly-go",
+      "name": "MONOPOLY GO!",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/monopoly-go",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/monopoly-go",
+      "renderedTitle": "MONOPOLY GO! 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/monopoly-go",
+      "referralRetained": true
+    },
+    {
+      "slug": "fortnite",
+      "name": "Fortnite",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/fortnite",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/fortnite",
+      "renderedTitle": "Fortnite 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/fortnite",
+      "referralRetained": true
+    },
+    {
+      "slug": "war-and-order",
+      "name": "War and Order",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/war-and-order",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/war-and-order",
+      "renderedTitle": "War and Order 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/war-and-order",
+      "referralRetained": true
+    },
+    {
+      "slug": "puzzles-survival",
+      "name": "퍼즐 & 생존",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/puzzles-survival",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/puzzles-survival",
+      "renderedTitle": "퍼즐 & 생존 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/puzzles-survival",
+      "referralRetained": true
+    },
+    {
+      "slug": "silver-and-blood",
+      "name": "실버와 피",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/silver-and-blood",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/silver-and-blood",
+      "renderedTitle": "실버와 피 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/silver-and-blood",
+      "referralRetained": true
+    },
+    {
+      "slug": "path-to-nowhere",
+      "name": "무기미도",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/path-to-nowhere",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/path-to-nowhere",
+      "renderedTitle": "무기미도 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/path-to-nowhere",
+      "referralRetained": true
+    },
+    {
+      "slug": "sonic-rumble",
+      "name": "Sonic Rumble",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sonic-rumble",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sonic-rumble",
+      "renderedTitle": "Sonic Rumble 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sonic-rumble",
+      "referralRetained": true
+    },
+    {
+      "slug": "resident-evil-survival",
+      "name": "레지던트 이블 서바이벌",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/resident-evil-survival",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/resident-evil-survival",
+      "renderedTitle": "레지던트 이블 서바이벌 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/resident-evil-survival",
+      "referralRetained": true
+    },
+    {
+      "slug": "gunsofglory-lostisland",
+      "name": "Guns of Glory: Lost Island",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gunsofglory-lostisland",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gunsofglory-lostisland",
+      "renderedTitle": "Guns of Glory: Lost Island 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gunsofglory-lostisland",
+      "referralRetained": true
+    },
+    {
+      "slug": "ragnarok-m-classic",
+      "name": "Ragnarok M: Classic",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ragnarok-m-classic",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ragnarok-m-classic",
+      "renderedTitle": "Ragnarok M: Classic 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ragnarok-m-classic",
+      "referralRetained": true
+    },
+    {
+      "slug": "bigolive",
+      "name": "Bigo Live",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/bigolive",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/bigolive",
+      "renderedTitle": "Bigo Live 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/bigolive",
+      "referralRetained": true
+    },
+    {
+      "slug": "poppo-live",
+      "name": "Poppo Live",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/poppo-live",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/poppo-live",
+      "renderedTitle": "Poppo Live 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/poppo-live",
+      "referralRetained": true
+    },
+    {
+      "slug": "chamet",
+      "name": "Chamet",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/chamet",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/chamet",
+      "renderedTitle": "Chamet 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/chamet",
+      "referralRetained": true
+    },
+    {
+      "slug": "likee",
+      "name": "라이키",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/likee",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/likee",
+      "renderedTitle": "라이키 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/likee",
+      "referralRetained": true
+    },
+    {
+      "slug": "sugo",
+      "name": "수고",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sugo",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sugo",
+      "renderedTitle": "수고 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sugo",
+      "referralRetained": true
+    },
+    {
+      "slug": "yoho-group-voice-chat",
+      "name": "YoHo - 그룹 음성 채팅",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yoho-group-voice-chat",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yoho-group-voice-chat",
+      "renderedTitle": "YoHo - 그룹 음성 채팅 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yoho-group-voice-chat",
+      "referralRetained": true
+    },
+    {
+      "slug": "reelshort-stream-drama-tv",
+      "name": "ReelShort 스트림 드라마&TV",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/reelshort-stream-drama-tv",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/reelshort-stream-drama-tv",
+      "renderedTitle": "ReelShort 스트림 드라마&TV 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/reelshort-stream-drama-tv",
+      "referralRetained": true
+    },
+    {
+      "slug": "starmaker",
+      "name": "StarMaker",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/starmaker",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/starmaker",
+      "renderedTitle": "StarMaker 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/starmaker",
+      "referralRetained": true
+    },
+    {
+      "slug": "mico",
+      "name": "MICO",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mico",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mico",
+      "renderedTitle": "MICO 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mico",
+      "referralRetained": true
+    },
+    {
+      "slug": "yalla-ludo-ludo-jackaroo",
+      "name": "얄라 루도 - 루도&자카루",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yalla-ludo-ludo-jackaroo",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yalla-ludo-ludo-jackaroo",
+      "renderedTitle": "얄라 루도 - 루도&자카루 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yalla-ludo-ludo-jackaroo",
+      "referralRetained": true
+    },
+    {
+      "slug": "ragnarok-m-eternal-love",
+      "name": "Ragnarok M: Eternal Love",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ragnarok-m-eternal-love",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ragnarok-m-eternal-love",
+      "renderedTitle": "Ragnarok M: Eternal Love 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ragnarok-m-eternal-love",
+      "referralRetained": true
+    },
+    {
+      "slug": "top-war-battle-game",
+      "name": "탑 워: 배틀 게임",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/top-war-battle-game",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/top-war-battle-game",
+      "renderedTitle": "탑 워: 배틀 게임 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/top-war-battle-game",
+      "referralRetained": true
+    },
+    {
+      "slug": "township",
+      "name": "타운십",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/township",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/township",
+      "renderedTitle": "타운십 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/township",
+      "referralRetained": true
+    },
+    {
+      "slug": "gardenscapes",
+      "name": "가든스케이프",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gardenscapes",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gardenscapes",
+      "renderedTitle": "가든스케이프 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gardenscapes",
+      "referralRetained": true
+    },
+    {
+      "slug": "apex-legends",
+      "name": "APEX",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/apex-legends",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/apex-legends",
+      "renderedTitle": "APEX 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/apex-legends",
+      "referralRetained": true
+    },
+    {
+      "slug": "girls-frontline-2-exilium",
+      "name": "소녀전선 2: Exilium",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/girls-frontline-2-exilium",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/girls-frontline-2-exilium",
+      "renderedTitle": "소녀전선 2: Exilium 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/girls-frontline-2-exilium",
+      "referralRetained": true
+    },
+    {
+      "slug": "crystal-of-atlan",
+      "name": "아틀란의 크리스탈 (ASIA)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/crystal-of-atlan",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/crystal-of-atlan",
+      "renderedTitle": "아틀란의 크리스탈 (ASIA) 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/crystal-of-atlan",
+      "referralRetained": true
+    },
+    {
+      "slug": "etheria-restart",
+      "name": "에테리아: 재시작",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/etheria-restart",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/etheria-restart",
+      "renderedTitle": "에테리아: 재시작 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/etheria-restart",
+      "referralRetained": true
+    },
+    {
+      "slug": "rememento-white-shadow",
+      "name": "Rememento: 화이트 섀도우",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/rememento-white-shadow",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/rememento-white-shadow",
+      "renderedTitle": "Rememento: 화이트 섀도우 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/rememento-white-shadow",
+      "referralRetained": true
+    },
+    {
+      "slug": "persona5-the-phantom-x",
+      "name": "페르소나5: 더 팬텀 X",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/persona5-the-phantom-x",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/persona5-the-phantom-x",
+      "renderedTitle": "페르소나5: 더 팬텀 X 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/persona5-the-phantom-x",
+      "referralRetained": true
+    },
+    {
+      "slug": "mechabreak",
+      "name": "메카 브레이크",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mechabreak",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mechabreak",
+      "renderedTitle": "메카 브레이크 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mechabreak",
+      "referralRetained": true
+    },
+    {
+      "slug": "migo-live",
+      "name": "MIGO 라이브",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/migo-live",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/migo-live",
+      "renderedTitle": "MIGO 라이브 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/migo-live",
+      "referralRetained": true
+    },
+    {
+      "slug": "dragonheir-silent-gods",
+      "name": "드래곤헤어 사일런트 갓",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragonheir-silent-gods",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragonheir-silent-gods",
+      "renderedTitle": "드래곤헤어 사일런트 갓 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragonheir-silent-gods",
+      "referralRetained": true
+    },
+    {
+      "slug": "haikyu-fly-high",
+      "name": "HAIKYU!! FLY HIGH (SEA)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/haikyu-fly-high",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/haikyu-fly-high",
+      "renderedTitle": "HAIKYU!! FLY HIGH (SEA) 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/haikyu-fly-high",
+      "referralRetained": true
+    },
+    {
+      "slug": "new-state-mobile",
+      "name": "NEW STATE 모바일",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/new-state-mobile",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/new-state-mobile",
+      "renderedTitle": "NEW STATE 모바일 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/new-state-mobile",
+      "referralRetained": true
+    },
+    {
+      "slug": "ragnarokoriginglobal",
+      "name": "라그나로크 오리진 글로벌",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ragnarokoriginglobal",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ragnarokoriginglobal",
+      "renderedTitle": "라그나로크 오리진 글로벌 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ragnarokoriginglobal",
+      "referralRetained": true
+    },
+    {
+      "slug": "legend-of-mushroom",
+      "name": "버섯의 전설",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/legend-of-mushroom",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/legend-of-mushroom",
+      "renderedTitle": "버섯의 전설 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/legend-of-mushroom",
+      "referralRetained": true
+    },
+    {
+      "slug": "sawa-play",
+      "name": "Sawa Play",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sawa-play",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sawa-play",
+      "renderedTitle": "Sawa Play 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sawa-play",
+      "referralRetained": true
+    },
+    {
+      "slug": "yalla-play-game-voice-chat",
+      "name": "Yalla",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yalla-play-game-voice-chat",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yalla-play-game-voice-chat",
+      "renderedTitle": "Yalla 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yalla-play-game-voice-chat",
+      "referralRetained": true
+    },
+    {
+      "slug": "dazz-live-live-stream-chat",
+      "name": "Dazz Live",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dazz-live-live-stream-chat",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dazz-live-live-stream-chat",
+      "renderedTitle": "Dazz Live 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dazz-live-live-stream-chat",
+      "referralRetained": true
+    },
+    {
+      "slug": "mo-co",
+      "name": "mo.co",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mo-co",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mo-co",
+      "renderedTitle": "mo.co 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mo-co",
+      "referralRetained": true
+    },
+    {
+      "slug": "archero2",
+      "name": "Archero 2",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/archero2",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/archero2",
+      "renderedTitle": "Archero 2 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/archero2",
+      "referralRetained": true
+    },
+    {
+      "slug": "dragon-ball-z-dokkan-battle",
+      "name": "드래곤 볼 Z 도칸 배틀",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragon-ball-z-dokkan-battle",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragon-ball-z-dokkan-battle",
+      "renderedTitle": "드래곤 볼 Z 도칸 배틀 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragon-ball-z-dokkan-battle",
+      "referralRetained": true
+    },
+    {
+      "slug": "capcut",
+      "name": "CapCut",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/capcut",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/capcut",
+      "renderedTitle": "CapCut 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/capcut",
+      "referralRetained": true
+    },
+    {
+      "slug": "squad-busters",
+      "name": "스쿼드 버스터스",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/squad-busters",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/squad-busters",
+      "renderedTitle": "스쿼드 버스터스 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/squad-busters",
+      "referralRetained": true
+    },
+    {
+      "slug": "azur-lane",
+      "name": "Azur Lane",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/azur-lane",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/azur-lane",
+      "renderedTitle": "Azur Lane 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/azur-lane",
+      "referralRetained": true
+    },
+    {
+      "slug": "browndust2",
+      "name": "브라운더스트2",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/browndust2",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/browndust2",
+      "renderedTitle": "브라운더스트2 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/browndust2",
+      "referralRetained": true
+    },
+    {
+      "slug": "honkai-nexus-anima",
+      "name": "Honkai: Nexus Anima",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/honkai-nexus-anima",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/honkai-nexus-anima",
+      "renderedTitle": "Honkai: Nexus Anima 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/honkai-nexus-anima",
+      "referralRetained": true
+    },
+    {
+      "slug": "toptop",
+      "name": "TopTop: 게임&채팅",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/toptop",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/toptop",
+      "renderedTitle": "TopTop: 게임&채팅 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/toptop",
+      "referralRetained": true
+    },
+    {
+      "slug": "strinova-mobile",
+      "name": "Strinova Mobile",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/strinova-mobile",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/strinova-mobile",
+      "renderedTitle": "Strinova Mobile 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/strinova-mobile",
+      "referralRetained": true
+    },
+    {
+      "slug": "petit-planet",
+      "name": "쁘띠플래닛",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/petit-planet",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/petit-planet",
+      "renderedTitle": "쁘띠플래닛 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/petit-planet",
+      "referralRetained": true
+    },
+    {
+      "slug": "fate-trigger",
+      "name": "Fate Trigger",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/fate-trigger",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/fate-trigger",
+      "renderedTitle": "Fate Trigger 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/fate-trigger",
+      "referralRetained": true
+    },
+    {
+      "slug": "rainbow-six-mobile",
+      "name": "Rainbow Six Mobile",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/rainbow-six-mobile",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/rainbow-six-mobile",
+      "renderedTitle": "Rainbow Six Mobile 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/rainbow-six-mobile",
+      "referralRetained": true
+    },
+    {
+      "slug": "zombie-waves",
+      "name": "좀비 웨이브",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/zombie-waves",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/zombie-waves",
+      "renderedTitle": "좀비 웨이브 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/zombie-waves",
+      "referralRetained": true
+    },
+    {
+      "slug": "lost-sword",
+      "name": "Lost SW",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/lost-sword",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/lost-sword",
+      "renderedTitle": "Lost SW 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/lost-sword",
+      "referralRetained": true
+    },
+    {
+      "slug": "2xko",
+      "name": "2XKO",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/2xko",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/2xko",
+      "renderedTitle": "2XKO 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/2xko",
+      "referralRetained": true
+    },
+    {
+      "slug": "dramabox",
+      "name": "DramaBox",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dramabox",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dramabox",
+      "renderedTitle": "DramaBox 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dramabox",
+      "referralRetained": true
+    },
+    {
+      "slug": "telegram-final",
+      "name": "Telegram",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/telegram-final",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/telegram-final",
+      "renderedTitle": "Telegram 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/telegram-final",
+      "referralRetained": true
+    },
+    {
+      "slug": "clash-of-kings",
+      "name": "Clash of Kings",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-of-kings",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-of-kings",
+      "renderedTitle": "Clash of Kings 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-of-kings",
+      "referralRetained": true
+    },
+    {
+      "slug": "aniimo",
+      "name": "애니모",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/aniimo",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/aniimo",
+      "renderedTitle": "애니모 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/aniimo",
+      "referralRetained": true
+    },
+    {
+      "slug": "hago",
+      "name": "Hago",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hago",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hago",
+      "renderedTitle": "Hago 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hago",
+      "referralRetained": true
+    },
+    {
+      "slug": "the-division-resurgence",
+      "name": "더 디비전 리서전스",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/the-division-resurgence",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/the-division-resurgence",
+      "renderedTitle": "더 디비전 리서전스 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/the-division-resurgence",
+      "referralRetained": true
+    },
+    {
+      "slug": "dragon-traveler",
+      "name": "그놈은 드래곤",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragon-traveler",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragon-traveler",
+      "renderedTitle": "그놈은 드래곤 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/dragon-traveler",
+      "referralRetained": true
+    },
+    {
+      "slug": "tft-teamfight-tactics",
+      "name": "TFT: 전략적 팀 전투",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/tft-teamfight-tactics",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/tft-teamfight-tactics",
+      "renderedTitle": "TFT: 전략적 팀 전투 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/tft-teamfight-tactics",
+      "referralRetained": true
+    },
+    {
+      "slug": "standoff2",
+      "name": "대치 2",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/standoff2",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/standoff2",
+      "renderedTitle": "대치 2 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/standoff2",
+      "referralRetained": true
+    },
+    {
+      "slug": "hatsune-miku-colorful-stage",
+      "name": "HATSUNE MIKU: COLORFUL STAGE!",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hatsune-miku-colorful-stage",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hatsune-miku-colorful-stage",
+      "renderedTitle": "HATSUNE MIKU: COLORFUL STAGE! 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hatsune-miku-colorful-stage",
+      "referralRetained": true
+    },
+    {
+      "slug": "sword-of-justice",
+      "name": "역수한",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sword-of-justice",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sword-of-justice",
+      "renderedTitle": "역수한 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/sword-of-justice",
+      "referralRetained": true
+    },
+    {
+      "slug": "ea-sports-fc-mobile-soccer-26",
+      "name": "FC Mobile ",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ea-sports-fc-mobile-soccer-26",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ea-sports-fc-mobile-soccer-26",
+      "renderedTitle": "FC Mobile  게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/ea-sports-fc-mobile-soccer-26",
+      "referralRetained": true
+    },
+    {
+      "slug": "mabinogi-mobile",
+      "name": "마비노기 모바일 TW/HK",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mabinogi-mobile",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mabinogi-mobile",
+      "renderedTitle": "마비노기 모바일 TW/HK 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mabinogi-mobile",
+      "referralRetained": true
+    },
+    {
+      "slug": "one-piece-bounty-rush",
+      "name": "ONE PIECE Bounty Rush",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/one-piece-bounty-rush",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/one-piece-bounty-rush",
+      "renderedTitle": "ONE PIECE Bounty Rush 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/one-piece-bounty-rush",
+      "referralRetained": true
+    },
+    {
+      "slug": "digimon-up",
+      "name": "디지몬 UP",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/digimon-up",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/digimon-up",
+      "renderedTitle": "디지몬 UP 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/digimon-up",
+      "referralRetained": true
+    },
+    {
+      "slug": "marvel-contest-of-champions",
+      "name": "마블 컨테스트 오브 챔피언스",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/marvel-contest-of-champions",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/marvel-contest-of-champions",
+      "renderedTitle": "마블 컨테스트 오브 챔피언스 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/marvel-contest-of-champions",
+      "referralRetained": true
+    },
+    {
+      "slug": "shadowverse-worlds-beyond",
+      "name": "Shadowverse: Worlds Beyond",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/shadowverse-worlds-beyond",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/shadowverse-worlds-beyond",
+      "renderedTitle": "Shadowverse: Worlds Beyond 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/shadowverse-worlds-beyond",
+      "referralRetained": true
+    },
+    {
+      "slug": "hololive-dreams",
+      "name": "홀로라이브 드림스",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hololive-dreams",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hololive-dreams",
+      "renderedTitle": "홀로라이브 드림스 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hololive-dreams",
+      "referralRetained": true
+    },
+    {
+      "slug": "racing-master",
+      "name": "레이싱 마스터",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/racing-master",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/racing-master",
+      "renderedTitle": "레이싱 마스터 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/racing-master",
+      "referralRetained": true
+    },
+    {
+      "slug": "call-of-dragons",
+      "name": "드래곤의 부름",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/call-of-dragons",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/call-of-dragons",
+      "renderedTitle": "드래곤의 부름 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/call-of-dragons",
+      "referralRetained": true
+    },
+    {
+      "slug": "starsavior",
+      "name": "StarSavior",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/starsavior",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/starsavior",
+      "renderedTitle": "StarSavior 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/starsavior",
+      "referralRetained": true
+    },
+    {
+      "slug": "flambe-merge-and-cook",
+      "name": "플랑베: 병합하고 요리하기",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/flambe-merge-and-cook",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/flambe-merge-and-cook",
+      "renderedTitle": "플랑베: 병합하고 요리하기 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/flambe-merge-and-cook",
+      "referralRetained": true
+    },
+    {
+      "slug": "jojos-bizarre-adventure-gs",
+      "name": "죠죠의 기묘한 모험: GS",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/jojos-bizarre-adventure-gs",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/jojos-bizarre-adventure-gs",
+      "renderedTitle": "죠죠의 기묘한 모험: GS 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/jojos-bizarre-adventure-gs",
+      "referralRetained": true
+    },
+    {
+      "slug": "onestate-rp-role-play-online",
+      "name": "OneState RP: 온라인 역할 놀이",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/onestate-rp-role-play-online",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/onestate-rp-role-play-online",
+      "renderedTitle": "OneState RP: 온라인 역할 놀이 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/onestate-rp-role-play-online",
+      "referralRetained": true
+    },
+    {
+      "slug": "xena-live",
+      "name": "Xena Live",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/xena-live",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/xena-live",
+      "renderedTitle": "Xena Live 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/xena-live",
+      "referralRetained": true
+    },
+    {
+      "slug": "yoyo",
+      "name": "YoYo (MENA)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yoyo",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yoyo",
+      "renderedTitle": "YoYo (MENA) 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/yoyo",
+      "referralRetained": true
+    },
+    {
+      "slug": "arena-breakout-infinite",
+      "name": "아레나 브레이크아웃: 인피니트",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arena-breakout-infinite",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arena-breakout-infinite",
+      "renderedTitle": "아레나 브레이크아웃: 인피니트 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/arena-breakout-infinite",
+      "referralRetained": true
+    },
+    {
+      "slug": "pokemon-champions",
+      "name": "포켓몬 챔피언",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pokemon-champions",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pokemon-champions",
+      "renderedTitle": "포켓몬 챔피언 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/pokemon-champions",
+      "referralRetained": true
+    },
+    {
+      "slug": "gangstar-mirage-city",
+      "name": "갱스터 미라지 시티",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gangstar-mirage-city",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gangstar-mirage-city",
+      "renderedTitle": "갱스터 미라지 시티 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/gangstar-mirage-city",
+      "referralRetained": true
+    },
+    {
+      "slug": "hunter-hunter-nen-survivor",
+      "name": "HUNTERxHUNTER NENxSURVIVOR",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hunter-hunter-nen-survivor",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hunter-hunter-nen-survivor",
+      "renderedTitle": "HUNTERxHUNTER NENxSURVIVOR 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/hunter-hunter-nen-survivor",
+      "referralRetained": true
+    },
+    {
+      "slug": "cookierun-ovensmash",
+      "name": "쿠키런: 오븐스매시",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/cookierun-ovensmash",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/cookierun-ovensmash",
+      "renderedTitle": "쿠키런: 오븐스매시 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/cookierun-ovensmash",
+      "referralRetained": true
+    },
+    {
+      "slug": "eggy-party",
+      "name": "에기 파티",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/eggy-party",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/eggy-party",
+      "renderedTitle": "에기 파티 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/eggy-party",
+      "referralRetained": true
+    },
+    {
+      "slug": "doomsday-last-survivors",
+      "name": "둠스데이: 라스트 서바이버",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/doomsday-last-survivors",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/doomsday-last-survivors",
+      "renderedTitle": "둠스데이: 라스트 서바이버 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/doomsday-last-survivors",
+      "referralRetained": true
+    },
+    {
+      "slug": "viking-rise",
+      "name": "Viking Rise",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/viking-rise",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/viking-rise",
+      "renderedTitle": "Viking Rise 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/viking-rise",
+      "referralRetained": true
+    },
+    {
+      "slug": "mongil-star-dive",
+      "name": "MONGIL: STAR DIVE",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mongil-star-dive",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mongil-star-dive",
+      "renderedTitle": "MONGIL: STAR DIVE 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/mongil-star-dive",
+      "referralRetained": true
+    },
+    {
+      "slug": "wild-water-world",
+      "name": "와일드 워터 월드",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/wild-water-world",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/wild-water-world",
+      "renderedTitle": "와일드 워터 월드 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/wild-water-world",
+      "referralRetained": true
+    },
+    {
+      "slug": "taka",
+      "name": "타카 라이브",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/taka",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/taka",
+      "renderedTitle": "타카 라이브 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/taka",
+      "referralRetained": true
+    },
+    {
+      "slug": "lootfiend-idle-dungeons",
+      "name": "Lootfiend: ldle Dungeons",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/lootfiend-idle-dungeons",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/lootfiend-idle-dungeons",
+      "renderedTitle": "Lootfiend: ldle Dungeons 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/lootfiend-idle-dungeons",
+      "referralRetained": true
+    },
+    {
+      "slug": "heesay",
+      "name": "Heesay",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/heesay",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/heesay",
+      "renderedTitle": "Heesay 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/heesay",
+      "referralRetained": true
+    },
+    {
+      "slug": "lords-mobile-kingdom-wars",
+      "name": "Lords Mobile: Kingdom Wars",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/lords-mobile-kingdom-wars",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/lords-mobile-kingdom-wars",
+      "renderedTitle": "Lords Mobile: Kingdom Wars 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/lords-mobile-kingdom-wars",
+      "referralRetained": true
+    },
+    {
+      "slug": "livu",
+      "name": "LivU",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/livu",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/livu",
+      "renderedTitle": "LivU 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/livu",
+      "referralRetained": true
+    },
+    {
+      "slug": "blood-strike-max",
+      "name": "블러드 스트라이크 Max",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/blood-strike-max",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/blood-strike-max",
+      "renderedTitle": "블러드 스트라이크 Max 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/blood-strike-max",
+      "referralRetained": true
+    },
+    {
+      "slug": "plants-on-fire",
+      "name": "불타는 식물",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/plants-on-fire",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/plants-on-fire",
+      "renderedTitle": "불타는 식물 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/plants-on-fire",
+      "referralRetained": true
+    },
+    {
+      "slug": "royal-kingdom",
+      "name": "로열 킹덤",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/royal-kingdom",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/royal-kingdom",
+      "renderedTitle": "로열 킹덤 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/royal-kingdom",
+      "referralRetained": true
+    },
+    {
+      "slug": "whoa-adventrue",
+      "name": "Whoa Adventrue",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/whoa-adventrue",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/whoa-adventrue",
+      "renderedTitle": "Whoa Adventrue 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/whoa-adventrue",
+      "referralRetained": true
+    },
+    {
+      "slug": "jaco",
+      "name": "Jaco",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/jaco",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/jaco",
+      "renderedTitle": "Jaco 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/jaco",
+      "referralRetained": true
+    },
+    {
+      "slug": "land-of-jail",
+      "name": "랜드 오브 제일",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/land-of-jail",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/land-of-jail",
+      "renderedTitle": "랜드 오브 제일 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/land-of-jail",
+      "referralRetained": true
+    },
+    {
+      "slug": "disney-solitaire",
+      "name": "D  Solitaire",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/disney-solitaire",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/disney-solitaire",
+      "renderedTitle": "D  Solitaire 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/disney-solitaire",
+      "referralRetained": true
+    },
+    {
+      "slug": "epic-seven",
+      "name": "Epic VII",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/epic-seven",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/epic-seven",
+      "renderedTitle": "Epic VII 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/epic-seven",
+      "referralRetained": true
+    },
+    {
+      "slug": "tomb-busters",
+      "name": "Tomb Busters",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/tomb-busters",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/tomb-busters",
+      "renderedTitle": "Tomb Busters 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/tomb-busters",
+      "referralRetained": true
+    },
+    {
+      "slug": "evo-defense",
+      "name": "Evo Defense",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/evo-defense",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/evo-defense",
+      "renderedTitle": "Evo Defense 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/evo-defense",
+      "referralRetained": true
+    },
+    {
+      "slug": "total-battle-war-strategy",
+      "name": "Total Battle: War Strategy",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/total-battle-war-strategy",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/total-battle-war-strategy",
+      "renderedTitle": "Total Battle: War Strategy 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/total-battle-war-strategy",
+      "referralRetained": true
+    },
+    {
+      "slug": "solo-leveling-arise",
+      "name": "Solo Leveling: Arise",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/solo-leveling-arise",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/solo-leveling-arise",
+      "renderedTitle": "Solo Leveling: Arise 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/solo-leveling-arise",
+      "referralRetained": true
+    },
+    {
+      "slug": "girls-frontline-blue-butterfly-contract",
+      "name": "Girls’ Frontline: 그린 Butterfly Contract",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/girls-frontline-blue-butterfly-contract",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/girls-frontline-blue-butterfly-contract",
+      "renderedTitle": "Girls’ Frontline: 그린 Butterfly Contract 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/girls-frontline-blue-butterfly-contract",
+      "referralRetained": true
+    },
+    {
+      "slug": "clash-of-critters",
+      "name": "뚜까펫: 서바이벌",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-of-critters",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-of-critters",
+      "renderedTitle": "뚜까펫: 서바이벌 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/clash-of-critters",
+      "referralRetained": true
+    },
+    {
+      "slug": "kingdom-fall-zombie-defense",
+      "name": "Kingdom Fall: Zombie Defense",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/kingdom-fall-zombie-defense",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/kingdom-fall-zombie-defense",
+      "renderedTitle": "Kingdom Fall: Zombie Defense 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/kingdom-fall-zombie-defense",
+      "referralRetained": true
+    },
+    {
+      "slug": "soulchill-voice-chat-room",
+      "name": "SoulChill",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/soulchill-voice-chat-room",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/soulchill-voice-chat-room",
+      "renderedTitle": "SoulChill 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/soulchill-voice-chat-room",
+      "referralRetained": true
+    },
+    {
+      "slug": "zomline-survival",
+      "name": "Zomline Survival",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/top-up/zomline-survival",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/zomline-survival",
+      "renderedTitle": "Zomline Survival 게임 충전",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/top-up/zomline-survival",
+      "referralRetained": true
+    },
+    {
+      "slug": "wardogs",
+      "name": "WARDOGS",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/wardogs",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/wardogs",
+      "renderedTitle": "WARDOGS Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/wardogs",
+      "referralRetained": true
+    },
+    {
+      "slug": "age-of-empires-iii-definitive-edition",
+      "name": "Age of Empires III: Definitive Edition (정식 게임)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/age-of-empires-iii-definitive-edition",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/age-of-empires-iii-definitive-edition",
+      "renderedTitle": "Age of Empires III: Definitive Edition (정식 게임) Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/age-of-empires-iii-definitive-edition",
+      "referralRetained": true
+    },
+    {
+      "slug": "clair-obscur-expedition-33",
+      "name": "클레르 옵스퀴르: 33 원정대",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/clair-obscur-expedition-33",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/clair-obscur-expedition-33",
+      "renderedTitle": "클레르 옵스퀴르: 33 원정대 Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/clair-obscur-expedition-33",
+      "referralRetained": true
+    },
+    {
+      "slug": "7-days-to-die",
+      "name": "7 Days to Die",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/7-days-to-die",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/7-days-to-die",
+      "renderedTitle": "7 Days to Die Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/7-days-to-die",
+      "referralRetained": true
+    },
+    {
+      "slug": "ready-or-not",
+      "name": "Ready or Not",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/ready-or-not",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/ready-or-not",
+      "renderedTitle": "Ready or Not Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/ready-or-not",
+      "referralRetained": true
+    },
+    {
+      "slug": "no-mans-sky",
+      "name": "No Man's Sky",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/no-mans-sky",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/no-mans-sky",
+      "renderedTitle": "No Man's Sky Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/no-mans-sky",
+      "referralRetained": true
+    },
+    {
+      "slug": "octopath-traveler",
+      "name": "옥토패스 트래블러",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/octopath-traveler",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/octopath-traveler",
+      "renderedTitle": "옥토패스 트래블러 Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/octopath-traveler",
+      "referralRetained": true
+    },
+    {
+      "slug": "dark-souls-ii-scholar-of-the-first-sin",
+      "name": "DARK SOULS™ II: Scholar of the First Sin",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/dark-souls-ii-scholar-of-the-first-sin",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/dark-souls-ii-scholar-of-the-first-sin",
+      "renderedTitle": "DARK SOULS™ II: Scholar of the First Sin Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/dark-souls-ii-scholar-of-the-first-sin",
+      "referralRetained": true
+    },
+    {
+      "slug": "soulmask",
+      "name": "Soulmask",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/soulmask",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/soulmask",
+      "renderedTitle": "Soulmask Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/soulmask",
+      "referralRetained": true
+    },
+    {
+      "slug": "phantom-blade-zero",
+      "name": "Phantom Blade Zero",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/phantom-blade-zero",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/phantom-blade-zero",
+      "renderedTitle": "Phantom Blade Zero Steam 키 PC",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/phantom-blade-zero",
+      "referralRetained": true
+    },
+    {
+      "slug": "arma-3",
+      "name": "Arma 3",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/game-key/arma-3",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/arma-3",
+      "renderedTitle": "Arma 3 Steam 키 PC - Global",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/game-key/arma-3",
+      "referralRetained": true
+    },
+    {
+      "slug": "pubgcoins",
+      "name": "P.U.B.G G-Coin",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/pubgcoins",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/pubgcoins",
+      "renderedTitle": "P.U.B.G G-Coin",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/pubgcoins",
+      "referralRetained": true
+    },
+    {
+      "slug": "xbox-gift-card-us",
+      "name": "Xbox 기프트 카드 미국",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/xbox-gift-card-us",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/xbox-gift-card-us",
+      "renderedTitle": "Xbox 기프트 카드 미국",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/xbox-gift-card-us",
+      "referralRetained": true
+    },
+    {
+      "slug": "free-fire-gift-card",
+      "name": "Free Fire 기프트 카드",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/free-fire-gift-card",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/free-fire-gift-card",
+      "renderedTitle": "Free Fire 기프트 카드",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/free-fire-gift-card",
+      "referralRetained": true
+    },
+    {
+      "slug": "riot-game-giftcard-na",
+      "name": "라이엇 게임즈 기프트 카드 (NA)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/riot-game-giftcard-na",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/riot-game-giftcard-na",
+      "renderedTitle": "라이엇 게임즈 기프트 카드 (NA)",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/riot-game-giftcard-na",
+      "referralRetained": true
+    },
+    {
+      "slug": "nintendo-eshop-gift-card-us",
+      "name": "닌텐도 e숍 기프트 카드 미국",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/nintendo-eshop-gift-card-us",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/nintendo-eshop-gift-card-us",
+      "renderedTitle": "닌텐도 e숍 기프트 카드 미국",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/nintendo-eshop-gift-card-us",
+      "referralRetained": true
+    },
+    {
+      "slug": "itunes-gift-card-us",
+      "name": "iTunes 기프트 카드 미국",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-us",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-us",
+      "renderedTitle": "iTunes 기프트 카드 미국",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-us",
+      "referralRetained": true
+    },
+    {
+      "slug": "itunes-gift-card-uk",
+      "name": "iTunes 기프트 카드 영국",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-uk",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-uk",
+      "renderedTitle": "iTunes 기프트 카드 영국",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-uk",
+      "referralRetained": true
+    },
+    {
+      "slug": "razer-giftcard-us",
+      "name": "레이저 기프트 카드 US",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/razer-giftcard-us",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/razer-giftcard-us",
+      "renderedTitle": "레이저 기프트 카드 US",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/razer-giftcard-us",
+      "referralRetained": true
+    },
+    {
+      "slug": "itunes-gift-card-tr",
+      "name": "iTunes 기프트 카드 TR",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-tr",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-tr",
+      "renderedTitle": "iTunes 기프트 카드 TR",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-tr",
+      "referralRetained": true
+    },
+    {
+      "slug": "xbox-game-pass",
+      "name": "Xbox 게임 패스 - US",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/xbox-game-pass",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/xbox-game-pass",
+      "renderedTitle": "Xbox 게임 패스 - US",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/xbox-game-pass",
+      "referralRetained": true
+    },
+    {
+      "slug": "itunes-gift-card-fr",
+      "name": "iTunes 기프트 카드 FR",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-fr",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-fr",
+      "renderedTitle": "iTunes 기프트 카드 FR",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-fr",
+      "referralRetained": true
+    },
+    {
+      "slug": "roblox-gift-card-global",
+      "name": "로블록스 기프트 카드 글로벌",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/roblox-gift-card-global",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/roblox-gift-card-global",
+      "renderedTitle": "로블록스 기프트 카드 글로벌",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/roblox-gift-card-global",
+      "referralRetained": true
+    },
+    {
+      "slug": "nintendo-eshop-gift-card-jp",
+      "name": "Nintendo eShop 기프트 카드 JP",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/nintendo-eshop-gift-card-jp",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/nintendo-eshop-gift-card-jp",
+      "renderedTitle": "Nintendo eShop 기프트 카드 JP",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/nintendo-eshop-gift-card-jp",
+      "referralRetained": true
+    },
+    {
+      "slug": "valorant-gift-card",
+      "name": "발로란트 기프트 카드 US",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/valorant-gift-card",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/valorant-gift-card",
+      "renderedTitle": "발로란트 기프트 카드 US",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/valorant-gift-card",
+      "referralRetained": true
+    },
+    {
+      "slug": "playstation-gift-card",
+      "name": "플레이스테이션 기프트 카드 US",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/playstation-gift-card",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/playstation-gift-card",
+      "renderedTitle": "플레이스테이션 기프트 카드 US",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/playstation-gift-card",
+      "referralRetained": true
+    },
+    {
+      "slug": "netflix-gift-card",
+      "name": "Netflix 기프트 카드 미국",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/netflix-gift-card",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/netflix-gift-card",
+      "renderedTitle": "Netflix 기프트 카드 미국",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/netflix-gift-card",
+      "referralRetained": true
+    },
+    {
+      "slug": "google-play-gift-card-us",
+      "name": "Google Play 기프트 카드 US",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/google-play-gift-card-us",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/google-play-gift-card-us",
+      "renderedTitle": "Google Play 기프트 카드 US",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/google-play-gift-card-us",
+      "referralRetained": true
+    },
+    {
+      "slug": "steam-gift-card-my",
+      "name": "Steam 기프트 카드 (MY&US)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/steam-gift-card-my",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/steam-gift-card-my",
+      "renderedTitle": "Steam 기프트 카드 (MY&US)",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/steam-gift-card-my",
+      "referralRetained": true
+    },
+    {
+      "slug": "nintendo-eshop-gift-card-de",
+      "name": "닌텐도 e숍 기프트 카드 DE",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/nintendo-eshop-gift-card-de",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/nintendo-eshop-gift-card-de",
+      "renderedTitle": "닌텐도 e숍 기프트 카드 DE",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/nintendo-eshop-gift-card-de",
+      "referralRetained": true
+    },
+    {
+      "slug": "playstation-gift-card-de",
+      "name": "PlayStation 기프트 카드 DE",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/playstation-gift-card-de",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/playstation-gift-card-de",
+      "renderedTitle": "PlayStation 기프트 카드 DE",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/playstation-gift-card-de",
+      "referralRetained": true
+    },
+    {
+      "slug": "likee-gift-card",
+      "name": "라이키 기프트 카드",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/likee-gift-card",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/likee-gift-card",
+      "renderedTitle": "라이키 기프트 카드",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/likee-gift-card",
+      "referralRetained": true
+    },
+    {
+      "slug": "bigo-live-gift-card",
+      "name": "BIGO LIVE 기프트 카드",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/bigo-live-gift-card",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/bigo-live-gift-card",
+      "renderedTitle": "BIGO LIVE 기프트 카드",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/bigo-live-gift-card",
+      "referralRetained": true
+    },
+    {
+      "slug": "tiktok-gift-card-de",
+      "name": "TikTok 기프트 카드 (DE)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/tiktok-gift-card-de",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/tiktok-gift-card-de",
+      "renderedTitle": "TikTok 기프트 카드 (DE)",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/tiktok-gift-card-de",
+      "referralRetained": true
+    },
+    {
+      "slug": "league-of-legends-gift-card",
+      "name": "리그 오브 레전드 기프트 카드 US",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/league-of-legends-gift-card",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/league-of-legends-gift-card",
+      "renderedTitle": "리그 오브 레전드 기프트 카드 US",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/league-of-legends-gift-card",
+      "referralRetained": true
+    },
+    {
+      "slug": "apex-legends-gift-card",
+      "name": "Apex 기프트 카드",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/apex-legends-gift-card",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/apex-legends-gift-card",
+      "renderedTitle": "Apex 기프트 카드",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/apex-legends-gift-card",
+      "referralRetained": true
+    },
+    {
+      "slug": "tiktok-gift-card-uk",
+      "name": "TikTok 기프트 카드 (영국)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/tiktok-gift-card-uk",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/tiktok-gift-card-uk",
+      "renderedTitle": "TikTok 기프트 카드 (영국)",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/tiktok-gift-card-uk",
+      "referralRetained": true
+    },
+    {
+      "slug": "steam-wallet-code",
+      "name": "스팀 기프트 카드 (BRL)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/steam-wallet-code",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/steam-wallet-code",
+      "renderedTitle": "스팀 기프트 카드 (BRL)",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/steam-wallet-code",
+      "referralRetained": true
+    },
+    {
+      "slug": "soulchill",
+      "name": "SoulChill",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/soulchill",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/soulchill",
+      "renderedTitle": "SoulChill",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/soulchill",
+      "referralRetained": true
+    },
+    {
+      "slug": "itunes-gift-card-jp",
+      "name": "iTunes 기프트 카드 JP",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-jp",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-jp",
+      "renderedTitle": "iTunes 기프트 카드 JP",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-jp",
+      "referralRetained": true
+    },
+    {
+      "slug": "discord-nitro-subscription",
+      "name": "디스코드",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/discord-nitro-subscription",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/discord-nitro-subscription",
+      "renderedTitle": "디스코드",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/discord-nitro-subscription",
+      "referralRetained": true
+    },
+    {
+      "slug": "amazon-gift-card-de",
+      "name": "아마존 기프트 카드 (DE)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/amazon-gift-card-de",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/amazon-gift-card-de",
+      "renderedTitle": "아마존 기프트 카드 (DE)",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/amazon-gift-card-de",
+      "referralRetained": true
+    },
+    {
+      "slug": "itunes-gift-card-de",
+      "name": "iTunes 기프트 카드 DE",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-de",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-de",
+      "renderedTitle": "iTunes 기프트 카드 DE",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/itunes-gift-card-de",
+      "referralRetained": true
+    },
+    {
+      "slug": "google-play-gift-card-de",
+      "name": "Google Play 기프트 카드 DE",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/google-play-gift-card-de",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/google-play-gift-card-de",
+      "renderedTitle": "Google Play 기프트 카드 DE",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/google-play-gift-card-de",
+      "referralRetained": true
+    },
+    {
+      "slug": "zalando-gift-card-de",
+      "name": "Zalando 기프트 카드 DE",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/zalando-gift-card-de",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/zalando-gift-card-de",
+      "renderedTitle": "Zalando 기프트 카드 DE",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/zalando-gift-card-de",
+      "referralRetained": true
+    },
+    {
+      "slug": "roblox-gift-card-us",
+      "name": "Roblox 기프트 카드 (US)",
+      "sourceUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/roblox-gift-card-us",
+      "httpStatus": 200,
+      "httpFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/roblox-gift-card-us",
+      "renderedTitle": "Roblox 기프트 카드 (US)",
+      "renderedFinalUrl": "https://www.lootbar.com/ko/shop/ten/gift-card/roblox-gift-card-us",
+      "referralRetained": true
+    }
+  ]
+}

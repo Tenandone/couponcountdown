@@ -32,7 +32,7 @@ test('All generated pages have correct canonical, 8 reciprocal alternates, one H
 });
 test('All static internal page and asset targets resolve; no guessed outbound destinations',async()=>{
  for(const l of localeOrder){const html=await fs.readFile(`dist/${l}/index.html`,'utf8');
-  for(const [,url] of html.matchAll(/(?:href|src)="(\/[^"#]*)"/g)){await fs.access(path.join('dist',url.endsWith('/')?url+'index.html':url));}
+  for(const [,url] of html.matchAll(/(?:href|src)="(\/[^"#]*)"/g)){await fs.access(path.join('dist',url.endsWith('/')?url+'index.html':url.split('?')[0]));}
   const links=[...html.matchAll(/href="(https:\/\/(?:www\.)?(?:lootbar|tiktok)\.com[^\"]+)"/g)].map(x=>x[1]);
   const expected=new Set([TIKTOK,...catalog.items.map(x=>x.url)]);links.forEach(x=>assert.ok(expected.has(x),x));
  }});
