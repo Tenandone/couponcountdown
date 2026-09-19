@@ -32,4 +32,4 @@ Production Core Web Vitals and Lighthouse scores have not been measured. Static 
 - Ten browser integration checks cover partial/alias search, empty/reset states, category counts, TikTok and game event attribution, consent/opt-out, recent selections, root language routing, deep language switching, redirects and 404 behavior.
 - Browser layout checks at 320px for all eight locales: no horizontal overflow; primary TikTok CTA above the fold and mobile sticky action visible. Additional visual checks at 390px and 1440px.
 - WebMCP `search_recharge_catalog` registered, returned the correct Wuthering Waves result for `명조`, updated the visible search results, and rejected non-string input without corruption.
-- Actual GA4 remote collection is pending a real measurement ID. Existing-domain launch remains a separate hosting step.
+- The existing GA4 ID `G-1TS6F1NK5K` is restored. Dispatch and consent are tested locally; GA4 DebugView/Realtime ingestion still requires account access. Existing-domain launch remains a separate hosting step. See `prelaunch-audit.md`.

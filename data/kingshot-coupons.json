@@ -1,0 +1,202 @@
+{
+  "coupons": [  
+    {
+  "code": "KS0603",
+  "expiresAt": "2026-06-05T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "CHILDFUN2026",
+  "expiresAt": "2026-06-05T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "EIDALADHA0527",
+  "expiresAt": "2026-05-30T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+  {
+  "code": "OFFICIALSTORE27",
+  "expiresAt": "2026-06-01T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KS0524",
+  "expiresAt": "2026-05-26T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KS0518",
+  "expiresAt": "2026-05-20T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "OFFICIALSTORE516",
+  "expiresAt": "2026-05-20T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "LOVEFAMILY",
+  "expiresAt": "2026-05-19T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "BESTMOM2026",
+  "expiresAt": "2026-05-14T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "Childrenday0505",
+  "expiresAt": "2026-05-10T00:00:00Z",
+  "firstSeenAt": "2026-05-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "WORKERPOWER",
+  "expiresAt": "2026-05-05T00:00:00Z",
+  "firstSeenAt": "2026-05-01T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KSGW26JP",
+  "expiresAt": "2026-05-03T00:00:00Z",
+  "firstSeenAt": "2026-04-30T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "OFFICIALSTORE9",
+  "expiresAt": "2026-05-04T00:00:00Z",
+  "firstSeenAt": "2026-04-28T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KS0426",
+  "expiresAt": "2026-04-28T00:00:00Z",
+  "firstSeenAt": "2026-04-26T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "0425FORU",
+  "expiresAt": "2026-04-27T00:00:00Z",
+  "firstSeenAt": "2026-04-25T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KS0425",
+  "expiresAt": "2026-04-27T00:00:00Z",
+  "firstSeenAt": "2026-04-25T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "LOVETHEPLANET",
+  "expiresAt": "2026-04-26T00:00:00Z",
+  "firstSeenAt": "2026-04-22T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KS0420",
+  "expiresAt": "2026-04-23T00:00:00Z",
+  "firstSeenAt": "2026-04-20T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KSPRAWNING",
+  "expiresAt": "2026-05-01T00:00:00Z",
+  "firstSeenAt": "2026-04-18T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "WEEKENDPLAN",
+  "expiresAt": "2026-04-16T00:00:00Z",
+  "firstSeenAt": "2026-04-12T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KS0408",
+  "expiresAt": "2026-04-10T00:00:00Z",
+  "firstSeenAt": "2026-04-08T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "BUNNY405",
+  "expiresAt": "2026-04-09T00:00:00Z",
+  "firstSeenAt": "2026-04-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "NOFOOLIN",
+  "expiresAt": "2026-04-05T00:00:00Z",
+  "firstSeenAt": "2026-04-01T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "OFFICIALSTORE04",
+  "expiresAt": "2026-04-08T00:00:00Z",
+  "firstSeenAt": "2026-04-01T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "KS0330",
+  "expiresAt": "2026-04-01T00:00:00Z",
+  "firstSeenAt": "2026-03-30T00:00:00Z",
+  "reward": "General coupon"
+},
+{
+  "code": "FIREFRIDAY",
+  "expiresAt": "2026-03-31T00:00:00Z",
+  "firstSeenAt": "2026-03-27T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "syunnbun26jp",
+  "expiresAt": "2026-03-23T23:59:59Z",
+  "firstSeenAt": "2026-03-20T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+    "code": "EIDMUB2026",
+    "expiresAt": "2026-03-23T23:59:59Z",
+    "firstSeenAt": "2026-03-19T00:00:00Z",
+    "reward": "General coupon"
+  },
+    {
+  "code": "KINGSHOTHBD",
+  "expiresAt": "2026-03-21T23:59:00Z",
+  "firstSeenAt": "2026-03-17T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "OFFICIALSTORE",
+  "expiresAt": "2026-03-26T00:00:00Z",
+  "firstSeenAt": "2026-03-17T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+      "code": "RAMADAN",
+      "expiresAt": "2026-03-19T23:59:59Z",
+      "firstSeenAt": "2026-03-15T00:00:00Z",
+      "reward": "General coupon"
+    },
+    {
+      "code": "KS0315",
+      "expiresAt": "2026-03-17T23:59:00Z",
+      "firstSeenAt": "2026-03-15T00:00:00Z",
+      "reward": "General coupon"
+    },
+    {
+      "code": "DC500KWEMADEIT",
+      "expiresAt": "2026-03-13T23:59:59Z",
+      "firstSeenAt": "2026-03-09T00:00:00Z",
+      "reward": "General coupon"
+    }
+  ]
+}

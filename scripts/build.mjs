@@ -7,7 +7,8 @@ const catalog=JSON.parse(await fs.readFile('data/catalog.json','utf8'));
 const overrides=JSON.parse(await fs.readFile('data/game-content.json','utf8').catch(()=>'{}'));
 const games=catalog.items.map(g=>({...g,...overrides[g.slug]}));
 const origin=(process.env.SITE_ORIGIN||'https://couponcountdown.com').replace(/\/$/,'');
-const ga=process.env.GA4_MEASUREMENT_ID||'';
+const siteConfig=JSON.parse(await fs.readFile('data/site-config.json','utf8'));
+const ga=process.env.GA4_MEASUREMENT_ID||siteConfig.ga4MeasurementId;
 if(ga&&!/^G-[A-Z0-9]+$/.test(ga))throw new Error('Invalid GA4_MEASUREMENT_ID');
 const outputRoot=path.resolve('dist');
 if(outputRoot!==path.join(process.cwd(),'dist')||path.dirname(outputRoot)!==process.cwd())throw new Error('Unsafe output path');
@@ -17,6 +18,7 @@ async function write(file,value){await fs.mkdir(path.dirname('dist/'+file),{recu
 const assets={};
 for(const [key,file] of [['css','site.css'],['js','site.js']]){const content=await fs.readFile('public/'+file);const hash=createHash('sha256').update(content).digest('hex').slice(0,10);assets[key]=`/assets/site.${hash}.${key}`;await write(assets[key].slice(1),content);}
 await fs.cp('public/games','dist/games',{recursive:true});await fs.copyFile('public/favicon.svg','dist/favicon.svg');
+for(const file of ['CNAME','naver7a9341e4440758476c83a2a85ef02628.html'])await fs.copyFile(file,'dist/'+file);
 const urls=[];
 for(const l of localeOrder.filter(x=>locales[x])){
  await write(l+'/index.html',home(l,games,origin,assets,ga));urls.push({l,path:''});

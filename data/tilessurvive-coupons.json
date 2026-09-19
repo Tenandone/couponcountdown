@@ -1,0 +1,58 @@
+{
+  "coupons": [
+    {
+  "code": "THANKSMOM",
+  "expiresAt": "2026-05-20T00:00:00Z",
+  "firstSeenAt": "2026-05-01T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "WORKPLAYWIN",
+  "expiresAt": "2026-05-15T00:00:00Z",
+  "firstSeenAt": "2026-05-01T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "EASTER2026",
+  "expiresAt": "2026-04-15T00:00:00Z",
+  "firstSeenAt": "2026-04-05T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "NOTAJOKE",
+  "expiresAt": "2026-04-10T00:00:00Z",
+  "firstSeenAt": "2026-04-01T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+  "code": "STPADDY2026",
+  "expiresAt": "2026-03-30T00:00:00Z",
+  "firstSeenAt": "2026-03-17T00:00:00Z",
+  "reward": "General coupon"
+},
+{
+  "code": "LOVE2026",
+  "expiresAt": "2026-02-28T00:00:00Z",
+  "firstSeenAt": "2026-02-20T00:00:00Z",
+  "reward": "General coupon"
+},
+    {
+      "code": "TS777",
+      "firstSeenAt": "2026-02-01T00:00:00Z",
+      "reward": "General coupon",
+      "permanent": true
+    },
+    {
+      "code": "TS888",
+      "firstSeenAt": "2026-02-01T00:00:00Z",
+      "reward": "General coupon",
+      "permanent": true
+    },
+    {
+      "code": "TS999",
+      "firstSeenAt": "2026-02-01T00:00:00Z",
+      "reward": "General coupon",
+      "permanent": true
+    }
+  ]
+}

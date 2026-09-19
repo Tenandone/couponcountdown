@@ -10,6 +10,7 @@
     "optimize:images": "node scripts/optimize-images.mjs"
   },
   "devDependencies": {
+    "jsdom": "^29.1.1",
     "sharp": "^0.35.4"
   },
   "engines": {

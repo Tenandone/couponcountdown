@@ -19,13 +19,25 @@ function filter(){
   for(const b of document.querySelectorAll('[data-filter]'))b.setAttribute('aria-pressed',String(b.dataset.filter===category));
   for(const a of document.querySelectorAll('#all-grid [data-outbound]'))a.dataset.position=query?'search':'catalog';
 }
-search?.addEventListener('input',filter);
+let searchTimer,lastSearch='';
+function recordSearch(position='search'){
+  clearTimeout(searchTimer);
+  const query=normalize(search.value);
+  if(!query){lastSearch='';return;}
+  const key=category+':'+query;
+  if(key===lastSearch)return;
+  lastSearch=key;
+  const matches=cards.filter(x=>!x.hidden);
+  // Do not send arbitrary typed text to Analytics.
+  track('game_search',{...dimensions(),game:matches.length===1?matches[0].dataset.slug:'',cta_position:position,destination:location.origin+location.pathname+'#all-games',result_count:matches.length,query_length:query.length,category});
+}
+search?.addEventListener('input',()=>{filter();clearTimeout(searchTimer);searchTimer=setTimeout(()=>recordSearch(),350);});
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;filter();}));
-document.querySelectorAll('[data-query]').forEach(b=>b.addEventListener('click',()=>{search.value=b.dataset.query;category='all';filter();search.focus();}));
-function clear(){if(!search)return;search.value='';category='all';filter();search.focus();}
+document.querySelectorAll('[data-query]').forEach(b=>b.addEventListener('click',()=>{search.value=b.dataset.query;category='all';filter();recordSearch('quick_pick');search.focus();}));
+function clear(){if(!search)return;clearTimeout(searchTimer);lastSearch='';search.value='';category='all';filter();search.focus();}
 document.querySelector('.clear-search')?.addEventListener('click',clear);document.querySelector('[data-reset]')?.addEventListener('click',clear);
 document.addEventListener('keydown',e=>{if(e.key==='/'&&search&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)&&!document.activeElement.isContentEditable){e.preventDefault();search.focus();}if(e.key==='Escape'){document.querySelectorAll('.language[open]').forEach(x=>x.open=false);}});
-document.querySelectorAll('[data-language]').forEach(a=>a.addEventListener('click',()=>safeStore.set('cc-locale',a.dataset.language)));
+document.querySelectorAll('[data-language]').forEach(a=>a.addEventListener('click',()=>{safeStore.set('cc-locale',a.dataset.language);track('language_change',{...dimensions(),game:location.pathname.match(/\/games\/([^/]+)/)?.[1]||'',target_locale:a.dataset.language,cta_position:'language_menu',destination:a.href});}));
 if(body.dataset.root==='true'){
   const supported=['ko','en','ja','zh-tw','es-419','es-es','pt-br','ru'];
   const saved=safeStore.get('cc-locale');
@@ -47,7 +59,21 @@ const consent=document.querySelector('.consent');
 if(consent&&body.dataset.ga&&!safeStore.get('cc-consent'))consent.hidden=false;
 document.querySelectorAll('[data-analytics-settings]').forEach(b=>b.addEventListener('click',()=>{if(consent)consent.hidden=false;}));
 document.querySelectorAll('[data-consent]').forEach(b=>b.addEventListener('click',()=>{safeStore.set('cc-consent',b.dataset.consent);if(consent)consent.hidden=true;if(b.dataset.consent==='yes'){if(analyticsReady)gtag('consent','update',{analytics_storage:'granted'});enableAnalytics();}else if(analyticsReady){gtag('consent','update',{analytics_storage:'denied'});}}));
-function click(event){if(event.type==='auxclick'&&event.button!==1)return;const a=event.target.closest('a[data-outbound]');if(!a)return;const game=a.dataset.game||'';if(game){const prev=safeStore.get('cc-recent',[]);safeStore.set('cc-recent',[game,...(Array.isArray(prev)?prev:[]).filter(x=>x!==game)].slice(0,5));showRecent();}track('outbound_recharge_click',{provider:a.dataset.outbound,game_name:a.dataset.name||'TikTok Coins',game_slug:game||'tiktok-coins',locale,device:matchMedia('(max-width: 650px)').matches?'mobile':matchMedia('(max-width: 1100px)').matches?'tablet':'desktop',page:location.pathname,cta_position:a.dataset.position,link_url:a.href});}
+function dimensions(){return{locale,device:matchMedia('(max-width: 650px)').matches?'mobile':matchMedia('(max-width: 1100px)').matches?'tablet':'desktop',page:location.pathname};}
+function click(event){
+  if(event.type==='auxclick'&&event.button!==1)return;
+  const a=event.target.closest('a');if(!a)return;
+  const card=a.closest('.game-card'),game=a.dataset.game||card?.dataset.slug||'';
+  const params={...dimensions(),game:game||'tiktok-coins',cta_position:a.dataset.position||card?.querySelector('[data-outbound]')?.dataset.position||'card',destination:a.href};
+  if(card)track('game_card_click',{...params,interaction:a.dataset.outbound?'recharge':'details'});
+  if(!a.dataset.outbound)return;
+  if(game){safeStore.set('cc-recent',[game,...recentSlugs().filter(x=>x!==game)].slice(0,5));showRecent();}
+  const outbound={...params,provider:a.dataset.outbound,game_name:a.dataset.name||'TikTok Coins',game_slug:game||'tiktok-coins',link_url:a.href};
+  track(a.dataset.outbound==='tiktok'?'tiktok_cta_click':'lootbar_click',outbound);
+  if(a.dataset.position?.includes('sticky'))track('sticky_cta_click',outbound);
+  // One canonical conversion per outbound activation. Other events are diagnostics.
+  track('outbound_recharge_click',outbound);
+}
 document.addEventListener('click',click);document.addEventListener('auxclick',click);
 track('hub_view',{locale,page:location.pathname});
 if(search&&document.modelContext?.registerTool){
@@ -57,7 +83,7 @@ if(search&&document.modelContext?.registerTool){
     description:'Filter the visible catalog by name or alias and return up to 20 direct product links. Does not navigate or purchase.',
     inputSchema:{type:'object',properties:{query:{type:'string',maxLength:256}},required:['query'],additionalProperties:false},
     annotations:{readOnlyHint:false,untrustedContentHint:false},
-    execute(input){if(!input||typeof input.query!=='string'||input.query.length>256||Object.keys(input).some(k=>k!=='query'))throw new Error('Expected query string, at most 256 characters.');search.value=input.query;category='all';filter();const matches=cards.filter(x=>!x.hidden);return{count:matches.length,locale,results:matches.slice(0,20).map(x=>{const a=x.querySelector('[data-outbound]');return{slug:x.dataset.slug,name:a.dataset.name,rechargeUrl:a.href};})};}
+    execute(input){if(!input||typeof input.query!=='string'||input.query.length>256||Object.keys(input).some(k=>k!=='query'))throw new Error('Expected query string, at most 256 characters.');search.value=input.query;category='all';filter();recordSearch('assistant_search');const matches=cards.filter(x=>!x.hidden);return{count:matches.length,locale,results:matches.slice(0,20).map(x=>{const a=x.querySelector('[data-outbound]');return{slug:x.dataset.slug,name:a.dataset.name,rechargeUrl:a.href};})};}
   },{signal:lifecycle.signal})).catch(()=>{});}catch{}
   addEventListener('pagehide',()=>lifecycle.abort(),{once:true});
 }

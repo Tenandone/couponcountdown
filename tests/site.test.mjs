@@ -22,6 +22,7 @@ test('All generated pages have correct canonical, 8 reciprocal alternates, one H
  for(const l of localeOrder){for(const suffix of ['', 'privacy/',...catalog.items.map(g=>`games/${g.slug}/`)]){
   const html=await fs.readFile(`dist/${l}/${suffix}index.html`,'utf8');
   assert.ok(html.includes(`<html lang="${locales[l].tag}">`));
+  assert.ok(html.includes('data-ga="G-1TS6F1NK5K"'),`Missing legacy GA ID: ${l}/${suffix}`);
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1,`${l}/${suffix}`);
   assert.ok(html.includes(`rel="canonical" href="https://couponcountdown.com/${l}/${suffix}"`));
   for(const alt of localeOrder)assert.ok(html.includes(`hreflang="${locales[alt].tag}" href="https://couponcountdown.com/${alt}/${suffix}"`));

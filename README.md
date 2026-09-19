@@ -6,7 +6,7 @@ Conversion-first TikTok + LootBar Ten referral hub. Eight independently rendered
 
 Requires Node 22+ (validated with Node 24). `npm ci`, `npm run build`, then `npm run dev`. Open http://127.0.0.1:4173/ko/. Production output is `dist/`.
 
-Copy `.env.example` to `.env` to set `SITE_ORIGIN` and the optional real `GA4_MEASUREMENT_ID`. Build again after changing either. The default canonical domain is `https://couponcountdown.com`. A private Sites publication is separate from switching this existing domain's hosting or DNS.
+Copy `.env.example` to `.env` to set `SITE_ORIGIN` and an optional `GA4_MEASUREMENT_ID` override (the existing `G-1TS6F1NK5K` is restored by default in `data/site-config.json`). Build again after changing either. The default canonical domain is `https://couponcountdown.com`. A private Sites publication is separate from switching this existing domain's hosting or DNS.
 
 ## Structure
 

@@ -1,6 +1,6 @@
 # Existing-site audit and migration
 
-The workspace initially contained only `.git`: no commits, remote, application source, build configuration, analytics setup or hosting credentials. There was no reusable local code to preserve.
+The workspace initially contained only `.git`: no commits, remote, application source, build configuration, analytics setup or hosting credentials. There was no reusable local code to preserve at that time. A subsequent prelaunch audit found and connected the existing Tenandone/couponcountdown GitHub repository and restored its GA4 ID, CNAME, Naver verification and coupon datasets; see prelaunch-audit.md.
 
 The public homepage and XML sitemap were read on 2026-09-19. The sitemap listed five URLs, with `en` and `x-default` for the existing English pages. Original captures are `data/legacy-home.html` and `data/legacy-sitemap.xml`. This is an inventory of observed URLs, not a Search Console traffic/backlink audit; no traffic value is claimed.
 

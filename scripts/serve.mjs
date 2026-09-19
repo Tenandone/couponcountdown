@@ -15,6 +15,11 @@ http.createServer(async(req,res)=>{try{
     if(!pathname.endsWith('/')){res.writeHead(308,{Location:pathname+'/'});res.end();return;}
     file=path.join(file,'index.html');
   }
-  res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream'});res.end(await fs.readFile(file));
+  let content=await fs.readFile(file);
+  // Development harness only: observe gtag commands without contacting Google.
+  if(path.extname(file)==='.html'&&new URL(req.url,'http://localhost').searchParams.get('qa')==='1'){
+    content=content.toString().replace('<head>',`<head><script>const nativeAppend=document.head.append.bind(document.head);document.head.append=(...nodes)=>{for(const node of nodes){if(node.tagName==='SCRIPT'&&node.src.startsWith('https://www.googletagmanager.com/gtag/js')){document.documentElement.dataset.gaLoads=String(Number(document.documentElement.dataset.gaLoads||0)+1);}else nativeAppend(node);}};</script>`);
+  }
+  res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream'});res.end(content);
 }catch{res.writeHead(404,{'Content-Type':'text/html; charset=utf-8'});res.end(await fs.readFile(path.join(root,'404.html')).catch(()=>'Not found'));}
 }).listen(4173,'127.0.0.1',()=>console.log('Local: http://127.0.0.1:4173/en/'));
