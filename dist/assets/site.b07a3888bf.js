@@ -7,12 +7,16 @@ const search=document.querySelector('#game-search');
 const cards=[...document.querySelectorAll('#all-grid .game-card')];
 const indexed=cards.map(el=>({el,text:normalize(el.dataset.search),category:el.dataset.category}));
 let category='all';
+let visibleLimit=12;
 function filter(){
   const query=normalize(search.value),parts=query.split(/\s+/).filter(Boolean);let count=0;
-  for(const item of indexed){const match=(category==='all'||item.category===category)&&parts.every(p=>item.text.includes(p));item.el.hidden=!match;if(match)count++;}
+  for(const item of indexed){const match=(category==='all'||item.category===category)&&parts.every(p=>item.text.includes(p));if(match)count++;item.el.hidden=!match||(!query&&count>visibleLimit);}
+  const more=document.querySelector('[data-show-more]');if(more)more.hidden=!!query||count<=visibleLimit;
   document.querySelector('#result-count').textContent=body.dataset.results.replace('{count}',count);
   document.querySelector('#all-heading').textContent=query?body.dataset.filteredTitle:body.dataset.allTitle;
   document.querySelector('#popular').hidden=!!query||category!=='all';
+  document.querySelector('.catalog .link-reason').hidden=!!query;
+  const recent=document.querySelector('.recent-section');if(recent)recent.hidden=!!query||!recent.querySelector('.recent-list').children.length;
   document.querySelector('.empty').hidden=count!==0;
   document.querySelector('.clear-search').hidden=!search.value;
   document.querySelector('.search-key').hidden=!!search.value;
@@ -32,9 +36,11 @@ function recordSearch(position='search'){
   track('game_search',{...dimensions(),game:matches.length===1?matches[0].dataset.slug:'',cta_position:position,destination:location.origin+location.pathname+'#all-games',result_count:matches.length,query_length:query.length,category});
 }
 search?.addEventListener('input',()=>{filter();clearTimeout(searchTimer);searchTimer=setTimeout(()=>recordSearch(),350);});
-document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;filter();}));
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;visibleLimit=12;filter();}));
+document.querySelector('[data-show-more]')?.addEventListener('click',()=>{visibleLimit+=24;filter();});
+if(search)filter();
 document.querySelectorAll('[data-query]').forEach(b=>b.addEventListener('click',()=>{search.value=b.dataset.query;category='all';filter();recordSearch('quick_pick');search.focus();}));
-function clear(){if(!search)return;clearTimeout(searchTimer);lastSearch='';search.value='';category='all';filter();search.focus();}
+function clear(){if(!search)return;clearTimeout(searchTimer);lastSearch='';visibleLimit=12;search.value='';category='all';filter();search.focus();}
 document.querySelector('.clear-search')?.addEventListener('click',clear);document.querySelector('[data-reset]')?.addEventListener('click',clear);
 document.addEventListener('keydown',e=>{if(e.key==='/'&&search&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)&&!document.activeElement.isContentEditable){e.preventDefault();search.focus();}if(e.key==='Escape'){document.querySelectorAll('.language[open]').forEach(x=>x.open=false);}});
 document.querySelectorAll('[data-language]').forEach(a=>a.addEventListener('click',()=>{safeStore.set('cc-locale',a.dataset.language);track('language_change',{...dimensions(),game:location.pathname.match(/\/games\/([^/]+)/)?.[1]||'',target_locale:a.dataset.language,cta_position:'language_menu',destination:a.href});}));
@@ -47,6 +53,12 @@ if(body.dataset.root==='true'){
 }
 function showRecent(){const section=document.querySelector('.recent-section'),list=document.querySelector('.recent-list');if(!section)return;list.replaceChildren();for(const slug of recentSlugs().slice(0,5)){const card=cards.find(x=>x.dataset.slug===slug);if(!card)continue;const original=card.querySelector('[data-outbound]'),a=original.cloneNode(false),image=card.querySelector('img').cloneNode();a.className='';a.dataset.position='recent';image.width=40;image.height=40;a.append(image,document.createTextNode(original.dataset.name+' ↗'));list.append(a);}section.hidden=!list.children.length;}
 showRecent();
+const primaryCTA=document.querySelector('.hero-actions [data-outbound], .product [data-outbound]');
+const stickyCTA=document.querySelector('.mobile-sticky');
+if(primaryCTA&&stickyCTA&&'IntersectionObserver' in window){
+  const visibility=new IntersectionObserver(([entry])=>{stickyCTA.hidden=entry.isIntersecting;},{threshold:0});
+  visibility.observe(primaryCTA);
+}
 // The adapter works without a GA account: all events are observable through
 // `cc:analytics`. GA4 forwarding is enabled only with a real ID and consent.
 window.dataLayer=window.dataLayer||[];

@@ -79,3 +79,17 @@ test('game search debounces, deduplicates, attributes the game and never sends r
     f.click('[data-query]');assert.equal(f.forwarded().filter(x=>x[1]==='game_search').at(-1)[2].cta_position,'quick_pick');
   }finally{f.dom.window.close();}
 });
+test('catalog progressively reveals all 238 products and searches beyond the initial twelve',()=>{
+  const f=fixture('no');try{
+    const visible=()=>f.d.querySelectorAll('#all-grid .game-card:not([hidden])');
+    assert.equal(visible().length,12);
+    for(let i=0;i<10;i++)f.click('[data-show-more]');
+    assert.equal(visible().length,238);assert.ok(f.d.querySelector('[data-show-more]').hidden);
+    f.click('[data-reset]');assert.equal(visible().length,12);
+    const last=f.d.querySelector('#all-grid .game-card:last-child').dataset.slug;
+    const input=f.d.querySelector('#game-search');input.value=last;
+    input.dispatchEvent(new f.w.Event('input',{bubbles:true}));
+    assert.ok([...visible()].some(x=>x.dataset.slug===last));
+    assert.ok(f.d.querySelector('.catalog .link-reason').hidden);
+  }finally{f.dom.window.close();}
+});
