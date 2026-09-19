@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';
+import sharp from 'sharp';
+const folder='public/icons';await fs.mkdir(folder,{recursive:true});
+const symbol='<circle cx="32" cy="32" r="26" fill="#176347"/><path d="M35 13 20 35h11l-2 16 16-24H34z" fill="#fff"/>';
+const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#f2f4f1"/>'+symbol+'</svg>';
+await fs.writeFile(folder+'/recharge-v3.svg',svg);await fs.writeFile('public/favicon.svg',svg);
+for(const [file,size]of [['favicon-16x16.png',16],['favicon-32x32.png',32],['apple-touch-icon.png',180],['icon-192.png',192],['icon-512.png',512]])await sharp(Buffer.from(svg)).resize(size,size).png().toFile(folder+'/'+file);
+const buffers=await Promise.all([16,32,48].map(n=>sharp(Buffer.from(svg)).resize(n,n).png().toBuffer()));const head=Buffer.alloc(6+16*3);head.writeUInt16LE(1,2);head.writeUInt16LE(3,4);let offset=head.length;buffers.forEach((b,i)=>{const n=[16,32,48][i],p=6+i*16;head[p]=n;head[p+1]=n;head.writeUInt16LE(1,p+4);head.writeUInt16LE(32,p+6);head.writeUInt32LE(b.length,p+8);head.writeUInt32LE(offset,p+12);offset+=b.length;});await fs.writeFile(folder+'/favicon.ico',Buffer.concat([head,...buffers]));
+const og='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#f2f4f1"/><g transform="translate(76 100) scale(2.5)">'+symbol+'</g><text x="80" y="370" font-family="Arial" font-size="56" font-weight="700" fill="#202624">TikTok coins &amp; game recharge</text><text x="84" y="450" font-family="Arial" font-size="32" fill="#176347">couponcountdown.com</text></svg>';
+await sharp(Buffer.from(og)).png().toFile(folder+'/recharge-og-v3.png');
+await fs.writeFile('public/site.webmanifest',JSON.stringify({name:'Coupon Countdown Recharge Hub',short_name:'Recharge Hub',id:'/',start_url:'/',display:'standalone',background_color:'#f2f4f1',theme_color:'#176347',icons:[{src:'/icons/icon-192.png?v=3',sizes:'192x192',type:'image/png',purpose:'any'},{src:'/icons/icon-512.png?v=3',sizes:'512x512',type:'image/png',purpose:'any'}]},null,2));

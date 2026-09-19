@@ -1,0 +1,7 @@
+.sites-runtime/
+node_modules/
+.env
+artifacts/
+data/lootbar-app.js
+data/lootbar-common.js
+data/lootbar-source.html

@@ -1,0 +1,2004 @@
+{
+  "kingshot": {
+    "names": {
+      "en": "Kingshot",
+      "ko": "킹샷",
+      "ja": "キングショット",
+      "zh-tw": "Kingshot"
+    },
+    "aliases": [
+      "king shot",
+      "킹샷",
+      "キングショット",
+      "King Shot"
+    ],
+    "content": {}
+  },
+  "genshin-impact": {
+    "names": {
+      "en": "Genshin Impact",
+      "ko": "원신·공월의 노래",
+      "ja": "原神",
+      "zh-tw": "原神"
+    },
+    "aliases": [
+      "genshin",
+      "원신",
+      "原神"
+    ],
+    "content": {}
+  },
+  "honkai-star-rail": {
+    "names": {
+      "en": "Honkai: Star Rail",
+      "ko": "붕괴: 스타레일",
+      "ja": "崩壊：スターレイル",
+      "zh-tw": "崩壞：星穹鐵道"
+    },
+    "aliases": [
+      "hsr",
+      "스타레일",
+      "スタレ",
+      "星鐵",
+      "Star Rail (HSR)"
+    ],
+    "content": {}
+  },
+  "zenless-zone-zero": {
+    "names": {
+      "en": "Zenless Zone Zero",
+      "ko": "젠레스 존 제로",
+      "ja": "ゼンレスゾーンゼロ",
+      "zh-tw": "絕區零"
+    },
+    "aliases": [
+      "zzz",
+      "젠존제",
+      "ゼンゼロ",
+      "Zenless Zone Zero(ZZZ)"
+    ],
+    "content": {}
+  },
+  "last-war-survival": {
+    "names": {
+      "en": "Last War: Survival",
+      "ko": "라스트 워: 서바이벌",
+      "ja": "ラストウォー：サバイバル",
+      "zh-tw": "Last War: Survival"
+    },
+    "aliases": [
+      "lastwar",
+      "라스트워",
+      "ラストウォー",
+      "LWS"
+    ],
+    "content": {}
+  },
+  "pubg": {
+    "names": {
+      "en": "PUBG MOBILE",
+      "ko": "배틀그라운드"
+    },
+    "aliases": [
+      "pubgm",
+      "pubg mobile",
+      "배그",
+      "배틀그라운드"
+    ],
+    "content": {}
+  },
+  "whiteout-survival": {
+    "names": {
+      "en": "Whiteout Survival",
+      "ko": "화이트아웃 서바이벌",
+      "ja": "ホワイトアウト・サバイバル",
+      "zh-tw": "寒霜啟示錄"
+    },
+    "aliases": [
+      "wos",
+      "화이트아웃",
+      "寒霜",
+      "wos"
+    ],
+    "content": {}
+  },
+  "last-z-survival-shooter": {
+    "names": {
+      "en": "LastZ: Survival Shooter",
+      "ko": "라스트 Z: 서바이벌 슈터"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "dark-war-survival": {
+    "names": {
+      "en": "DW: Survival",
+      "ko": "Dark War Survival"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "afk-journey": {
+    "names": {
+      "en": "AFK Journey",
+      "ko": "AFK 여정"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "nikke": {
+    "names": {
+      "en": "GODDESS OF VICTORY: NIKKE",
+      "ko": "승리의 여신: 니케",
+      "ja": "勝利の女神：NIKKE",
+      "zh-tw": "勝利女神：妮姬"
+    },
+    "aliases": [
+      "니케",
+      "ニケ",
+      "妮姬"
+    ],
+    "content": {}
+  },
+  "brawl-stars": {
+    "names": {
+      "en": "Brawl Game (BS)",
+      "ko": "브롤 스타즈",
+      "ja": "ブロスタ",
+      "zh-tw": "荒野亂鬥"
+    },
+    "aliases": [
+      "브롤",
+      "ブロスタ",
+      "荒野亂鬥"
+    ],
+    "content": {}
+  },
+  "tiles-survive": {
+    "names": {
+      "en": "Tiles Survive",
+      "ko": "타일즈 서바이브",
+      "ja": "タイルズ・サバイブ",
+      "zh-tw": "Tiles Survive"
+    },
+    "aliases": [
+      "tiles",
+      "타일즈",
+      "타일 서바이브",
+      "タイルズ"
+    ],
+    "content": {}
+  },
+  "rise-of-kingdoms": {
+    "names": {
+      "en": "Rise of Kingdoms",
+      "ko": "라이즈 오브 킹덤즈"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "maplestory-idle-rpg": {
+    "names": {
+      "en": "MapleStory:Idle RPG",
+      "ko": "메이플스토리: 아이들 RPG"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "wuthering-waves": {
+    "names": {
+      "en": "Wuthering Waves(WuWa)",
+      "ko": "명조:워더링 웨이브",
+      "ja": "鳴潮",
+      "zh-tw": "鳴潮"
+    },
+    "aliases": [
+      "wuwa",
+      "명조",
+      "鳴潮"
+    ],
+    "content": {}
+  },
+  "arknights-endfield": {
+    "names": {
+      "en": "Arknights: Endfield",
+      "ko": "Arknights: Endfield",
+      "ja": "アークナイツ：エンドフィールド",
+      "zh-tw": "明日方舟：終末地"
+    },
+    "aliases": [
+      "엔드필드",
+      "終末地"
+    ],
+    "content": {}
+  },
+  "the-seven-deadly-sins-origin": {
+    "names": {
+      "en": "The Seven Deadly Sins: Origin ",
+      "ko": "일곱 개의 대죄: 기원"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "valorant": {
+    "names": {
+      "en": "Valorant",
+      "ko": "발로란트"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "heartopia": {
+    "names": {
+      "en": "Heartopia",
+      "ko": "Heartopia"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "delta-force": {
+    "names": {
+      "en": "Delta Force",
+      "ko": "델타 포스"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "pokemon-go": {
+    "names": {
+      "en": "Pokémon Go",
+      "ko": "포켓몬 고"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "age-of-empires-mobile": {
+    "names": {
+      "en": "Age of Empires Mobile",
+      "ko": "에이지 오브 엠파이어 모바일"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "top-lords": {
+    "names": {
+      "en": "Top Lords",
+      "ko": "톱 로드"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "mobile-legends-bang-bang": {
+    "names": {
+      "en": "Mobile Legends: Bang Bang",
+      "ko": "모바일 레전드: Bang Bang"
+    },
+    "aliases": [
+      "mlbb",
+      "ml",
+      "모바일 레전드"
+    ],
+    "content": {}
+  },
+  "neverness-to-everness": {
+    "names": {
+      "en": "Neverness to Everness (NTE-Global)",
+      "ko": "Neverness to Everness (Global)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "free-fire": {
+    "names": {
+      "en": "Free Fire",
+      "ko": "Free Fire"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "knivesout": {
+    "names": {
+      "en": "Knives Out",
+      "ko": "Knives Out"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "marvel-rivals": {
+    "names": {
+      "en": "Marvel Rivals",
+      "ko": "마블 라이벌즈"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "where-winds-meet": {
+    "names": {
+      "en": "Where Winds Meet",
+      "ko": "Where Winds Meet"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "last-asylum-plague": {
+    "names": {
+      "en": "Last Asylum: Plague",
+      "ko": "Last Asylum: Plague"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "sword-x-staff": {
+    "names": {
+      "en": "Sword x Staff",
+      "ko": "소드 x 스태프"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "umamusume-pretty-derby": {
+    "names": {
+      "en": "Umamusume: Pretty Derby",
+      "ko": "우마무스메: 프리티 더비"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "identity-v": {
+    "names": {
+      "en": "Identity V",
+      "ko": "Identity V"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "pokemon-tcg-pocket": {
+    "names": {
+      "en": "Pokémon TCG Pocket",
+      "ko": "포켓몬 TCG 포켓"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "arknights": {
+    "names": {
+      "en": "Arknights",
+      "ko": "Arknights",
+      "ja": "アークナイツ",
+      "zh-tw": "明日方舟"
+    },
+    "aliases": [
+      "명일방주",
+      "アークナイツ",
+      "明日方舟"
+    ],
+    "content": {}
+  },
+  "punishing-gray-raven": {
+    "names": {
+      "en": "Punishing: Gray Raven",
+      "ko": "퍼니싱: 그레이 레이븐"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "fate-war": {
+    "names": {
+      "en": "Fate War",
+      "ko": "페이트 워"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "blood-strike": {
+    "names": {
+      "en": "Blood Strike",
+      "ko": "블러드 스트라이크"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "chaos-zero-nightmare": {
+    "names": {
+      "en": "CZN",
+      "ko": "카오스 제로 나이트메어"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "duck-survival": {
+    "names": {
+      "en": "Duck Survival",
+      "ko": "Duck Survival"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "chatgpt": {
+    "names": {
+      "en": "ChatGPT",
+      "ko": "ChatGPT"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "clash-of-clans": {
+    "names": {
+      "en": "Clash of Clans",
+      "ko": "Clash of Clans"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "clash-royale": {
+    "names": {
+      "en": "Clash Royale",
+      "ko": "클래시 로얄"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "watcher-of-realms": {
+    "names": {
+      "en": "Watcher of Realms",
+      "ko": "영역의 감시자"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "top-heroes-kingdom-saga": {
+    "names": {
+      "en": "Top Heroes: Kingdom Saga",
+      "ko": "탑 히어로즈: 영웅의 시대"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "gossip-harbor-merge-story": {
+    "names": {
+      "en": "Gossip Harbor: Merge & Story",
+      "ko": "Gossip Harbor: Merge & Story"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "nte-neverness-to-everness": {
+    "names": {
+      "en": "異環",
+      "ko": "異環"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "bleach-soul-resonance": {
+    "names": {
+      "en": "Bleach Soul Resonance",
+      "ko": "Bleach Soul Resonance"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "palmon-survival": {
+    "names": {
+      "en": "Palmon: Survival",
+      "ko": "팔몬: 서바이벌"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "x-clash-survival-challenge": {
+    "names": {
+      "en": "X Clash:Survival Challenge",
+      "ko": "X Clash:Survival Challenge"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "love-and-deepspace": {
+    "names": {
+      "en": "Love and Deepspace",
+      "ko": "사랑과 딥스페이스",
+      "ja": "恋と深空",
+      "zh-tw": "戀與深空"
+    },
+    "aliases": [
+      "戀與深空",
+      "恋と深空"
+    ],
+    "content": {}
+  },
+  "infinity-nikki": {
+    "names": {
+      "en": "Infinity Nikki",
+      "ko": "인피니티 니키"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "sd-gundam-g-generation-eternal": {
+    "names": {
+      "en": "SD Gundam G Generation ETERNAL",
+      "ko": "SD건담 지 제네레이션 이터널"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "destiny-rising": {
+    "names": {
+      "en": "Destiny: Rising",
+      "ko": "운명: 라이징"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "arena-breakout": {
+    "names": {
+      "en": "Arena Breakout",
+      "ko": "아레나 브레이크아웃"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "reverse-1999": {
+    "names": {
+      "en": "Reverse: 1999",
+      "ko": "Reverse: 1999"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "blueprotocol-starresonance": {
+    "names": {
+      "en": "Blue Protocol: Star Resonance",
+      "ko": "Blue Protocol: Star Resonance"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "dragon-nest-m-classic": {
+    "names": {
+      "en": "Dragon Nest M: Classic",
+      "ko": "Dragon Nest M: Classic"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "foundation-galactic-frontier": {
+    "names": {
+      "en": "Foundation: Galactic Frontier",
+      "ko": "Foundation: Galactic Frontier"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "hay-day": {
+    "names": {
+      "en": "Hay Day",
+      "ko": "Hay Day"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "honor-of-kings": {
+    "names": {
+      "en": "Honor of Kings",
+      "ko": "왕자의 영예"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "roblox-robux": {
+    "names": {
+      "en": "Roblox Robux",
+      "ko": "RBLX"
+    },
+    "aliases": [
+      "RBLX"
+    ],
+    "content": {}
+  },
+  "league-of-legends-wild-rift": {
+    "names": {
+      "en": "League of Legends: Wild Rift",
+      "ko": "리그 오브 레전드: 와일드 리프트"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "dunk-city-dynasty": {
+    "names": {
+      "en": "Dunk City Dynasty",
+      "ko": "덩크 시티 다이너스티"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "once-human": {
+    "names": {
+      "en": "Once Human",
+      "ko": "한때 인간"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "duet-night-abyss": {
+    "names": {
+      "en": "Duet Night Abyss",
+      "ko": "듀엣 나이트 어비스"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "stella-sora": {
+    "names": {
+      "en": "Stella Sora",
+      "ko": "스텔라소라"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "snowbreak-containment-zone": {
+    "names": {
+      "en": "Snowbreak: Containment Zone",
+      "ko": "Snowbreak: Containment Zone"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "candy-crush-saga": {
+    "names": {
+      "en": "Candy Crush Saga",
+      "ko": "캔디 크러쉬 사가"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "royal-match": {
+    "names": {
+      "en": "Royal Match",
+      "ko": "로얄 매치"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "evony-the-kings-return": {
+    "names": {
+      "en": "Evony: The King's Return ",
+      "ko": "에보니: 더 킹즈 리턴"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "age-of-origin": {
+    "names": {
+      "en": "Age of Origin: Tower Defense",
+      "ko": "Age of Origins:Tower Defense"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "raid-shadow-legends": {
+    "names": {
+      "en": "RAID: Shadow Legends",
+      "ko": "RAID: Shadow Legends"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "seven-knights-re-birth": {
+    "names": {
+      "en": "Seven Knights Re: BIRTH",
+      "ko": "세븐 나이츠 Re: BIRTH"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "limbus-company": {
+    "names": {
+      "en": "Limbus Company",
+      "ko": "Limbus Company"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "efootball": {
+    "names": {
+      "en": "eFootball (PES)",
+      "ko": "eFootball (PES)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "state-of-survival-zombie-war": {
+    "names": {
+      "en": "State of Survival: Zombie War",
+      "ko": "S.O.S: 스테이트 오브 서바이벌"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "monopoly-go": {
+    "names": {
+      "en": "MONOPOLY GO!",
+      "ko": "MONOPOLY GO!"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "fortnite": {
+    "names": {
+      "en": "Fortnite",
+      "ko": "Fortnite"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "war-and-order": {
+    "names": {
+      "en": "War&Order",
+      "ko": "War and Order"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "puzzles-survival": {
+    "names": {
+      "en": "Puzzles & Survival",
+      "ko": "퍼즐 & 생존"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "silver-and-blood": {
+    "names": {
+      "en": "Silver and Blood",
+      "ko": "실버와 피"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "path-to-nowhere": {
+    "names": {
+      "en": "Path to Nowhere",
+      "ko": "무기미도"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "sonic-rumble": {
+    "names": {
+      "en": "Sonic Rumble",
+      "ko": "Sonic Rumble"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "resident-evil-survival": {
+    "names": {
+      "en": "Resident Evil Survival",
+      "ko": "레지던트 이블 서바이벌"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "gunsofglory-lostisland": {
+    "names": {
+      "en": "Guns of Glory: Lost Island",
+      "ko": "Guns of Glory: Lost Island"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "ragnarok-m-classic": {
+    "names": {
+      "en": "Ragnarok M: Classic",
+      "ko": "Ragnarok M: Classic"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "bigolive": {
+    "names": {
+      "en": "Bigo Live",
+      "ko": "Bigo Live"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "poppo-live": {
+    "names": {
+      "en": "Poppo Live",
+      "ko": "Poppo Live"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "chamet": {
+    "names": {
+      "en": "Chamet",
+      "ko": "Chamet"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "likee": {
+    "names": {
+      "en": "Likee",
+      "ko": "라이키"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "sugo": {
+    "names": {
+      "en": "Sugo",
+      "ko": "수고"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "yoho-group-voice-chat": {
+    "names": {
+      "en": "YoHo - Group Voice Chat",
+      "ko": "YoHo - 그룹 음성 채팅"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "reelshort-stream-drama-tv": {
+    "names": {
+      "en": "ReelShort Stream Drama&TV",
+      "ko": "ReelShort 스트림 드라마&TV"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "starmaker": {
+    "names": {
+      "en": "StarMaker",
+      "ko": "StarMaker"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "mico": {
+    "names": {
+      "en": "MICO",
+      "ko": "MICO"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "yalla-ludo-ludo-jackaroo": {
+    "names": {
+      "en": "Yalla Ludo - Ludo&Jackaroo",
+      "ko": "얄라 루도 - 루도&자카루"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "ragnarok-m-eternal-love": {
+    "names": {
+      "en": "Ragnarok M: Eternal Love",
+      "ko": "Ragnarok M: Eternal Love"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "top-war-battle-game": {
+    "names": {
+      "en": "Top War: Battle Game",
+      "ko": "탑 워: 배틀 게임"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "township": {
+    "names": {
+      "en": "Township",
+      "ko": "타운십"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "gardenscapes": {
+    "names": {
+      "en": "Gardenscapes",
+      "ko": "가든스케이프"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "apex-legends": {
+    "names": {
+      "en": "APEX",
+      "ko": "APEX"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "girls-frontline-2-exilium": {
+    "names": {
+      "en": "Girls' Frontline 2: Exilium",
+      "ko": "소녀전선 2: Exilium"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "crystal-of-atlan": {
+    "names": {
+      "en": "Crystal of Atlan (ASIA)",
+      "ko": "아틀란의 크리스탈 (ASIA)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "etheria-restart": {
+    "names": {
+      "en": "Etheria: Restart",
+      "ko": "에테리아: 재시작"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "rememento-white-shadow": {
+    "names": {
+      "en": "Rememento: White Shadow",
+      "ko": "Rememento: 화이트 섀도우"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "persona5-the-phantom-x": {
+    "names": {
+      "en": "Persona5: The Phantom X",
+      "ko": "페르소나5: 더 팬텀 X"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "mechabreak": {
+    "names": {
+      "en": "Mecha BREAK",
+      "ko": "메카 브레이크"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "migo-live": {
+    "names": {
+      "en": "MIGO Live",
+      "ko": "MIGO 라이브"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "dragonheir-silent-gods": {
+    "names": {
+      "en": "Dragonheir Silent Gods",
+      "ko": "드래곤헤어 사일런트 갓"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "haikyu-fly-high": {
+    "names": {
+      "en": "HAIKYU!! FLY HIGH (SEA)",
+      "ko": "HAIKYU!! FLY HIGH (SEA)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "new-state-mobile": {
+    "names": {
+      "en": "NEW STATE Mobile",
+      "ko": "NEW STATE 모바일"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "ragnarokoriginglobal": {
+    "names": {
+      "en": "Ragnarok Origin Global",
+      "ko": "라그나로크 오리진 글로벌"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "legend-of-mushroom": {
+    "names": {
+      "en": "Legend of Mushroom",
+      "ko": "버섯의 전설"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "sawa-play": {
+    "names": {
+      "en": "Sawa Play",
+      "ko": "Sawa Play"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "yalla-play-game-voice-chat": {
+    "names": {
+      "en": "Yalla",
+      "ko": "Yalla"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "dazz-live-live-stream-chat": {
+    "names": {
+      "en": "Dazz Live",
+      "ko": "Dazz Live"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "mo-co": {
+    "names": {
+      "en": "mo.co",
+      "ko": "mo.co"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "archero2": {
+    "names": {
+      "en": "Archero 2",
+      "ko": "Archero 2"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "dragon-ball-z-dokkan-battle": {
+    "names": {
+      "en": "Dragon Ball Z Dokkan Battle",
+      "ko": "드래곤 볼 Z 도칸 배틀"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "capcut": {
+    "names": {
+      "en": "CapCut",
+      "ko": "CapCut"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "squad-busters": {
+    "names": {
+      "en": "Squad Busters",
+      "ko": "스쿼드 버스터스"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "azur-lane": {
+    "names": {
+      "en": "Azur Lane",
+      "ko": "Azur Lane"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "browndust2": {
+    "names": {
+      "en": "BrownDust2",
+      "ko": "브라운더스트2"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "honkai-nexus-anima": {
+    "names": {
+      "en": "Honkai: Nexus Anima",
+      "ko": "Honkai: Nexus Anima"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "toptop": {
+    "names": {
+      "en": "TopTop: Games&Chat",
+      "ko": "TopTop: 게임&채팅"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "strinova-mobile": {
+    "names": {
+      "en": "Strinova Mobile",
+      "ko": "Strinova Mobile"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "petit-planet": {
+    "names": {
+      "en": "Petit Planet",
+      "ko": "쁘띠플래닛"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "fate-trigger": {
+    "names": {
+      "en": "Fate Trigger",
+      "ko": "Fate Trigger"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "rainbow-six-mobile": {
+    "names": {
+      "en": "Rainbow Six Mobile",
+      "ko": "Rainbow Six Mobile"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "zombie-waves": {
+    "names": {
+      "en": "Zombie Waves",
+      "ko": "좀비 웨이브"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "lost-sword": {
+    "names": {
+      "en": "Lost SW",
+      "ko": "Lost SW"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "2xko": {
+    "names": {
+      "en": "2XKO",
+      "ko": "2XKO"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "dramabox": {
+    "names": {
+      "en": "DramaBox",
+      "ko": "DramaBox"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "telegram-final": {
+    "names": {
+      "en": "Telegram",
+      "ko": "Telegram"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "clash-of-kings": {
+    "names": {
+      "en": "Clash of Kings",
+      "ko": "Clash of Kings"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "aniimo": {
+    "names": {
+      "en": "Aniimo",
+      "ko": "애니모"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "hago": {
+    "names": {
+      "en": "Hago",
+      "ko": "Hago"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "the-division-resurgence": {
+    "names": {
+      "en": "The Division Resurgence",
+      "ko": "더 디비전 리서전스"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "dragon-traveler": {
+    "names": {
+      "en": "Dragon Traveler",
+      "ko": "그놈은 드래곤"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "tft-teamfight-tactics": {
+    "names": {
+      "en": "TFT: Teamfight Tactics",
+      "ko": "TFT: 전략적 팀 전투"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "standoff2": {
+    "names": {
+      "en": "Standoff 2",
+      "ko": "대치 2"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "hatsune-miku-colorful-stage": {
+    "names": {
+      "en": "HATSUNE MIKU: COLORFUL STAGE!",
+      "ko": "HATSUNE MIKU: COLORFUL STAGE!"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "sword-of-justice": {
+    "names": {
+      "en": "Sword of Justice",
+      "ko": "역수한"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "ea-sports-fc-mobile-soccer-26": {
+    "names": {
+      "en": "FC Mobile ",
+      "ko": "FC Mobile "
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "mabinogi-mobile": {
+    "names": {
+      "en": "Mabinogi Mobile TW/HK",
+      "ko": "마비노기 모바일 TW/HK"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "one-piece-bounty-rush": {
+    "names": {
+      "en": "ONE PIECE Bounty Rush",
+      "ko": "ONE PIECE Bounty Rush"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "digimon-up": {
+    "names": {
+      "en": "Digimon UP",
+      "ko": "디지몬 UP"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "marvel-contest-of-champions": {
+    "names": {
+      "en": "Marvel Contest of Champions",
+      "ko": "마블 컨테스트 오브 챔피언스"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "shadowverse-worlds-beyond": {
+    "names": {
+      "en": "Shadowverse: Worlds Beyond",
+      "ko": "Shadowverse: Worlds Beyond"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "hololive-dreams": {
+    "names": {
+      "en": "Hololive Dreams",
+      "ko": "홀로라이브 드림스"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "racing-master": {
+    "names": {
+      "en": "Racing Master",
+      "ko": "레이싱 마스터"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "call-of-dragons": {
+    "names": {
+      "en": "Call of Dragons",
+      "ko": "드래곤의 부름"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "starsavior": {
+    "names": {
+      "en": "StarSavior",
+      "ko": "StarSavior"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "flambe-merge-and-cook": {
+    "names": {
+      "en": "Flambé: Merge and Cook",
+      "ko": "플랑베: 병합하고 요리하기"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "jojos-bizarre-adventure-gs": {
+    "names": {
+      "en": "JoJo's Bizarre Adventure: GS",
+      "ko": "죠죠의 기묘한 모험: GS"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "onestate-rp-role-play-online": {
+    "names": {
+      "en": "OneState RP: Role Play Online",
+      "ko": "OneState RP: 온라인 역할 놀이"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "xena-live": {
+    "names": {
+      "en": "Xena Live",
+      "ko": "Xena Live"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "yoyo": {
+    "names": {
+      "en": "YoYo (MENA)",
+      "ko": "YoYo (MENA)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "arena-breakout-infinite": {
+    "names": {
+      "en": "Arena Breakout: Infinite",
+      "ko": "아레나 브레이크아웃: 인피니트"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "pokemon-champions": {
+    "names": {
+      "en": "Pokémon Champions",
+      "ko": "포켓몬 챔피언"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "gangstar-mirage-city": {
+    "names": {
+      "en": "Gangstar Mirage City",
+      "ko": "갱스터 미라지 시티"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "hunter-hunter-nen-survivor": {
+    "names": {
+      "en": "HUNTERxHUNTER NENxSURVIVOR",
+      "ko": "HUNTERxHUNTER NENxSURVIVOR"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "cookierun-ovensmash": {
+    "names": {
+      "en": "CookieRun: OvenSmash",
+      "ko": "쿠키런: 오븐스매시"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "eggy-party": {
+    "names": {
+      "en": "Eggy Party",
+      "ko": "에기 파티"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "doomsday-last-survivors": {
+    "names": {
+      "en": "Doomsday: Last Survivors",
+      "ko": "둠스데이: 라스트 서바이버"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "viking-rise": {
+    "names": {
+      "en": "Viking Rise",
+      "ko": "Viking Rise"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "mongil-star-dive": {
+    "names": {
+      "en": "MONGIL: STAR DIVE",
+      "ko": "MONGIL: STAR DIVE"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "wild-water-world": {
+    "names": {
+      "en": "Wild Water World",
+      "ko": "와일드 워터 월드"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "taka": {
+    "names": {
+      "en": "Taka Live",
+      "ko": "타카 라이브"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "lootfiend-idle-dungeons": {
+    "names": {
+      "en": "Lootfiend: ldle Dungeons",
+      "ko": "Lootfiend: ldle Dungeons"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "heesay": {
+    "names": {
+      "en": "Heesay",
+      "ko": "Heesay"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "lords-mobile-kingdom-wars": {
+    "names": {
+      "en": "Lords Mobile: Kingdom Wars",
+      "ko": "Lords Mobile: Kingdom Wars"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "livu": {
+    "names": {
+      "en": "LivU",
+      "ko": "LivU"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "blood-strike-max": {
+    "names": {
+      "en": "Blood Strike Max",
+      "ko": "블러드 스트라이크 Max"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "plants-on-fire": {
+    "names": {
+      "en": "Plants on Fire",
+      "ko": "불타는 식물"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "royal-kingdom": {
+    "names": {
+      "en": "Royal Kingdom",
+      "ko": "로열 킹덤"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "whoa-adventrue": {
+    "names": {
+      "en": "Whoa Adventrue",
+      "ko": "Whoa Adventrue"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "jaco": {
+    "names": {
+      "en": "JACO - جاكو",
+      "ko": "Jaco"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "land-of-jail": {
+    "names": {
+      "en": "Land of Jail",
+      "ko": "랜드 오브 제일"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "disney-solitaire": {
+    "names": {
+      "en": "Disney Solitaire",
+      "ko": "D  Solitaire"
+    },
+    "aliases": [
+      "D Solitaire"
+    ],
+    "content": {}
+  },
+  "epic-seven": {
+    "names": {
+      "en": "Epic Seven",
+      "ko": "Epic VII"
+    },
+    "aliases": [
+      "Epic 7"
+    ],
+    "content": {}
+  },
+  "tomb-busters": {
+    "names": {
+      "en": "Tomb Busters",
+      "ko": "Tomb Busters"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "evo-defense": {
+    "names": {
+      "en": "Evo Defense",
+      "ko": "Evo Defense"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "total-battle-war-strategy": {
+    "names": {
+      "en": "Total Battle: War Strategy",
+      "ko": "Total Battle: War Strategy"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "solo-leveling-arise": {
+    "names": {
+      "en": "Solo Leveling: Arise",
+      "ko": "Solo Leveling: Arise"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "girls-frontline-blue-butterfly-contract": {
+    "names": {
+      "en": "Girls’ Frontline: Blue Butterfly Contract",
+      "ko": "Girls’ Frontline: 그린 Butterfly Contract"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "clash-of-critters": {
+    "names": {
+      "en": "Clash of Critters",
+      "ko": "뚜까펫: 서바이벌"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "kingdom-fall-zombie-defense": {
+    "names": {
+      "en": "Kingdom Fall: Zombie Defense",
+      "ko": "Kingdom Fall: Zombie Defense"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "soulchill-voice-chat-room": {
+    "names": {
+      "en": "SoulChill",
+      "ko": "SoulChill"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "zomline-survival": {
+    "names": {
+      "en": "Zomline Survival",
+      "ko": "Zomline Survival"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "wardogs": {
+    "names": {
+      "en": "WARDOGS",
+      "ko": "WARDOGS"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "age-of-empires-iii-definitive-edition": {
+    "names": {
+      "en": "Age of Empires III: Definitive Edition (Base Game)",
+      "ko": "Age of Empires III: Definitive Edition (정식 게임)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "clair-obscur-expedition-33": {
+    "names": {
+      "en": "Clair Obscur: Expedition 33",
+      "ko": "클레르 옵스퀴르: 33 원정대"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "7-days-to-die": {
+    "names": {
+      "en": "7 Days to Die",
+      "ko": "7 Days to Die"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "ready-or-not": {
+    "names": {
+      "en": "Ready or Not",
+      "ko": "Ready or Not"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "no-mans-sky": {
+    "names": {
+      "en": "No Man's Sky",
+      "ko": "No Man's Sky"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "octopath-traveler": {
+    "names": {
+      "en": "OCTOPATH TRAVELER™",
+      "ko": "옥토패스 트래블러"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "dark-souls-ii-scholar-of-the-first-sin": {
+    "names": {
+      "en": "DARK SOULS™ II: Scholar of the First Sin",
+      "ko": "DARK SOULS™ II: Scholar of the First Sin"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "soulmask": {
+    "names": {
+      "en": "Soulmask",
+      "ko": "Soulmask"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "phantom-blade-zero": {
+    "names": {
+      "en": "Phantom Blade Zero",
+      "ko": "Phantom Blade Zero"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "arma-3": {
+    "names": {
+      "en": "Arma 3",
+      "ko": "Arma 3"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "pubgcoins": {
+    "names": {
+      "en": "P.U.B.G G-Coin",
+      "ko": "P.U.B.G G-Coin"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "xbox-gift-card-us": {
+    "names": {
+      "en": "Xbox Gift Card US",
+      "ko": "Xbox 기프트 카드 미국"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "free-fire-gift-card": {
+    "names": {
+      "en": "Free Fire Gift Card",
+      "ko": "Free Fire 기프트 카드"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "riot-game-giftcard-na": {
+    "names": {
+      "en": "Riot Games Gift Card (NA)",
+      "ko": "라이엇 게임즈 기프트 카드 (NA)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "nintendo-eshop-gift-card-us": {
+    "names": {
+      "en": "Nintendo eShop Gift Card US",
+      "ko": "닌텐도 e숍 기프트 카드 미국"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "itunes-gift-card-us": {
+    "names": {
+      "en": "iTunes Gift Card US",
+      "ko": "iTunes 기프트 카드 미국"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "itunes-gift-card-uk": {
+    "names": {
+      "en": "iTunes Gift Card UK",
+      "ko": "iTunes 기프트 카드 영국"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "razer-giftcard-us": {
+    "names": {
+      "en": "Razer Gift Card US",
+      "ko": "레이저 기프트 카드 US"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "itunes-gift-card-tr": {
+    "names": {
+      "en": "iTunes Gift Card TR",
+      "ko": "iTunes 기프트 카드 TR"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "xbox-game-pass": {
+    "names": {
+      "en": "Xbox Game Pass - US",
+      "ko": "Xbox 게임 패스 - US"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "itunes-gift-card-fr": {
+    "names": {
+      "en": "iTunes Gift Card FR",
+      "ko": "iTunes 기프트 카드 FR"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "roblox-gift-card-global": {
+    "names": {
+      "en": "RBLX",
+      "ko": "로블록스 기프트 카드 글로벌"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "nintendo-eshop-gift-card-jp": {
+    "names": {
+      "en": "Nintendo eShop Gift Card JP",
+      "ko": "Nintendo eShop 기프트 카드 JP"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "valorant-gift-card": {
+    "names": {
+      "en": "Valorant Gift Card US",
+      "ko": "발로란트 기프트 카드 US"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "playstation-gift-card": {
+    "names": {
+      "en": "Playstation Gift Card US",
+      "ko": "플레이스테이션 기프트 카드 US"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "netflix-gift-card": {
+    "names": {
+      "en": "Netflix Gift Card US",
+      "ko": "Netflix 기프트 카드 미국"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "google-play-gift-card-us": {
+    "names": {
+      "en": "Google Play Gift Card US",
+      "ko": "Google Play 기프트 카드 US"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "steam-gift-card-my": {
+    "names": {
+      "en": "Steam Gift Card (MY&US)",
+      "ko": "Steam 기프트 카드 (MY&US)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "nintendo-eshop-gift-card-de": {
+    "names": {
+      "en": "Nintendo eShop Gift Card DE",
+      "ko": "닌텐도 e숍 기프트 카드 DE"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "playstation-gift-card-de": {
+    "names": {
+      "en": "PlayStation Gift Card DE",
+      "ko": "PlayStation 기프트 카드 DE"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "likee-gift-card": {
+    "names": {
+      "en": "Likee Gift Card",
+      "ko": "라이키 기프트 카드"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "bigo-live-gift-card": {
+    "names": {
+      "en": "BIGO LIVE Gift Card",
+      "ko": "BIGO LIVE 기프트 카드"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "tiktok-gift-card-de": {
+    "names": {
+      "en": "TikTok Gift Card (DE)",
+      "ko": "TikTok 기프트 카드 (DE)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "league-of-legends-gift-card": {
+    "names": {
+      "en": "League of Legends Gift Card US",
+      "ko": "리그 오브 레전드 기프트 카드 US"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "apex-legends-gift-card": {
+    "names": {
+      "en": "Apex Gift Card",
+      "ko": "Apex 기프트 카드"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "tiktok-gift-card-uk": {
+    "names": {
+      "en": "TikTok Gift Card (UK)",
+      "ko": "TikTok 기프트 카드 (영국)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "steam-wallet-code": {
+    "names": {
+      "en": "Steam Gift Card (BRL)",
+      "ko": "스팀 기프트 카드 (BRL)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "soulchill": {
+    "names": {
+      "en": "SoulChill",
+      "ko": "SoulChill"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "itunes-gift-card-jp": {
+    "names": {
+      "en": "iTunes Gift Card JP",
+      "ko": "iTunes 기프트 카드 JP"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "discord-nitro-subscription": {
+    "names": {
+      "en": "Discord",
+      "ko": "디스코드"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "amazon-gift-card-de": {
+    "names": {
+      "en": "Amazon Gift Card (DE)",
+      "ko": "아마존 기프트 카드 (DE)"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "itunes-gift-card-de": {
+    "names": {
+      "en": "iTunes Gift Card DE",
+      "ko": "iTunes 기프트 카드 DE"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "google-play-gift-card-de": {
+    "names": {
+      "en": "Google Play Gift Card DE",
+      "ko": "Google Play 기프트 카드 DE"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "zalando-gift-card-de": {
+    "names": {
+      "en": "Zalando Gift Card DE",
+      "ko": "Zalando 기프트 카드 DE"
+    },
+    "aliases": [],
+    "content": {}
+  },
+  "roblox-gift-card-us": {
+    "names": {
+      "en": "RBLX",
+      "ko": "Roblox 기프트 카드 (US)"
+    },
+    "aliases": [],
+    "content": {}
+  }
+}
