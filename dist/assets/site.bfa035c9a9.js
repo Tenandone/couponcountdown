@@ -51,7 +51,7 @@ if(body.dataset.root==='true'){
   const target=supported.includes(saved)?saved:(navigator.languages||[navigator.language]).map(match).find(Boolean)||'en';
   location.replace('/'+target+'/');
 }
-function showRecent(){const section=document.querySelector('.recent-section'),list=document.querySelector('.recent-list');if(!section)return;list.replaceChildren();for(const slug of recentSlugs().slice(0,5)){const card=cards.find(x=>x.dataset.slug===slug);if(!card)continue;const original=card.querySelector('[data-outbound]'),a=original.cloneNode(false),image=card.querySelector('img').cloneNode();a.className='';a.dataset.position='recent';image.width=40;image.height=40;a.append(image,document.createTextNode(original.dataset.name+' ↗'));list.append(a);}section.hidden=!list.children.length;}
+function showRecent(){const section=document.querySelector('.recent-section'),list=document.querySelector('.recent-list');if(!section)return;list.replaceChildren();for(const slug of recentSlugs().slice(0,5)){const card=cards.find(x=>x.dataset.slug===slug);if(!card||card.dataset.availability==='maintenance')continue;const original=card.querySelector('[data-outbound]'),a=original.cloneNode(false),image=card.querySelector('img').cloneNode();a.className='';a.dataset.position='recent';image.width=40;image.height=40;a.append(image,document.createTextNode(original.dataset.name+' ↗'));list.append(a);}section.hidden=!list.children.length;}
 showRecent();
 const primaryCTA=document.querySelector('.hero-actions [data-outbound], .product [data-outbound]');
 const stickyCTA=document.querySelector('.mobile-sticky');
@@ -95,7 +95,7 @@ if(search&&document.modelContext?.registerTool){
     description:'Filter the visible catalog by name or alias and return up to 20 direct product links. Does not navigate or purchase.',
     inputSchema:{type:'object',properties:{query:{type:'string',maxLength:256}},required:['query'],additionalProperties:false},
     annotations:{readOnlyHint:false,untrustedContentHint:false},
-    execute(input){if(!input||typeof input.query!=='string'||input.query.length>256||Object.keys(input).some(k=>k!=='query'))throw new Error('Expected query string, at most 256 characters.');search.value=input.query;category='all';filter();recordSearch('assistant_search');const matches=cards.filter(x=>!x.hidden);return{count:matches.length,locale,results:matches.slice(0,20).map(x=>{const a=x.querySelector('[data-outbound]');return{slug:x.dataset.slug,name:a.dataset.name,rechargeUrl:a.href};})};}
+    execute(input){if(!input||typeof input.query!=='string'||input.query.length>256||Object.keys(input).some(k=>k!=='query'))throw new Error('Expected query string, at most 256 characters.');search.value=input.query;category='all';filter();recordSearch('assistant_search');const matches=cards.filter(x=>!x.hidden);return{count:matches.length,locale,results:matches.slice(0,20).map(x=>{const a=x.querySelector('[data-outbound], [data-maintenance]');return{slug:x.dataset.slug,name:a.dataset.name,status:x.dataset.availability,rechargeUrl:a.dataset.maintenance?null:a.href};})};}
   },{signal:lifecycle.signal})).catch(()=>{});}catch{}
   addEventListener('pagehide',()=>lifecycle.abort(),{once:true});
 }

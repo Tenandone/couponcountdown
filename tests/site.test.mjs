@@ -43,7 +43,7 @@ test('Sitemap covers every locale product and redirects preserve existing game i
  assert.ok((await fs.readFile('dist/robots.txt','utf8')).includes('https://couponcountdown.com/sitemap.xml'));
 });
 test('Editorial overrides and escaping work without changing the direct URL',()=>{
- const g={...catalog.items[0],names:{en:'A <Test>'},content:{en:{title:'Custom title',description:'Custom description',h1:'Custom H1',cta:'Custom CTA',faq:[['Question?','Answer.']]}}};
+ const g={...catalog.items.find(x=>x.slug==='genshin-impact'),names:{en:'A <Test>'},content:{en:{title:'Custom title',description:'Custom description',h1:'Custom H1',cta:'Custom CTA',faq:[['Question?','Answer.']]}}};
  const html=detail('en',g,catalog.items,'https://couponcountdown.com',{css:'/a.css',js:'/a.js'},'');
  for(const value of ['Custom title','Custom description','Custom H1','Custom CTA','Question?'])assert.ok(html.includes(value));
  assert.ok(html.includes(g.url));assert.equal(escape('<script>"&'), '&lt;script&gt;&quot;&amp;');

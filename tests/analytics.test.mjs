@@ -5,12 +5,12 @@ import {JSDOM} from 'jsdom';
 
 const source=await fs.readFile('public/site.js','utf8');
 const html=await fs.readFile('dist/en/index.html','utf8');
-function fixture(consent='yes'){
+function fixture(consent='yes',recent=[]){
   // No resource loader: tests cannot send events to the production GA property.
   const dom=new JSDOM(html,{url:'https://couponcountdown.com/en/',runScripts:'outside-only'});
   const w=dom.window,d=w.document;
   w.matchMedia=()=>({matches:true});
-  w.localStorage.setItem('cc-consent',JSON.stringify(consent));
+  w.localStorage.setItem('cc-consent',JSON.stringify(consent));w.localStorage.setItem('cc-recent',JSON.stringify(recent));
   const events=[];d.addEventListener('cc:analytics',e=>events.push(e.detail));
   d.addEventListener('click',e=>e.preventDefault());
   w.eval(source);
@@ -92,4 +92,15 @@ test('catalog progressively reveals all 238 products and searches beyond the ini
     assert.ok([...visible()].some(x=>x.dataset.slug===last));
     assert.ok(f.d.querySelector('.catalog .link-reason').hidden);
   }finally{f.dom.window.close();}
+});
+
+test('maintenance games stay searchable but never appear in recent recommendations or emit recharge events',()=>{
+ const f=fixture('yes',['kingshot','whiteout-survival','genshin-impact']);try{
+  assert.equal(f.d.querySelectorAll('.recent-list a').length,1);
+  assert.equal(f.d.querySelector('.recent-list a').dataset.game,'genshin-impact');
+  for(const query of ['KingShot','WOS']){const input=f.d.querySelector('#game-search');input.value=query;input.dispatchEvent(new f.w.Event('input',{bubbles:true}));assert.ok(f.d.querySelector('#all-grid .game-card:not([hidden]) [data-maintenance]'));}
+  const count=f.events.filter(x=>x.event==='outbound_recharge_click').length;
+  f.click('#all-grid [data-slug="kingshot"] [data-maintenance]');
+  assert.equal(f.events.filter(x=>x.event==='outbound_recharge_click').length,count);
+ }finally{f.dom.window.close();}
 });
