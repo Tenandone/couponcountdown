@@ -1,0 +1,66 @@
+[
+  {
+    "heroButtonBottom": 417.34375,
+    "imageErrors": 0,
+    "lang": "ko",
+    "scrollWidth": 305,
+    "sticky": true,
+    "width": 320
+  },
+  {
+    "heroButtonBottom": 455.421875,
+    "imageErrors": 0,
+    "lang": "en",
+    "scrollWidth": 305,
+    "sticky": true,
+    "width": 320
+  },
+  {
+    "heroButtonBottom": 417.34375,
+    "imageErrors": 0,
+    "lang": "ja",
+    "scrollWidth": 305,
+    "sticky": true,
+    "width": 320
+  },
+  {
+    "heroButtonBottom": 417.34375,
+    "imageErrors": 0,
+    "lang": "zh-TW",
+    "scrollWidth": 305,
+    "sticky": true,
+    "width": 320
+  },
+  {
+    "heroButtonBottom": 516,
+    "imageErrors": 0,
+    "lang": "es-419",
+    "scrollWidth": 305,
+    "sticky": true,
+    "width": 320
+  },
+  {
+    "heroButtonBottom": 516,
+    "imageErrors": 0,
+    "lang": "es-ES",
+    "scrollWidth": 305,
+    "sticky": true,
+    "width": 320
+  },
+  {
+    "heroButtonBottom": 516,
+    "imageErrors": 0,
+    "lang": "pt-BR",
+    "scrollWidth": 305,
+    "sticky": true,
+    "width": 320
+  },
+  {
+    "heroButtonBottom": 511.265625,
+    "imageErrors": 0,
+    "lang": "ru",
+    "scrollWidth": 305,
+    "sticky": true,
+    "width": 320
+  }
+]
