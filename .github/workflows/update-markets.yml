@@ -30,8 +30,6 @@ jobs:
         run: npm run markets:fetch
         env:
           GOLD_API_KEY: ${{ secrets.GOLD_API_KEY }}
-          MARKET_API_KEY: ${{ secrets.MARKET_API_KEY }}
-          MARKET_INDEX_DISPLAY_APPROVED: ${{ vars.MARKET_INDEX_DISPLAY_APPROVED }}
       - run: npm run lint
       - run: npm run build
       - run: npm test

@@ -22,6 +22,7 @@ test('providers reject wrong instruments and normalize daily FX without inventin
  const fx=normalizeFX([{date:'2026-09-11',base:'USD',quote:'KRW',rate:1300},{date:'2026-09-17',base:'USD',quote:'KRW',rate:1350},{date:'2026-09-18',base:'USD',quote:'KRW',rate:1380}]);
  assert.equal(fx.price,1380);assert.ok(Math.abs(fx.changePercent-2.222222222)<0.00001);assert.equal(fx.high,null);assert.equal(fx.changeBasis,'reference');assert.equal(fx.updatedAt,'2026-09-18T00:00:00Z');assert.equal(fx.weekComparisonAt,'2026-09-11');
  let calls=0;await assert.rejects(collect(assets[2],{}, {indices:{}},()=>{calls++;}));assert.equal(calls,0);
+ await assert.rejects(collect(assets[2],{MARKET_API_KEY:'test',MARKET_INDEX_DISPLAY_APPROVED:'true'}, {policy:'free-only',indices:{sp500:{symbol:'TEST'}}},()=>{calls++;}),/free-only/);assert.equal(calls,0);
 });
 test('optional history uses six authenticated windows, distinguishes changes from high/low range, and safely degrades',async()=>{
  let calls=0;

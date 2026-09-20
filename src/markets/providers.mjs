@@ -68,6 +68,7 @@ export async function collect(asset, env, config, request = fetch, now = new Dat
     const from = new Date(now.getTime()-18*86400000).toISOString().slice(0,10);
     return normalizeFX(await requestJSON(`https://api.frankfurter.dev/v2/providers/ecb/rates?from=${from}&to=${now.toISOString().slice(0,10)}&base=USD&quotes=KRW`,{},request));
   }
+  if(config.policy==='free-only')throw new Error('Index source excluded by free-only policy');
   const mapping=config.indices?.[asset.slug];
   if (env.MARKET_INDEX_DISPLAY_APPROVED !== 'true' || !env.MARKET_API_KEY || !mapping) throw new Error('Index display license, credentials or verified instrument mapping not configured');
   const url=new URL('https://api.twelvedata.com/quote');
