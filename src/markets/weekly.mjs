@@ -20,6 +20,7 @@ export function preserveWeekly(asset,week,candidate,previous){
  if(validWeekly(candidate,week))return {...emptyWeekly(asset,week),...candidate,status:'ready'};
  // Never relabel a prior week's observations as this week's numbers.
  if(validWeekly(previous,week))return {...previous,status:'retained'};
+ if(previous && validWeekly(previous,{id:previous.weekId}))return {...previous,status:'stale'};
  return emptyWeekly(asset,week,asset.assetType==='index'?'rights-pending':asset.provider==='gold-api'?'free-key-required':'fetch-failed');
 }
 export function normalizeWeeklyFX(data,week){
@@ -49,6 +50,7 @@ export async function fetchWeeklyAsset(asset,week,env=process.env,request=fetch)
  return normalizeWeeklyOHLC(await json(`https://api.gold-api.com/ohlc/${asset.symbol}?startTimestamp=${start}&endTimestamp=${end}`,{headers:{'x-api-key':env.GOLD_API_KEY}},request),week);
 }
 export function assembleWeekly(week,items,context,previous,now){
- const normalized=assets.map(a=>preserveWeekly(a,week,items.find(x=>x.slug===a.slug),previous?.items?.find(x=>x.slug===a.slug)));
- return {schemaVersion:2,week,publishedAt:previous?.publishedAt||previous?.collectedAt||now,collectedAt:now,items:normalized,issues:context.issues.slice(0,5),events:context.events,sourceStatus:context.sourceStatus,usable:normalized.some(q=>validWeekly(q,week))||context.issues.length>0};
+ const normalized=assets.map(a=>{const candidate=items.find(x=>x.slug===a.slug),old=previous?.items?.find(x=>x.slug===a.slug);return preserveWeekly(a,week,candidate?{...candidate,verifiedAt:now}:null,old?{...old,verifiedAt:old.verifiedAt||previous.collectedAt}:null);});
+ const currentCount=normalized.filter(q=>validWeekly(q,week)).length;
+ return {schemaVersion:2,week,publishedAt:previous?.week?.id===week.id?(previous.publishedAt||previous.collectedAt||now):now,collectedAt:now,items:normalized,issues:context.issues.slice(0,5),events:context.events,sourceStatus:context.sourceStatus,publishable:currentCount>=2||(currentCount>=1&&context.issues.length>=2),usable:currentCount>0||context.issues.length>0};
 }

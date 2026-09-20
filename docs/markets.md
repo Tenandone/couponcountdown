@@ -4,7 +4,7 @@ Review branch: codex/markets-hub. Production main, Pages main-root deployment, C
 
 ## Scope and cadence
 
-Monday 00:23 UTC / 09:23 Korea, once a week. Collect the completed Monday–Sunday UTC week. Seven assets, eight locales, concise overview and asset pages, permanent /LOCALE/markets/weeks/YYYY-MM-DD/ archives. No streaming, charts, forecasts, trading, long generated analysis or browser provider requests. Existing 238-product recharge hub and maintenance rules remain intact.
+Monday 00:00 UTC / 09:00 Korea, once a week. Collect the completed Monday–Sunday UTC week. Seven assets, eight locales, concise overview and asset pages, permanent /LOCALE/markets/weeks/YYYY-MM-DD/ archives. No streaming, charts, forecasts, trading, long generated analysis or browser provider requests. Existing 238-product recharge hub and maintenance rules remain intact.
 
 Each connected asset shows start/end, return, high/low, source and collection date. FX uses the first/last daily reference observations inside the week, and daily reference extrema rather than intraday trading extremes. Exact observation dates and USD conversion are disclosed. BTC/ETH/gold use exact completed-week OHLC, never current quotes repurposed as historical data.
 
@@ -39,11 +39,11 @@ Total with free OHLC key: 10 requests/week; currently 7. Normal same-week reruns
 
 npm run markets:fetch → validate → atomic weekly JSON/index → lint/build/tests → prepare existing Pages output → normal Git push → request and verify existing Pages build.
 
-- src/markets/weekly.mjs: UTC boundaries, exact OHLC windows, price/range/return validation, provider adapters and same-week recovery.
+- src/markets/weekly.mjs: UTC boundaries, exact OHLC windows, price/range/return validation, provider adapters and same-week and explicitly dated stale recovery.
 - src/markets/weekly-sources.mjs: official feeds/calendars, date filtering, source-host allowlist and deduplication.
 - weekly-copy.mjs and render.mjs: eight locales, overview/detail/archive, canonical/hreflang/Article metadata.
 - Old hourly adapters, snapshots and browser freshness timer removed. No hourly workflow remains.
-- Partial failure retains only verified data for the same week, marked retained. Never relabel another week's value. If no usable prices or releases exist, retain the previous published edition. Save source status in JSON and preserve archive URLs.
+- Partial failure retains the last verified value, including a previous week, marked stale with its original week and verification timestamp. Never relabel old numbers as current-week observations. If no usable prices or releases exist, retain the previous published edition. Save source status in JSON and preserve archive URLs.
 - Main and explicit automation variable are both required for production writes. Concurrent pushes fail safely; no force push or DNS/Pages source change.
 
 ## Validation and activation
@@ -51,3 +51,13 @@ npm run markets:fetch → validate → atomic weekly JSON/index → lint/build/t
 Tests cover UTC/year boundaries, OHLC windows, FX dates, same-week fallback, index/no-key blocking, feed/date safety, calendar parsing, locale/archive metadata and consent-aware analytics without duplicate outbound conversions. Browser coverage includes 320/375/390/430px and recharge interactions.
 
 Before production: review Preview, add the free Gold API key if desired, verify its live OHLC response, then separately authorize review-branch merge and automation activation. This task does not enable production publication. Index rights and asset-specific editorial coverage remain gaps. GA DebugView actual receipt has not been checked in an authenticated administrator session.
+
+## Final MVP review
+
+Connected rows appear first in BTC, ETH, USD/KRW, gold priority order. Unconnected priority assets are a compact note, and the three indices are a subdued section below official releases/calendar. No price is shown for indices. Calendar is omitted when no event is verified.
+
+Publish/archive eligibility requires at least two current-week price series, or one current-week series plus two verified releases. Thin or fully failed collections retain the last published edition. Existing /weeks/YYYY-MM-DD/ URLs remain unchanged rather than introducing duplicate archive routes. Missing/corrupt edition files fall back to the latest readable eligible edition at build time.
+
+Cron is 0 0 * * 1 (Monday 09:00 KST); GitHub may queue scheduled jobs after the requested time. No exact-time delivery guarantee.
+
+Repository Actions Secrets and local environment were checked: GOLD_API_KEY is absent. Registration must be completed by the owner on the free plan, then the key saved directly to GitHub Secrets. Never put it in chat, source, build assets or logs. Production automation remains disabled.

@@ -13,12 +13,12 @@ test('completed UTC weeks handle Sundays, Monday boundaries and year transitions
  assert.equal(completedWeek(new Date('2026-09-21T00:00:00Z')).id,'2026-09-14');
  assert.equal(completedWeek(new Date('2026-01-05T00:23:00Z')).id,'2025-12-29');
 });
-test('weekly OHLC validates exact window, computes start-to-end return and preserves only the same week',()=>{
+test('weekly OHLC validates exact window, computes start-to-end return and preserves original week labels on stale data',()=>{
  const raw={open:100,close:110,high:120,low:90,startTimestamp:Date.parse(week.start)/1000,endTimestamp:Date.parse(week.endExclusive)/1000-1};
  const q=normalizeWeeklyOHLC(raw,week);assert.ok(Math.abs(q.changePercent-10)<1e-8);assert.ok(validWeekly(q,week));
  for(const changes of [{open:0},{close:null},{high:105},{low:111},{startTimestamp:raw.startTimestamp+1}])assert.throws(()=>normalizeWeeklyOHLC({...raw,...changes},week));
  assert.equal(preserveWeekly(assets[0],week,null,q).status,'retained');
- assert.equal(preserveWeekly(assets[0],week,null,{...q,weekId:'2026-08-31'}).startPrice,null);
+ const old=preserveWeekly(assets[0],week,null,{...q,weekId:'2026-08-31'});assert.equal(old.startPrice,100);assert.equal(old.weekId,'2026-08-31');assert.equal(old.status,'stale');
  assert.equal(assembleWeekly(week,[],{issues:[],events:[],sourceStatus:[]},null,new Date().toISOString()).usable,false);
 });
 test('FX weekly ranges use only the requested reference days and cannot use prior-week padding',()=>{
@@ -71,6 +71,28 @@ test('Markets analytics sends one event per action with consent and preserves ca
  }finally{w.close();}
 });
 test('scheduled publishing is opt-in, main-only and preserves Pages settings',async()=>{
- const y=await fs.readFile('.github/workflows/update-markets.yml','utf8');assert.ok(y.includes("github.ref == 'refs/heads/main' && vars.MARKETS_AUTOMATION_ENABLED == 'true'"));assert.ok(y.includes('cron: \'23 0 * * 1\''));assert.ok(!y.includes('--force'));assert.ok(y.indexOf('npm test')<y.indexOf('git push'));
+ const y=await fs.readFile('.github/workflows/update-markets.yml','utf8');assert.ok(y.includes("github.ref == 'refs/heads/main' && vars.MARKETS_AUTOMATION_ENABLED == 'true'"));assert.ok(y.includes('cron: \'0 0 * * 1\''));assert.ok(!y.includes('--force'));assert.ok(y.indexOf('npm test')<y.indexOf('git push'));
  const s=await fs.readFile('scripts/request-pages-build.mjs','utf8');assert.ok(!s.includes("'PUT'"));assert.ok(s.includes("settings.cname!=='couponcountdown.com'"));
+});
+
+test('thin editions are withheld and failed assets retain dated verified data',()=>{
+ const context={issues:[],events:[],sourceStatus:[]};
+ const q={slug:'bitcoin',weekId:week.id,startPrice:100,endPrice:110,high:120,low:90,changePercent:10,source:{name:'Test',url:'https://example.com'}};
+ assert.equal(assembleWeekly(week,[q],context,null,week.endExclusive).publishable,false);
+ assert.equal(assembleWeekly(week,[q],{...context,issues:[{},{}]},null,week.endExclusive).publishable,true);
+ const old={week:{id:'2026-08-31'},collectedAt:'2026-09-07T00:00:00Z',items:[{...q,weekId:'2026-08-31'}]};
+ const stale=assembleWeekly(week,[],context,old,week.endExclusive);
+ assert.equal(stale.items[0].status,'stale');assert.equal(stale.items[0].verifiedAt,old.collectedAt);assert.equal(stale.publishable,false);
+});
+test('connected rows lead, indices stay below context, and SEO includes asset and reporting dates',async()=>{
+ const idx=JSON.parse(await fs.readFile('data/markets/weekly-index.json','utf8'));
+ const report=JSON.parse(await fs.readFile('data/markets/weeks/'+idx.latest+'.json','utf8'));
+ const first=['bitcoin','ethereum','usd-krw','gold'].find(slug=>report.items.some(q=>q.slug===slug&&validWeekly(q,{id:q.weekId})));
+ for(const l of localeOrder){
+ const html=await fs.readFile('dist/'+l+'/markets/index.html','utf8');const d=new JSDOM(html).window.document;
+ assert.equal(d.querySelector('.market-list .market-row').dataset.asset,first);
+ assert.deepEqual([...d.querySelectorAll('.market-coming [data-asset]')].map(x=>x.dataset.asset),['sp500','nasdaq','kospi']);
+ assert.ok(html.indexOf('class="market-coming"')>html.indexOf('id="weekly-context"'));
+ assert.ok(d.querySelector('meta[property="og:title"]'));assert.ok(d.querySelector('meta[name="description"]').content.includes(idx.latest));
+ }
 });
