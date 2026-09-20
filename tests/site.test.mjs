@@ -37,7 +37,9 @@ test('All static internal page and asset targets resolve; no guessed outbound de
   const expected=new Set([TIKTOK,...catalog.items.map(x=>x.url)]);links.forEach(x=>assert.ok(expected.has(x),x));
  }});
 test('Sitemap covers every locale product and redirects preserve existing game intent',async()=>{
- const sitemap=await fs.readFile('dist/sitemap.xml','utf8');assert.equal((sitemap.match(/<loc>/g)||[]).length,1921);
+ const sitemap=await fs.readFile('dist/sitemap.xml','utf8');
+ const markets=JSON.parse(await fs.readFile('data/markets/latest.json','utf8'));
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,1921+8+8*markets.items.filter(x=>x.price>0).length);
  const redirects=JSON.parse(await fs.readFile('data/redirects.json','utf8'));
  for(const key of ['/wos/','/kingshot/','/lastwar/','/tilessurvive/'])await fs.access('dist'+redirects[key]+'index.html');
  assert.ok((await fs.readFile('dist/robots.txt','utf8')).includes('https://couponcountdown.com/sitemap.xml'));

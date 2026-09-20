@@ -63,9 +63,9 @@ if(primaryCTA&&stickyCTA&&'IntersectionObserver' in window){
 // `cc:analytics`. GA4 forwarding is enabled only with a real ID and consent.
 window.dataLayer=window.dataLayer||[];
 function gtag(){window.dataLayer.push(arguments);}
-let analyticsReady=false;
-function enableAnalytics(){if(analyticsReady||safeStore.get('cc-consent')!=='yes'||!/^G-[A-Z0-9]+$/.test(body.dataset.ga||''))return;analyticsReady=true;gtag('js',new Date());gtag('config',body.dataset.ga,{send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false});const script=document.createElement('script');script.async=true;script.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(body.dataset.ga);document.head.append(script);}
-function track(name,params){const detail={event:name,...params};document.dispatchEvent(new CustomEvent('cc:analytics',{detail}));if(safeStore.get('cc-consent')==='yes'){if(analyticsReady)gtag('event',name,{...params,transport_type:'beacon'});else window.dataLayer.push(detail);}}
+let analyticsReady=false,marketViewParams=null,marketViewForwarded=false;
+function enableAnalytics(){if(analyticsReady||safeStore.get('cc-consent')!=='yes'||!/^G-[A-Z0-9]+$/.test(body.dataset.ga||''))return;analyticsReady=true;gtag('js',new Date());gtag('config',body.dataset.ga,{send_page_view:true,allow_google_signals:false,allow_ad_personalization_signals:false});const script=document.createElement('script');script.async=true;script.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(body.dataset.ga);document.head.append(script);if(marketViewParams&&!marketViewForwarded){gtag('event','market_page_view',{...marketViewParams,transport_type:'beacon'});marketViewForwarded=true;}}
+function track(name,params){if(name==='market_page_view')marketViewParams=params;const detail={event:name,...params};document.dispatchEvent(new CustomEvent('cc:analytics',{detail}));if(safeStore.get('cc-consent')==='yes'){if(analyticsReady){gtag('event',name,{...params,transport_type:'beacon'});if(name==='market_page_view')marketViewForwarded=true;}else window.dataLayer.push(detail);}}
 enableAnalytics();
 const consent=document.querySelector('.consent');
 if(consent&&body.dataset.ga&&!safeStore.get('cc-consent'))consent.hidden=false;
@@ -75,6 +75,10 @@ function dimensions(){return{locale,device:matchMedia('(max-width: 650px)').matc
 function click(event){
   if(event.type==='auxclick'&&event.button!==1)return;
   const a=event.target.closest('a');if(!a)return;
+  const marketEvent=a.dataset.marketEvent;
+  if(['market_asset_click','markets_to_games_click','markets_to_tiktok_click'].includes(marketEvent)){
+    track(marketEvent,{...dimensions(),asset:a.dataset.asset||body.dataset.marketPage||'overview',source_section:a.dataset.sourceSection||'market_list'});
+  }
   const card=a.closest('.game-card'),game=a.dataset.game||card?.dataset.slug||'';
   const params={...dimensions(),game:game||'tiktok-coins',cta_position:a.dataset.position||card?.querySelector('[data-outbound]')?.dataset.position||'card',destination:a.href};
   if(card)track('game_card_click',{...params,interaction:a.dataset.outbound?'recharge':'details'});
@@ -87,7 +91,15 @@ function click(event){
   track('outbound_recharge_click',outbound);
 }
 document.addEventListener('click',click);document.addEventListener('auxclick',click);
-track('hub_view',{locale,page:location.pathname});
+if(body.dataset.marketPage)track('market_page_view',{...dimensions(),asset:body.dataset.marketPage,source_section:'markets'});
+else track('hub_view',{locale,page:location.pathname});
+// A static snapshot can outlive its build. Re-evaluate staleness without fetching prices.
+function refreshMarketAge(){for(const el of document.querySelectorAll('[data-quote-state]')){
+  if(el.dataset.quoteState==='unavailable')continue;
+  if(Date.now()-Date.parse(el.dataset.updated)>Number(el.dataset.maxAge)*3600000||Date.now()-Date.parse(el.dataset.lastSuccess)>3*3600000){el.dataset.quoteState='stale';el.classList.add('stale');el.textContent=el.dataset.staleLabel;}
+}}
+refreshMarketAge();
+if(body.dataset.marketPage){setInterval(refreshMarketAge,60000);document.addEventListener('visibilitychange',refreshMarketAge);}
 if(search&&document.modelContext?.registerTool){
   const lifecycle=new AbortController();
   try{Promise.resolve(document.modelContext.registerTool({

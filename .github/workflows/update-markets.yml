@@ -1,0 +1,52 @@
+name: Refresh market snapshots
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: market-snapshot-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    # Review branches can never publish. Explicit opt-in is required after launch review.
+    if: github.ref == 'refs/heads/main' && vars.MARKETS_AUTOMATION_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Fetch and validate (retain last good data per asset)
+        run: npm run markets:fetch
+        env:
+          GOLD_API_KEY: ${{ secrets.GOLD_API_KEY }}
+          MARKET_API_KEY: ${{ secrets.MARKET_API_KEY }}
+          MARKET_INDEX_DISPLAY_APPROVED: ${{ vars.MARKET_INDEX_DISPLAY_APPROVED }}
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+      - name: Prepare existing Pages main-root output
+        run: npm run prepare:pages
+      - name: Commit generated snapshot without overwriting concurrent changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/markets/latest.json dist assets ko en ja zh-tw es-419 es-es pt-br ru sitemap.xml index.html 404.html robots.txt _headers _redirects
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh market snapshots'
+            git push origin HEAD:main
+          fi
+      - name: Request and verify existing GitHub Pages build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/request-pages-build.mjs
