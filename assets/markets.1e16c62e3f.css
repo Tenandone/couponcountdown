@@ -2,3 +2,5 @@
 @media(max-width:650px){.market-main{padding-top:24px}.market-intro h1{font-size:26px}.market-intro>p{font-size:13px}.weekly-asset{padding:14px 0}.market-row strong{font-size:16px}.weekly-change{font-size:20px}.weekly-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}.weekly-metrics dd{font-size:17px}.weekly-context,.weekly-calendar,.weekly-archives{margin-top:24px;padding-top:20px}.weekly-calendar li{grid-template-columns:1fr;gap:5px}.market-cross{display:block}.market-cross>div:last-child{gap:4px}.market-cross a{min-height:40px;display:flex;align-items:center}.market-main h2{font-size:17px}.weekly-context li>a{font-size:14px}.market-note{overflow-wrap:anywhere}}
 
 .market-pending,.market-coming{font-size:12px;color:#687269;line-height:1.8}.market-pending .market-row,.market-coming .market-row{display:inline;font-size:12px;min-height:0}.market-coming{border-top:1px solid #eee;margin-top:28px;padding-top:18px}.market-main .market-coming h2{font-size:14px;font-weight:500}.market-coming a:hover,.market-pending a:hover{text-decoration:underline}
+
+.weekly-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}

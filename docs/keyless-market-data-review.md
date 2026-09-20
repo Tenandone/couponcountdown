@@ -38,3 +38,5 @@ Three serial, unauthenticated official Gold API /price requests returned HTTP 20
 No reviewed source meets all requirements for immediate historical BTC/ETH/gold weekly OHLC without either a key or additional commercial rights. This is a finding about the reviewed candidates, not proof that no such provider exists.
 
 A viable keyless design is Gold API's public current endpoint, called once per asset on Monday, persisting timestamped observations and comparing consecutive scheduled weeks. It requires one full interval after the first scheduled baseline. It cannot backfill previous weeks, produce true weekly highs/lows, call today's quote last week's close, or calculate seven-day change from irregular/missing observations. This changes the meaning from OHLC to weekly sampling; user preference is pending before implementing that change. Until then retain the existing historical adapter and Preview unchanged.
+
+Decision: owner approved weekly sampling. Implemented schema v3 using keyless /price for BTC/ETH/XAU and latest ECB reference observations. No historical adapter remains active. See markets.md.

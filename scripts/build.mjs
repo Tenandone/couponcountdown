@@ -8,7 +8,7 @@ import {assets as marketAssets} from '../src/markets/data.mjs';
 import {completedWeek,emptyWeekly,validWeekly} from '../src/markets/weekly.mjs';
 const weeklyIndex=JSON.parse(await fs.readFile('data/markets/weekly-index.json','utf8').catch(()=>'{}'));
 let archiveIds=(weeklyIndex.weeks||[]).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
-const archives=await Promise.all(archiveIds.map(id=>fs.readFile('data/markets/weeks/'+id+'.json','utf8').then(JSON.parse).catch(()=>null))).then(rows=>rows.filter(r=>r?.week&&r.items&&r.issues&&r.events&&(r.items.filter(q=>validWeekly(q,r.week)).length>=2||(r.items.some(q=>validWeekly(q,r.week))&&r.issues.length>=2))));
+const archives=await Promise.all(archiveIds.map(id=>fs.readFile('data/markets/weeks/'+id+'.json','utf8').then(JSON.parse).catch(()=>null))).then(rows=>rows.filter(r=>r?.schemaVersion===3&&r.week&&r.items&&r.issues&&r.events&&(r.items.filter(q=>validWeekly(q,r.week)).length>=2||(r.items.some(q=>validWeekly(q,r.week))&&r.issues.length>=2))));
 archiveIds=archives.map(r=>r.week.id);
 const fallbackWeek=completedWeek();
 const markets=archives.find(x=>x.week.id===weeklyIndex.latest)||archives[0]||{week:fallbackWeek,collectedAt:new Date().toISOString(),items:marketAssets.map(a=>emptyWeekly(a,fallbackWeek)),issues:[],events:[]};

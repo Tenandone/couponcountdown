@@ -40,7 +40,7 @@ test('Sitemap covers every locale product and redirects preserve existing game i
  const sitemap=await fs.readFile('dist/sitemap.xml','utf8');
  const idx=JSON.parse(await fs.readFile('data/markets/weekly-index.json','utf8'));
  const markets=JSON.parse(await fs.readFile('data/markets/weeks/'+idx.latest+'.json','utf8'));
- assert.equal((sitemap.match(/<loc>/g)||[]).length,1921+8+8*markets.items.filter(x=>x.endPrice>0).length+8*idx.weeks.length);
+ assert.equal((sitemap.match(/<loc>/g)||[]).length,1921+8+8*markets.items.filter(x=>x.price>0).length+8*idx.weeks.length);
  const redirects=JSON.parse(await fs.readFile('data/redirects.json','utf8'));
  for(const key of ['/wos/','/kingshot/','/lastwar/','/tilessurvive/'])await fs.access('dist'+redirects[key]+'index.html');
  assert.ok((await fs.readFile('dist/robots.txt','utf8')).includes('https://couponcountdown.com/sitemap.xml'));

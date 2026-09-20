@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {JSDOM} from 'jsdom';
 import {assets} from '../src/markets/data.mjs';
-import {completedWeek,validWeekly,normalizeWeeklyFX,normalizeWeeklyOHLC,preserveWeekly,fetchWeeklyAsset,assembleWeekly} from '../src/markets/weekly.mjs';
+import {completedWeek,validWeekly,makeSnapshot,preserveWeekly,fetchWeeklyAsset,assembleWeekly} from '../src/markets/weekly.mjs';
 import {parseFeed,parseBLSCalendar,parseFedCalendar,feeds} from '../src/markets/weekly-sources.mjs';
 import {weeklyCopy as marketCopy} from '../src/markets/weekly-copy.mjs';
 import {localeOrder,locales} from '../src/locales.mjs';
@@ -13,24 +13,21 @@ test('completed UTC weeks handle Sundays, Monday boundaries and year transitions
  assert.equal(completedWeek(new Date('2026-09-21T00:00:00Z')).id,'2026-09-14');
  assert.equal(completedWeek(new Date('2026-01-05T00:23:00Z')).id,'2025-12-29');
 });
-test('weekly OHLC validates exact window, computes start-to-end return and preserves original week labels on stale data',()=>{
- const raw={open:100,close:110,high:120,low:90,startTimestamp:Date.parse(week.start)/1000,endTimestamp:Date.parse(week.endExclusive)/1000-1};
- const q=normalizeWeeklyOHLC(raw,week);assert.ok(Math.abs(q.changePercent-10)<1e-8);assert.ok(validWeekly(q,week));
- for(const changes of [{open:0},{close:null},{high:105},{low:111},{startTimestamp:raw.startTimestamp+1}])assert.throws(()=>normalizeWeeklyOHLC({...raw,...changes},week));
- assert.equal(preserveWeekly(assets[0],week,null,q).status,'retained');
- const old=preserveWeekly(assets[0],week,null,{...q,weekId:'2026-08-31'});assert.equal(old.startPrice,100);assert.equal(old.weekId,'2026-08-31');assert.equal(old.status,'stale');
- assert.equal(assembleWeekly(week,[],{issues:[],events:[],sourceStatus:[]},null,new Date().toISOString()).usable,false);
+
+test('snapshot baselines, next collection and same-week correction use honest comparison',()=>{
+ const raw={price:100,observedAt:'2026-09-20T10:00:00Z',source:{name:'Gold API',url:'https://gold-api.com/'}};
+ const q=makeSnapshot(assets[0],week,raw,null,'2026-09-20T10:01:00Z');assert.equal(q.previousPrice,null);assert.equal(q.changePercent,null);
+ const next=makeSnapshot(assets[0],{id:'2026-09-14'},{...raw,price:110},q,'2026-09-20T10:02:00Z');assert.ok(Math.abs(next.changePercent-10)<1e-6);assert.equal(next.previousPrice,100);
+ const correction=makeSnapshot(assets[0],{id:'2026-09-14'},{...raw,price:120},next,'2026-09-20T10:03:00Z');assert.equal(correction.previousPrice,100);
+ assert.equal(preserveWeekly(assets[0],{id:'2026-09-14'},null,q).price,100);assert.equal(preserveWeekly(assets[0],week,null,q).status,'stale');
+ for(const price of [0,null,-1])assert.throws(()=>makeSnapshot(assets[0],week,{...raw,price},q,'2026-09-20T10:03:00Z'));
+ assert.throws(()=>makeSnapshot(assets[0],week,raw,q,'2026-09-22T10:03:00Z'));
 });
-test('FX weekly ranges use only the requested reference days and cannot use prior-week padding',()=>{
- const raw=[{date:'2026-09-04',base:'USD',quote:'KRW',rate:9999},{date:'2026-09-07',base:'USD',quote:'KRW',rate:1300},{date:'2026-09-11',base:'USD',quote:'KRW',rate:1320},{date:'2026-09-14',base:'USD',quote:'KRW',rate:9999}];
- const q=normalizeWeeklyFX(raw,week);assert.equal(q.startPrice,1300);assert.equal(q.endPrice,1320);assert.equal(q.high,1320);assert.equal(q.rangeBasis,'daily-reference');
- assert.throws(()=>normalizeWeeklyFX(raw.slice(0,2),week));
-});
-test('free weekly fetch makes one OHLC request, no current-price calls, and blocks index calls',async()=>{
- const calls=[];const req=async(url,opts)=>{calls.push({url,opts});return{ok:true,json:async()=>({open:100,close:110,high:120,low:90,startTimestamp:Date.parse(week.start)/1000,endTimestamp:Date.parse(week.endExclusive)/1000-1})};};
- await fetchWeeklyAsset(assets[0],week,{GOLD_API_KEY:'fixture'},req);assert.equal(calls.length,1);assert.ok(calls[0].url.includes('/ohlc/BTC'));assert.ok(!calls[0].url.includes('fixture'));assert.equal(calls[0].opts.headers['x-api-key'],'fixture');
- await assert.rejects(fetchWeeklyAsset(assets[2],week,{MARKET_API_KEY:'fixture'},req));assert.equal(calls.length,1);
- await assert.rejects(fetchWeeklyAsset(assets[0],week,{},req));assert.equal(calls.length,1);
+test('public snapshot endpoints need no secrets and reject incorrect assets',async()=>{
+ const calls=[];const req=async(url,options)=>{calls.push({url,options});return {ok:true,json:async()=>({symbol:'BTC',currency:'USD',price:100,updatedAt:'2026-09-20T10:00:00Z'})};};
+ await fetchWeeklyAsset(assets[0],week,{},req);assert.ok(calls[0].url.endsWith('/price/BTC'));assert.equal(calls[0].options.headers,undefined);
+ await assert.rejects(fetchWeeklyAsset(assets[1],week,{},req));await assert.rejects(fetchWeeklyAsset(assets[2],week,{},req));
+ const fx=await fetchWeeklyAsset(assets[5],week,{},async()=>({ok:true,json:async()=>[{base:'USD',quote:'KRW',date:'2026-09-18',rate:1388.1}]}),new Date('2026-09-20'));assert.equal(fx.price,1388.1);
 });
 test('source parsing excludes out-of-week releases, hostile links and unsupported calendar dates',()=>{
  const xml='<rss><channel><item><title>Verified release</title><link>https://www.bls.gov/news.release/test.htm</link><pubDate>Fri, 11 Sep 2026 12:30:00 GMT</pubDate></item><item><title>Outside</title><link>https://www.bls.gov/test.htm</link><pubDate>Mon, 14 Sep 2026 12:30:00 GMT</pubDate></item><item><title>Hostile</title><link>https://example.com</link><pubDate>Fri, 11 Sep 2026 12:30:00 GMT</pubDate></item></channel></rss>';
@@ -75,15 +72,6 @@ test('scheduled publishing is opt-in, main-only and preserves Pages settings',as
  const s=await fs.readFile('scripts/request-pages-build.mjs','utf8');assert.ok(!s.includes("'PUT'"));assert.ok(s.includes("settings.cname!=='couponcountdown.com'"));
 });
 
-test('thin editions are withheld and failed assets retain dated verified data',()=>{
- const context={issues:[],events:[],sourceStatus:[]};
- const q={slug:'bitcoin',weekId:week.id,startPrice:100,endPrice:110,high:120,low:90,changePercent:10,source:{name:'Test',url:'https://example.com'}};
- assert.equal(assembleWeekly(week,[q],context,null,week.endExclusive).publishable,false);
- assert.equal(assembleWeekly(week,[q],{...context,issues:[{},{}]},null,week.endExclusive).publishable,true);
- const old={week:{id:'2026-08-31'},collectedAt:'2026-09-07T00:00:00Z',items:[{...q,weekId:'2026-08-31'}]};
- const stale=assembleWeekly(week,[],context,old,week.endExclusive);
- assert.equal(stale.items[0].status,'stale');assert.equal(stale.items[0].verifiedAt,old.collectedAt);assert.equal(stale.publishable,false);
-});
 test('connected rows lead, indices stay below context, and SEO includes asset and reporting dates',async()=>{
  const idx=JSON.parse(await fs.readFile('data/markets/weekly-index.json','utf8'));
  const report=JSON.parse(await fs.readFile('data/markets/weeks/'+idx.latest+'.json','utf8'));
@@ -95,4 +83,18 @@ test('connected rows lead, indices stay below context, and SEO includes asset an
  assert.ok(html.indexOf('class="market-coming"')>html.indexOf('id="weekly-context"'));
  assert.ok(d.querySelector('meta[property="og:title"]'));assert.ok(d.querySelector('meta[name="description"]').content.includes(idx.latest));
  }
+});
+
+test('collection failures retain exact prices, comparison and original timestamps',()=>{
+ const now='2026-09-20T10:00:00Z';const source={name:'Gold API',url:'https://gold-api.com/'};
+ const q=makeSnapshot(assets[0],week,{price:100,observedAt:now,source},null,now);
+ const old={week,items:[q],collectedAt:now};
+ const report=assembleWeekly({id:'2026-09-21'},[],{issues:[],events:[],sourceStatus:[]},old,'2026-09-21T00:00:00Z');
+ assert.equal(report.items[0].price,100);assert.equal(report.items[0].collectedAt,now);assert.equal(report.items[0].status,'stale');assert.equal(report.publishable,false);
+});
+test('snapshot pages use truthful fields and expose first-collection notices in eight locales',async()=>{
+ const idx=JSON.parse(await fs.readFile('data/markets/weekly-index.json','utf8'));
+ const report=JSON.parse(await fs.readFile('data/markets/weeks/'+idx.latest+'.json','utf8'));
+ for(const q of report.items.filter(q=>q.price)){assert.ok(validWeekly(q,{id:q.weekId}));for(const k of ['high','low','volume','startPrice','endPrice'])assert.ok(!(k in q));}
+ for(const l of localeOrder){const html=await fs.readFile('dist/'+l+'/markets/index.html','utf8');assert.ok(!/OHLC|주간 고가|주간 저가/i.test(html));assert.ok(html.includes(marketCopy[l].current));if(report.items.some(q=>q.price&&q.previousPrice===null))assert.ok(html.includes(marketCopy[l].baseline));}
 });
