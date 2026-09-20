@@ -1,72 +1,53 @@
-# Markets preview — 20 September 2026
+# Weekly Markets Preview — 20 September 2026
 
-Review branch: `codex/markets-hub`. Production `main`, Pages source `main /`, CNAME and DNS are unchanged. The hourly production workflow is gated off. This preview is a static snapshot, not a continuously updating deployment.
+Review branch: codex/markets-hub. Production main, Pages main-root deployment, CNAME and DNS are unchanged. Production publishing stays disabled until review and MARKETS_AUTOMATION_ENABLED=true.
 
-## Free-only policy confirmed by the owner
+## Scope and cadence
 
-Only free plans with confirmed commercial website-display rights are in scope. `data/markets/providers.json` enforces `policy: free-only`: index collection is rejected before any request, even if old paid-provider credentials exist. The scheduled workflow exposes only the optional free `GOLD_API_KEY`; no paid-provider secret is passed. No subscription, purchase or contract is authorized.
+Monday 00:23 UTC / 09:23 Korea, once a week. Collect the completed Monday–Sunday UTC week. Seven assets, eight locales, concise overview and asset pages, permanent /LOCALE/markets/weeks/YYYY-MM-DD/ archives. No streaming, charts, forecasts, trading, long generated analysis or browser provider requests. Existing 238-product recharge hub and maintenance rules remain intact.
 
-Gold API explicitly permits commercial use in third-party websites. This implementation uses quotes as displayed website content, not as a resold API or bulk-data product. Its terms do not separately grant unrestricted onward raw-data resale/sublicensing rights; do not claim those rights or add such a service. No mandatory attribution clause was found in the reviewed Gold API terms; source links are included voluntarily. ECB attribution is required, and the USD-base conversion is disclosed.
+Each connected asset shows start/end, return, high/low, source and collection date. FX uses the first/last daily reference observations inside the week, and daily reference extrema rather than intraday trading extremes. Exact observation dates and USD conversion are disclosed. BTC/ETH/gold use exact completed-week OHLC, never current quotes repurposed as historical data.
 
-The [FSC/KRX index API metadata](https://www.data.go.kr/catalog/15094807/openapi.json) explicitly lists noncommercial/no-modification terms (KOGL type 4 and third-party rights). Its [dataset page](https://www.data.go.kr/data/15094807/openapi.do) also covers indirect revenue from visits. It is not suitable for this referral website without separate rights. [FRED reuse guidance](https://fredhelp.stlouisfed.org/fred/graphs/share-my-fred-graph/cite/) requires original-provider permission for commercial sharing of copyrighted series. [SP500](https://fred.stlouisfed.org/series/SP500) and [NASDAQCOM](https://fred.stlouisfed.org/series/NASDAQCOM) remain excluded. No verified free commercial redistribution route was found for these three indices in this review. Do not purchase rights; retain the pending state.
+Official releases are shared macro context, not alleged causes of each asset's movement. At most five verified releases; fewer are shown when fewer are available. Original titles are expandable. Next-week BLS and FOMC calendars are source-linked; US release times preserve America/New_York and FOMC times are not guessed. Coverage is explicitly incomplete.
 
-## What works now
+## Current edition and gaps
 
-- 64 static Markets pages: one overview and seven asset pages in each of `ko`, `en`, `ja`, `zh-tw`, `es-419`, `es-es`, `pt-br`, `ru`.
-- Live fetch prototype: BTC, ETH, gold current quotes; USD/KRW daily reference rate and previous-reference/7-day changes.
-- S&P 500, Nasdaq **Composite**, KOSPI pages exist but prices are unavailable pending licensed provider access and verified mappings. No ETF proxies, guessed symbols or scraped exchange quotes.
-- Current-price-only BTC/ETH/gold responses contain no day change, high, low or volume. These show `—`, not zero. Optional free Gold API credentials unlock rolling 24-hour and 7-day OHLC requests. No volume is invented.
-- Unavailable asset pages are `noindex,follow` and excluded from sitemap until valid data exists. All 64 routes remain usable. Current sitemap: 1,961 URLs; total canonical HTML pages: 1,985.
+7–13 September 2026 is the last completed UTC week at collection on Sunday 20 September. The next Monday collection will cover 14–20 September.
 
-## Source research and rights
+- USD/KRW connected: five observations, 1,347.93 to 1,342.79 (−0.38%), high 1,347.93 and low 1,336.20.
+- BTC/ETH/gold adapters implemented, pending free GOLD_API_KEY in GitHub Secrets. Live authenticated OHLC is untested without the key. No account, subscription or paid contract created.
+- S&P 500, Nasdaq Composite, KOSPI pending verified free commercial display/redistribution rights. No ETF substitutes or unofficial quote scraping.
+- Two verified releases (CPI/PPI) and two next-week events (import/export prices, FOMC). This is not three to five asset-specific reasons per asset. Crypto/Korean asset-specific news and earnings calendars are not connected.
+- Missing asset pages: noindex,follow, excluded from sitemap. Current sitemap 1,945 URLs; 1,993 canonical HTML pages including eight archive pages.
 
-Checked official sources on 2026-09-20. No paid subscription or new account was created.
+## Sources and permissions
 
-| Source | Use and cost | Limits / licensing |
+Official sources reviewed 2026-09-20. Rights below concern displayed website content, not unlimited raw-data resale.
+
+| Provider | Free/commercial reuse | Budget and attribution |
 | --- | --- | --- |
-| [Gold API docs](https://gold-api.com/docs), [endpoint reference](https://gold-api.com/llms.txt) | BTC, ETH, XAU in USD. Current quotes are free, no key. Optional history/OHLC uses `GOLD_API_KEY`. | [Free: 10 history/OHLC calls/hour; Premium $10/month](https://gold-api.com/pricing). Current quotes have no stated numeric cap; avoid abusive bursts. Three quotes/hour + six history requests/hour fit the free plan. Docs request caching responses for 30 seconds. [Terms](https://gold-api.com/terms) explicitly permit commercial web use; no specific maximum retention is stated. |
-| [Frankfurter](https://frankfurter.dev/) → ECB-only provider | USD/KRW daily reference cross-rate, free, no key. One 18-day query/hour. | No monthly/daily quota; abuse throttling. Commercial API use and caching supported. [ECB reuse policy](https://www.ecb.europa.eu/stats/ecb_statistics/governance_and_quality_framework/html/usage_policy.en.html) permits commercial/noncommercial reuse of its published statistics with attribution. This is not a bank dealing rate. |
-| [Twelve Data](https://twelvedata.com/docs) | Research-only, dormant index adapter. **Blocked by free-only policy; not connected or billed.** | [Individual Basic](https://twelvedata.com/pricing): 8 credits/minute, 800/day, unsuitable for this site's commercial display. [Commercial policy](https://support.twelvedata.com/en/articles/5332349-commercial-and-personal-usage) requires appropriate business rights and further approval for international data. [March pricing notice](https://twelvedata.com/news/march-2026-updates) lists Venture $499/month; index rights can add costs. Confirm all three indices, external display, cache lifetime, public Git retention and redistribution permission before enabling. Coverage for the specific licensed account has **not** been verified. |
+| [Gold API docs](https://gold-api.com/llms.txt), [terms](https://gold-api.com/terms) | Free history key tier; commercial web/apps and third-party websites permitted. BTC/ETH/XAU OHLC pending key. | Free 10 history/OHLC requests/hour; 3/week planned. No mandatory attribution found in reviewed terms; source links included. |
+| [Frankfurter](https://frankfurter.dev/) / [ECB reuse policy](https://www.ecb.europa.eu/stats/ecb_statistics/governance_and_quality_framework/html/usage_policy.en.html) | Free, no key; commercial statistics reuse allowed with attribution and conversion disclosure. | No daily/monthly cap, abuse throttling; 1/week. ECB attribution required. |
+| [BLS](https://www.bls.gov/feed/), [reuse policy](https://www.bls.gov/bls/linksite.htm) | Official public-domain text, excluding designated images/logos. Only text/calendar facts used. | No numeric feed quota stated; 4/week. Original source links retained. |
+| [Federal Reserve](https://www.federalreserve.gov/feeds/feeds.htm), [disclaimer](https://www.federalreserve.gov/disclaimer.htm) | Public-domain official material except identified third-party content. Only official titles/calendar facts used. | No numeric feed quota stated; 2/week. Original source links retained. |
 
-Rejected for now: CoinLore's API is publicly callable, but its [general terms](https://www.coinlore.com/terms-of-use) require written consent for commercial reuse. CoinGecko's commercial plans require a paid commercial license and its [API terms](https://www.coingecko.com/en/api_terms) set cache refresh conditions; no account is configured. Unofficial Yahoo endpoints and unlicensed index scraping were not used.
+Total with free OHLC key: 10 requests/week; currently 7. Normal same-week reruns are cached and use zero provider calls. An explicit --refresh correction or workflow refresh input consumes another collection. No rapid automatic retries.
 
-Gold API is an aggregator, not a direct exchange feed. Provider responses were validated against symbol, currency, numeric fields and timestamps; this does not establish tick-level exchange accuracy. Prices are hourly snapshots and can be delayed.
+[FRED sharing guidance](https://fredhelp.stlouisfed.org/fred/graphs/share-my-fred-graph/cite/) requires original-provider permission for commercial sharing of copyrighted [SP500](https://fred.stlouisfed.org/series/SP500) and [NASDAQCOM](https://fred.stlouisfed.org/series/NASDAQCOM). [FSC/KRX metadata](https://www.data.go.kr/catalog/15094807/openapi.json) and [dataset](https://www.data.go.kr/data/15094807/openapi.do) list noncommercial/no-modification and third-party restrictions. Weekly frequency does not waive these restrictions. No paid fallback.
 
-## Data contract and failure behavior
+## Pipeline and recovery
 
-`src/markets/data.mjs` defines exactly seven identities and a provider-neutral contract. `data/markets/latest.json` stores normalized observations, never provider credentials or raw error bodies. `source`, `updatedAt` (observation), `lastSuccessAt` (retrieval), `dateOnly`, `changeBasis`, `weekComparisonAt` avoid conflating daily data with live quotes. Index units are points; gold is USD/troy ounce; FX is KRW per USD.
+npm run markets:fetch → validate → atomic weekly JSON/index → lint/build/tests → prepare existing Pages output → normal Git push → request and verify existing Pages build.
 
-`scripts/fetch-markets.mjs` handles failures per asset with a 20-second request timeout. Reject zero/null/NaN prices, wrong identity/currency, future timestamps, invalid ranges, older observations, or loss of previously present metrics. Keep the whole last-good snapshot (including its timestamps) rather than mix old changes with a new price. First-run failures remain unavailable. Log a sanitized warning and continue the site build. Write JSON atomically.
+- src/markets/weekly.mjs: UTC boundaries, exact OHLC windows, price/range/return validation, provider adapters and same-week recovery.
+- src/markets/weekly-sources.mjs: official feeds/calendars, date filtering, source-host allowlist and deduplication.
+- weekly-copy.mjs and render.mjs: eight locales, overview/detail/archive, canonical/hreflang/Article metadata.
+- Old hourly adapters, snapshots and browser freshness timer removed. No hourly workflow remains.
+- Partial failure retains only verified data for the same week, marked retained. Never relabel another week's value. If no usable prices or releases exist, retain the previous published edition. Save source status in JSON and preserve archive URLs.
+- Main and explicit automation variable are both required for production writes. Concurrent pushes fail safely; no force push or DNS/Pages source change.
 
-An explicit fetch failure marks the snapshot stale immediately. Freshness also checks quote age (crypto 3h; index/gold 96h to tolerate closed sessions; daily FX 120h) and retrieval age (3h). The browser rechecks every minute and on tab visibility without any API call. An expired snapshot never silently becomes a fresh quote. These are freshness budgets, not a full exchange holiday calendar.
+## Validation and activation
 
-No causal market commentary is generated from prices. `data/markets/context.json` can hold 2–4 brief reviewed facts per asset/locale with an official source, publication timestamp and ≤48h expiry. Unknown/unreviewed sources and untranslated facts are omitted; the page says verified context is pending. No news ingestion or AI cause generator is enabled in this MVP. This deliberate limitation avoids speculative explanations.
+Tests cover UTC/year boundaries, OHLC windows, FX dates, same-week fallback, index/no-key blocking, feed/date safety, calendar parsing, locale/archive metadata and consent-aware analytics without duplicate outbound conversions. Browser coverage includes 320/375/390/430px and recharge interactions.
 
-## Scheduled workflow (not activated)
-
-`.github/workflows/update-markets.yml`: minute 23 of each hour → checkout current main → npm ci → fetch/normalize → lint → build → tests → prepare existing root output → regular non-force commit/push → explicitly request the existing Pages build and verify its commit. GitHub-token pushes alone do not reliably trigger another Pages workflow; the [documented Pages build API](https://docs.github.com/en/rest/pages/pages#request-a-github-pages-build) handles that step. Configuration is read and checked, never changed.
-
-Two gates: branch must be main **and** repository variable `MARKETS_AUTOMATION_ENABLED=true`. Neither is activated for this preview. A concurrent main update causes a safe non-fast-forward failure; the next run starts with fresh main. No automatic merge or force push. Pages API/deployment and authenticated provider requests have not been exercised against production for this change.
-
-About 24 runs/day. [Standard GitHub-hosted runners are free for public repositories](https://docs.github.com/en/billing/concepts/product-billing/github-actions); private repositories consume the owner's allowance. Scheduled runs can be delayed, so the UI never promises exact real-time quotes. Check Actions notifications and stale timestamps. Generated files remain in the existing repository, consistent with its current deployment; longer-term retention should be revisited before enabling a commercially licensed index feed.
-
-## SEO, UI and analytics
-
-- Natural titles/descriptions in eight locales, one H1, canonical/OG production URLs, reciprocal hreflang and WebPage/Breadcrumb structured data. Sitemap includes data-backed pages; no fake price schema. Existing robots/redirects remain.
-- Lightweight independent Markets stylesheet; no chart library, extra browser API fetch or backend. No new dependency. Existing recharge CSS is unchanged.
-- One low-key cross-navigation block to games and TikTok below the market information. Recharge footer gains a small Markets link; hero/search/sticky unchanged.
-- Existing GA ID `G-1TS6F1NK5K` and consent adapter retained. New events: `market_page_view`, `market_asset_click`, `markets_to_games_click`, `markets_to_tiktok_click`; dimensions `asset`, `locale`, `page`, `source_section` plus existing device dimension. On first consent, market page view is forwarded once. One canonical `outbound_recharge_click` per outbound action; other events are diagnostics, not extra conversions.
-- In GA4, define event-scoped custom dimensions asset/locale/page/source_section as needed. Funnel: session default channel group Organic Search → market_page_view → market_asset_click → markets_to_games_click or markets_to_tiktok_click → outbound_recharge_click. Do not add internal UTM tags that would overwrite acquisition attribution. Browser tests intercept Google requests; live DebugView receipt remains **unverified**.
-
-## Before production review
-
-1. Review the private preview at `/ko/markets/` and each asset slug: `bitcoin`, `ethereum`, `sp500`, `nasdaq`, `kospi`, `usd-krw`, `gold`. The same routes work under all eight locale prefixes.
-2. Optional: create a free Gold API key and put it only in GitHub Actions secret `GOLD_API_KEY` (or ignored local `.env` for testing). This enables missing crypto/gold metrics without a paid tier. Do not place it in the chat, JSON, browser or repository.
-3. Keep all three indices pending. Connect them only after a free official source explicitly permits this commercial display and redistribution use. Paid Twelve Data setup is outside the approved MVP. A future free-source adapter needs a fresh source-specific review and tests; do not disable the free-only gate to reuse paid access.
-4. Review metrics units, timestamp freshness and empty context states. Confirm whether this four-live/three-pending preview is suitable for the initial launch or wait for indices.
-5. Only after explicit production approval, merge the reviewed branch and set `MARKETS_AUTOMATION_ENABLED=true`. Verify the first scheduled/dispatch run, resulting Pages SHA and public routes. Existing production settings and DNS need no change.
-6. Validate GA DebugView using an authorized Analytics session; it was not available during implementation.
-
-## Validation
-
-Build and lint pass. Unit/integration tests cover source normalization, invalid/partial-data fallback, publication gates, 64 localized pages, SEO, link resolution, analytics, original 238 products and maintenance ordering. Browser harness covers the original recharge flows, Markets funnel/deduplication, all seven routes, and all eight locales at 320/375/390/430px. Exact test counts and preview commit are reported with delivery.
+Before production: review Preview, add the free Gold API key if desired, verify its live OHLC response, then separately authorize review-branch merge and automation activation. This task does not enable production publication. Index rights and asset-specific editorial coverage remain gaps. GA DebugView actual receipt has not been checked in an authenticated administrator session.

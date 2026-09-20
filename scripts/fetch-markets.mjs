@@ -1,27 +1,24 @@
 import fs from 'node:fs/promises';
-import {assets,mergeQuote,validQuote} from '../src/markets/data.mjs';
-import {collect} from '../src/markets/providers.mjs';
-
-const file='data/markets/latest.json';
-const previous=JSON.parse(await fs.readFile(file,'utf8').catch(()=>'{}'));
-const config=JSON.parse(await fs.readFile('data/markets/providers.json','utf8'));
-const now=new Date();
-const items=[];
-// Serial calls keep the prototype comfortably below public API fair-use limits.
-for (const asset of assets) {
-  let candidate;
-  try {
-    candidate=await collect(asset,process.env,config,fetch,now);
-    if (!validQuote(candidate,now.getTime())) throw new Error('Invalid normalized quote');
-  } catch (error) {
-    // Only our known error classifications enter logs, never provider payloads.
-    const reason=/^(Provider HTTP \d+|Index display license, credentials or verified instrument mapping not configured|Invalid normalized quote)$/.test(error.message) ? error.message : 'Provider fetch or validation failed';
-    console.warn(`::warning::${asset.slug}: ${reason}; retaining last good quote`);
-  }
-  const result=mergeQuote(asset,previous.items?.find(x=>x.slug===asset.slug),candidate,now.toISOString());
-  items.push(result);
-  console.log(`${asset.slug}: ${result.status}, observation ${result.updatedAt || 'none'}`);
+import {assets} from '../src/markets/data.mjs';
+import {completedWeek,fetchWeeklyAsset,assembleWeekly} from '../src/markets/weekly.mjs';
+import {collectContext} from '../src/markets/weekly-sources.mjs';
+const now=new Date(),week=completedWeek(now),file=`data/markets/weeks/${week.id}.json`;
+const previous=JSON.parse(await fs.readFile(file,'utf8').catch(()=>'null'));
+if(previous?.usable&&!process.argv.includes('--refresh')&&process.env.MARKETS_REFRESH!=='true'){
+ console.log(`Weekly edition ${week.id} already exists; zero provider requests. Use --refresh for a correction.`);process.exit(0);
 }
-await fs.mkdir('data/markets',{recursive:true});
-await fs.writeFile(file+'.tmp',JSON.stringify({schemaVersion:1,generatedAt:now.toISOString(),items},null,2)+'\n');
-await fs.rename(file+'.tmp',file);
+const items=[];
+for(const asset of assets){
+ try{items.push({...await fetchWeeklyAsset(asset,week),slug:asset.slug});}
+ catch{console.warn(`::warning::${asset.slug}: weekly data unavailable; no cross-week substitution`);}
+}
+const context=await collectContext(week,previous);
+const report=assembleWeekly(week,items,context,previous,now.toISOString());
+if(!report.usable){console.warn('::warning::No usable weekly data; previous published edition retained');process.exit(0);}
+await fs.mkdir('data/markets/weeks',{recursive:true});
+await fs.writeFile(file+'.tmp',JSON.stringify(report,null,2)+'\n');await fs.rename(file+'.tmp',file);
+const indexFile='data/markets/weekly-index.json';
+const index=JSON.parse(await fs.readFile(indexFile,'utf8').catch(()=>'{}'));
+const weeks=[...new Set([...(index.weeks||[]),week.id])].sort().reverse();
+await fs.writeFile(indexFile+'.tmp',JSON.stringify({schemaVersion:2,latest:weeks[0],weeks},null,2)+'\n');await fs.rename(indexFile+'.tmp',indexFile);
+console.log(`Weekly edition ${week.id}: ${report.items.filter(x=>x.status!=='pending').length}/7 assets, ${report.issues.length} verified releases, ${report.events.length} next-week events`);

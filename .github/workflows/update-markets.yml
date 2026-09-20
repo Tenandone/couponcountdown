@@ -1,12 +1,17 @@
-name: Refresh market snapshots
+name: Publish weekly market recap
 on:
   schedule:
-    - cron: '23 * * * *'
+    - cron: '23 0 * * 1'
   workflow_dispatch:
+    inputs:
+      refresh:
+        description: Re-fetch the completed week for a correction
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
-  group: market-snapshot-refresh
+  group: weekly-market-recap
   cancel-in-progress: false
 jobs:
   refresh:
@@ -26,9 +31,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - name: Fetch and validate (retain last good data per asset)
+      - name: Fetch and validate (retain verified data for the same week)
         run: npm run markets:fetch
         env:
+          MARKETS_REFRESH: ${{ inputs.refresh || 'false' }}
           GOLD_API_KEY: ${{ secrets.GOLD_API_KEY }}
       - run: npm run lint
       - run: npm run build
@@ -39,9 +45,9 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/markets/latest.json dist assets ko en ja zh-tw es-419 es-es pt-br ru sitemap.xml index.html 404.html robots.txt _headers _redirects
+          git add data/markets/weekly-index.json data/markets/weeks dist assets ko en ja zh-tw es-419 es-es pt-br ru sitemap.xml index.html 404.html robots.txt _headers _redirects
           if ! git diff --cached --quiet; then
-            git commit -m 'Refresh market snapshots'
+            git commit -m 'Publish weekly market recap'
             git push origin HEAD:main
           fi
       - name: Request and verify existing GitHub Pages build

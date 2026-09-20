@@ -4,10 +4,13 @@ import {createHash} from 'node:crypto';
 import {locales,localeOrder} from '../src/locales.mjs';
 import {home,detail,privacy,escape,iconHead} from '../src/render.mjs';
 import {marketPage} from '../src/markets/render.mjs';
-import {assets as marketAssets,mergeQuote,stateOf} from '../src/markets/data.mjs';
-const marketSnapshot=JSON.parse(await fs.readFile('data/markets/latest.json','utf8').catch(()=>'{}'));
-const markets={items:marketAssets.map(a=>marketSnapshot.items?.find(x=>x.slug===a.slug)||mergeQuote(a,null,null))};
-const marketContext=JSON.parse(await fs.readFile('data/markets/context.json','utf8'));
+import {assets as marketAssets} from '../src/markets/data.mjs';
+import {completedWeek,emptyWeekly,validWeekly} from '../src/markets/weekly.mjs';
+const weeklyIndex=JSON.parse(await fs.readFile('data/markets/weekly-index.json','utf8').catch(()=>'{}'));
+const archiveIds=(weeklyIndex.weeks||[]).filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x));
+const archives=await Promise.all(archiveIds.map(id=>fs.readFile('data/markets/weeks/'+id+'.json','utf8').then(JSON.parse)));
+const fallbackWeek=completedWeek();
+const markets=archives.find(x=>x.week.id===weeklyIndex.latest)||{week:fallbackWeek,collectedAt:new Date().toISOString(),items:marketAssets.map(a=>emptyWeekly(a,fallbackWeek)),issues:[],events:[]};
 const catalog=JSON.parse(await fs.readFile('data/catalog.json','utf8'));
 const overrides=JSON.parse(await fs.readFile('data/game-content.json','utf8').catch(()=>'{}'));
 const games=catalog.items.map(g=>({...g,...overrides[g.slug]}));
@@ -32,8 +35,9 @@ await fs.cp('public/games','dist/games',{recursive:true});await fs.copyFile('pub
 for(const file of ['CNAME','naver7a9341e4440758476c83a2a85ef02628.html'])await fs.copyFile(file,'dist/'+file);
 const urls=[];
 for(const l of localeOrder.filter(x=>locales[x])){
- await write(`${l}/markets/index.html`,marketPage(l,markets,marketContext,origin,assets,ga));urls.push({l,path:'markets/'});
- for(const a of markets.items){await write(`${l}/markets/${a.slug}/index.html`,marketPage(l,markets,marketContext,origin,assets,ga,a.slug));if(stateOf(a)!=='unavailable')urls.push({l,path:`markets/${a.slug}/`});}
+ await write(`${l}/markets/index.html`,marketPage(l,markets,origin,assets,ga,{archiveIds}));urls.push({l,path:'markets/'});
+ for(const a of markets.items){await write(`${l}/markets/${a.slug}/index.html`,marketPage(l,markets,origin,assets,ga,{slug:a.slug,archiveIds}));if(validWeekly(a,markets.week))urls.push({l,path:`markets/${a.slug}/`});}
+ for(const report of archives){await write(`${l}/markets/weeks/${report.week.id}/index.html`,marketPage(l,report,origin,assets,ga,{archive:true,archiveIds}));urls.push({l,path:`markets/weeks/${report.week.id}/`});}
  await write(l+'/index.html',home(l,games,origin,assets,ga));urls.push({l,path:''});
  await write(l+'/privacy/index.html',privacy(l,origin,assets,ga));urls.push({l,path:'privacy/'});
  for(const g of games){await write(`${l}/games/${g.slug}/index.html`,detail(l,g,games,origin,assets,ga));urls.push({l,path:`games/${g.slug}/`});}
@@ -45,7 +49,7 @@ await write('robots.txt',`User-agent: *\nAllow: /\nDisallow: /dist/\nDisallow: /
 const redirects=JSON.parse(await fs.readFile('data/redirects.json','utf8'));
 await write('_redirects',Object.entries(redirects).map(([from,to])=>`${from} ${to} 301`).join('\n')+'\n');
 await write('_headers','/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n/games/*\n  Cache-Control: public, max-age=86400, stale-while-revalidate=604800\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: SAMEORIGIN\n');
-console.log(`Built 64 Markets pages plus the recharge hub; ${urls.length+1} sitemap URLs, ${games.length} products, ${Object.keys(locales).length} locales. JS ${((await fs.stat('dist'+assets.js)).size/1024).toFixed(1)} KiB.`);
+console.log(`Built weekly Markets pages plus the recharge hub; ${urls.length+1} sitemap URLs, ${games.length} products, ${Object.keys(locales).length} locales. JS ${((await fs.stat('dist'+assets.js)).size/1024).toFixed(1)} KiB.`);
 
 await write('.nojekyll','');
 // GitHub Pages uses the existing main / source. Static redirect stubs preserve legacy URLs.

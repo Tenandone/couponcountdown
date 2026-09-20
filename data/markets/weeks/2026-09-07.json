@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "week": {
+    "id": "2026-09-07",
+    "start": "2026-09-07T00:00:00.000Z",
+    "endExclusive": "2026-09-14T00:00:00.000Z",
+    "endDate": "2026-09-13",
+    "nextEndExclusive": "2026-09-21T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "collectedAt": "2026-09-20T10:37:22.934Z",
+  "items": [
+    {
+      "slug": "bitcoin",
+      "symbol": "BTC",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-09-07",
+      "startPrice": null,
+      "endPrice": null,
+      "changePercent": null,
+      "high": null,
+      "low": null,
+      "source": null,
+      "status": "pending",
+      "reason": "free-key-required"
+    },
+    {
+      "slug": "ethereum",
+      "symbol": "ETH",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-09-07",
+      "startPrice": null,
+      "endPrice": null,
+      "changePercent": null,
+      "high": null,
+      "low": null,
+      "source": null,
+      "status": "pending",
+      "reason": "free-key-required"
+    },
+    {
+      "slug": "sp500",
+      "symbol": "S&P 500",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-09-07",
+      "startPrice": null,
+      "endPrice": null,
+      "changePercent": null,
+      "high": null,
+      "low": null,
+      "source": null,
+      "status": "pending",
+      "reason": "rights-pending"
+    },
+    {
+      "slug": "nasdaq",
+      "symbol": "Nasdaq Composite",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-09-07",
+      "startPrice": null,
+      "endPrice": null,
+      "changePercent": null,
+      "high": null,
+      "low": null,
+      "source": null,
+      "status": "pending",
+      "reason": "rights-pending"
+    },
+    {
+      "slug": "kospi",
+      "symbol": "KOSPI",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-09-07",
+      "startPrice": null,
+      "endPrice": null,
+      "changePercent": null,
+      "high": null,
+      "low": null,
+      "source": null,
+      "status": "pending",
+      "reason": "rights-pending"
+    },
+    {
+      "slug": "usd-krw",
+      "symbol": "USD/KRW",
+      "assetType": "fx",
+      "currency": "KRW",
+      "unit": "per-usd",
+      "weekId": "2026-09-07",
+      "startPrice": 1347.93,
+      "endPrice": 1342.79,
+      "changePercent": -0.381325439748359,
+      "high": 1347.93,
+      "low": 1336.2,
+      "source": {
+        "name": "ECB via Frankfurter",
+        "url": "https://www.ecb.europa.eu/stats/exchange_rates/html/index.en.html"
+      },
+      "status": "ready",
+      "reason": "unavailable",
+      "observedStart": "2026-09-07",
+      "observedEnd": "2026-09-11",
+      "observations": 5,
+      "rangeBasis": "daily-reference"
+    },
+    {
+      "slug": "gold",
+      "symbol": "XAU",
+      "assetType": "commodity",
+      "currency": "USD",
+      "unit": "troy-oz",
+      "weekId": "2026-09-07",
+      "startPrice": null,
+      "endPrice": null,
+      "changePercent": null,
+      "high": null,
+      "low": null,
+      "source": null,
+      "status": "pending",
+      "reason": "free-key-required"
+    }
+  ],
+  "issues": [
+    {
+      "kind": "cpi",
+      "title": "CPI for all items increases 0.4% in August; gasoline rises",
+      "sourceUrl": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
+      "sourceName": "U.S. Bureau of Labor Statistics",
+      "publishedAt": "2026-09-11T11:50:40.968Z",
+      "scope": "shared-macro",
+      "feedId": "cpi"
+    },
+    {
+      "kind": "ppi",
+      "title": "PPI for final demand moves up 0.4% in August; goods advance 1.1%, services rise 0.1%",
+      "sourceUrl": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
+      "sourceName": "U.S. Bureau of Labor Statistics",
+      "publishedAt": "2026-09-10T11:50:35.512Z",
+      "scope": "shared-macro",
+      "feedId": "ppi"
+    }
+  ],
+  "events": [
+    {
+      "kind": "trade-prices",
+      "title": "U.S. Import and Export Price Indexes",
+      "date": "2026-09-16",
+      "localTime": "08:30",
+      "timezone": "America/New_York",
+      "sourceUrl": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "sourceName": "U.S. Bureau of Labor Statistics",
+      "feedId": "bls-calendar"
+    },
+    {
+      "kind": "fomc",
+      "title": "FOMC meeting — final day",
+      "date": "2026-09-16",
+      "localTime": null,
+      "timezone": "America/New_York",
+      "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "sourceName": "Federal Reserve Board",
+      "feedId": "fed-calendar"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "id": "cpi",
+      "status": "ok"
+    },
+    {
+      "id": "ppi",
+      "status": "ok"
+    },
+    {
+      "id": "employment",
+      "status": "ok"
+    },
+    {
+      "id": "fed",
+      "status": "ok"
+    },
+    {
+      "id": "bls-calendar",
+      "status": "ok"
+    },
+    {
+      "id": "fed-calendar",
+      "status": "ok"
+    }
+  ],
+  "usable": true
+}

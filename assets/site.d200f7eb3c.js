@@ -93,13 +93,6 @@ function click(event){
 document.addEventListener('click',click);document.addEventListener('auxclick',click);
 if(body.dataset.marketPage)track('market_page_view',{...dimensions(),asset:body.dataset.marketPage,source_section:'markets'});
 else track('hub_view',{locale,page:location.pathname});
-// A static snapshot can outlive its build. Re-evaluate staleness without fetching prices.
-function refreshMarketAge(){for(const el of document.querySelectorAll('[data-quote-state]')){
-  if(el.dataset.quoteState==='unavailable')continue;
-  if(Date.now()-Date.parse(el.dataset.updated)>Number(el.dataset.maxAge)*3600000||Date.now()-Date.parse(el.dataset.lastSuccess)>3*3600000){el.dataset.quoteState='stale';el.classList.add('stale');el.textContent=el.dataset.staleLabel;}
-}}
-refreshMarketAge();
-if(body.dataset.marketPage){setInterval(refreshMarketAge,60000);document.addEventListener('visibilitychange',refreshMarketAge);}
 if(search&&document.modelContext?.registerTool){
   const lifecycle=new AbortController();
   try{Promise.resolve(document.modelContext.registerTool({
