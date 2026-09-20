@@ -20,5 +20,32 @@ document.querySelector('#run').onclick=async()=>{results.replaceChildren();try{
  await check('Saved language routes only the root, preserving explicit locale links',async()=>{localStorage.setItem('cc-locale','"ja"');await load('/');await new Promise(resolve=>{if(frame.contentWindow.location.pathname==='/ja/')resolve();else frame.onload=resolve;});assert(frame.contentWindow.location.pathname==='/ja/','Root did not respect preference');await load('/en/?qa=1');assert(frame.contentWindow.location.pathname==='/en/','Explicit locale was overwritten');});
  await check('Deep-link locale switch preserves the selected game',async()=>{doc=await load('/ko/games/tiles-survive/');assert(doc.querySelector('[data-language="ja"]').getAttribute('href')==='/ja/games/tiles-survive/','Game context lost');assert(doc.querySelector('.product [data-outbound]').dataset.position==='detail_hero','Wrong detail position');});
  await check('404 and legacy redirects',async()=>{let r=await fetch('/wos/',{redirect:'follow'});assert(r.url.endsWith('/en/games/whiteout-survival/'),'Legacy path not preserved');r=await fetch('/missing-page/');assert(r.status===404,'Soft 404');});
+
+ await check('Markets rows, locale context, consent and funnel events',async()=>{
+  localStorage.setItem('cc-consent','"no"');doc=await load('/en/markets/?qa=1');
+  assert(doc.querySelectorAll('.market-row').length===7,'Missing asset');
+  doc.addEventListener('click',e=>{if(e.target.closest('[data-market-event]'))e.preventDefault();},true);
+  doc.querySelector('[data-consent="yes"]').click();doc.querySelector('[data-consent="yes"]').click();
+  for(const name of ['market_asset_click','markets_to_games_click','markets_to_tiktok_click'])doc.querySelector('[data-market-event="'+name+'"]').click();
+  for(const name of ['market_page_view','market_asset_click','markets_to_games_click','markets_to_tiktok_click','outbound_recharge_click'])assert(frame.contentWindow.dataLayer.filter(e=>e[0]==='event'&&e[1]===name).length===1,'Duplicate/missing '+name);
+  doc=await load('/ja/markets/bitcoin/?qa=1');assert(doc.querySelector('[data-language="ko"]').getAttribute('href')==='/ko/markets/bitcoin/','Market context lost');
+  assert(!doc.querySelector('.mobile-sticky'),'Markets must not overlay a recharge CTA');
+ });
+ await check('Markets at 320/375/390/430px in every locale',async()=>{
+  localStorage.setItem('cc-consent','"no"');
+  for(const l of ['ko','en','ja','zh-tw','es-419','es-es','pt-br','ru'])for(const width of [320,375,390,430]){
+   frame.style.width=width+'px';doc=await load('/'+l+'/markets/?qa=1');
+   assert(doc.documentElement.scrollWidth<=doc.documentElement.clientWidth,l+' hub overflow '+width);
+   doc=await load('/'+l+'/markets/usd-krw/?qa=1');assert(doc.documentElement.scrollWidth<=doc.documentElement.clientWidth,l+' detail overflow '+width);
+   for(const el of doc.querySelectorAll('main a,main h1,main dd,header .brand'))assert(el.getBoundingClientRect().right<=doc.documentElement.clientWidth+1,l+' clipped '+el.textContent);
+  }
+  frame.style.width='390px';
+ });
+ await check('All seven asset routes retain source or explicit pending state',async()=>{
+  for(const slug of ['bitcoin','ethereum','sp500','nasdaq','kospi','usd-krw','gold']){
+   doc=await load('/ko/markets/'+slug+'/?qa=1');assert(doc.querySelector('h1'),'Missing page');
+   assert(doc.querySelector('.market-status'),'Missing data status');assert(doc.querySelector('.market-method'),'Missing methodology');
+  }
+ });
 }finally{for(const [key,value]of backup){if(value===null)localStorage.removeItem(key);else localStorage.setItem(key,value);}document.body.dataset.done='true';}};
 </script></html>
