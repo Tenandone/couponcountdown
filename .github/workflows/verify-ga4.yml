@@ -1,0 +1,29 @@
+name: Verify GA4 collector
+on:
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: Reviewed commit to verify
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.revision }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/fetch-stats.mjs
+        env:
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-ga4-stats
+          path: data/stats.json
+          retention-days: 3
