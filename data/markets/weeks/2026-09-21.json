@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 3,
+  "week": {
+    "id": "2026-09-21",
+    "start": "2026-09-21T00:00:00.000Z",
+    "endExclusive": "2026-09-28T00:00:00.000Z",
+    "endDate": "2026-09-27",
+    "nextEndExclusive": "2026-10-05T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "contextWeek": {
+    "id": "2026-09-14",
+    "start": "2026-09-14T00:00:00.000Z",
+    "endExclusive": "2026-09-21T00:00:00.000Z",
+    "endDate": "2026-09-20",
+    "nextEndExclusive": "2026-09-28T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "publishedAt": "2026-09-21T03:37:23.308Z",
+  "collectedAt": "2026-09-21T03:37:23.308Z",
+  "items": [
+    {
+      "asset": "bitcoin",
+      "slug": "bitcoin",
+      "symbol": "BTC",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-09-21",
+      "status": "ready",
+      "price": 81492,
+      "previousPrice": 80441,
+      "changePercent": 1.3065476560460532,
+      "previousCollectedAt": "2026-09-20T11:37:10.409Z",
+      "collectedAt": "2026-09-21T03:37:23.308Z",
+      "observedAt": "2026-09-21T03:37:01Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "ethereum",
+      "slug": "ethereum",
+      "symbol": "ETH",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-09-21",
+      "status": "ready",
+      "price": 2668.939941,
+      "previousPrice": 2574.199951,
+      "changePercent": 3.680366397458612,
+      "previousCollectedAt": "2026-09-20T11:37:10.409Z",
+      "collectedAt": "2026-09-21T03:37:23.308Z",
+      "observedAt": "2026-09-21T03:37:02Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "sp500",
+      "slug": "sp500",
+      "symbol": "S&P 500",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-09-21",
+      "status": "pending"
+    },
+    {
+      "asset": "nasdaq",
+      "slug": "nasdaq",
+      "symbol": "Nasdaq Composite",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-09-21",
+      "status": "pending"
+    },
+    {
+      "asset": "kospi",
+      "slug": "kospi",
+      "symbol": "KOSPI",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-09-21",
+      "status": "pending"
+    },
+    {
+      "asset": "usd-krw",
+      "slug": "usd-krw",
+      "symbol": "USD/KRW",
+      "assetType": "fx",
+      "currency": "KRW",
+      "unit": "per-usd",
+      "weekId": "2026-09-21",
+      "status": "ready",
+      "price": 1388.1,
+      "previousPrice": 1388.1,
+      "changePercent": 0,
+      "previousCollectedAt": "2026-09-20T11:37:10.409Z",
+      "collectedAt": "2026-09-21T03:37:23.308Z",
+      "observedAt": "2026-09-18T00:00:00Z",
+      "source": {
+        "name": "ECB via Frankfurter",
+        "url": "https://www.ecb.europa.eu/stats/exchange_rates/html/index.en.html"
+      }
+    },
+    {
+      "asset": "gold",
+      "slug": "gold",
+      "symbol": "XAU",
+      "assetType": "commodity",
+      "currency": "USD",
+      "unit": "troy-oz",
+      "weekId": "2026-09-21",
+      "status": "ready",
+      "price": 4366.600098,
+      "previousPrice": 4379,
+      "changePercent": -0.2831674354875524,
+      "previousCollectedAt": "2026-09-20T11:37:10.409Z",
+      "collectedAt": "2026-09-21T03:37:23.308Z",
+      "observedAt": "2026-09-21T03:37:01Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    }
+  ],
+  "issues": [
+    {
+      "kind": "fed",
+      "title": "Federal Reserve issues FOMC statement",
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "sourceName": "Federal Reserve Board",
+      "publishedAt": "2026-09-16T18:00:00.000Z",
+      "scope": "shared-macro",
+      "feedId": "fed"
+    },
+    {
+      "kind": "fed",
+      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting",
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916b.htm",
+      "sourceName": "Federal Reserve Board",
+      "publishedAt": "2026-09-16T18:00:00.000Z",
+      "scope": "shared-macro",
+      "feedId": "fed"
+    }
+  ],
+  "events": [],
+  "sourceStatus": [
+    {
+      "id": "cpi",
+      "status": "ok"
+    },
+    {
+      "id": "ppi",
+      "status": "ok"
+    },
+    {
+      "id": "employment",
+      "status": "ok"
+    },
+    {
+      "id": "fed",
+      "status": "ok"
+    },
+    {
+      "id": "bls-calendar",
+      "status": "failed"
+    },
+    {
+      "id": "fed-calendar",
+      "status": "ok"
+    }
+  ],
+  "publishable": true,
+  "usable": true
+}
