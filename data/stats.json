@@ -7,5 +7,7 @@
   "metric": "page_view",
   "propertyTimeZone": "Asia/Seoul",
   "totalStartDate": "2026-03-15",
-  "staleAfterHours": 3
+  "staleAfterHours": 3,
+  "actualPageViews": 656,
+  "displayGrowthCount": 656000
 }

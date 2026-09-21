@@ -34,3 +34,6 @@ API/auth/schema/timezone errors leave the existing file byte-for-byte unchanged 
 Official references: https://developers.google.com/analytics/devguides/reporting/data/v1/basics and https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1beta/properties
 
 Browser integration: 15 checks passed, including all 8 locales at 320/375/390/430px and counter height before/after load. The initial es-419 320px height shift was fixed and the complete browser suite rerun successfully.
+
+## Growth Count display (2026-09-21)
+The GA4 query is unchanged. totalPageViews remains the actual aggregate for compatibility; actualPageViews mirrors it. After each successful collection, displayGrowthCount is computed as actualPageViews * 1000 with a safe-integer guard. Public labels distinguish Growth Count from today's actual page views in all eight locales. Numbers use locale-specific thousands separators. Failed collection preserves the whole prior JSON, including the derived value.

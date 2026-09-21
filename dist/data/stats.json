@@ -1,11 +1,13 @@
 {
   "totalPageViews": 656,
   "todayPageViews": 7,
-  "updatedAt": "2026-09-21T17:10:07+09:00",
+  "updatedAt": "2026-09-21T17:16:33+09:00",
   "reportingDate": "2026-09-21",
   "source": "GA4",
   "metric": "page_view",
   "propertyTimeZone": "Asia/Seoul",
   "totalStartDate": "2026-03-15",
-  "staleAfterHours": 3
+  "staleAfterHours": 3,
+  "actualPageViews": 656,
+  "displayGrowthCount": 656000
 }

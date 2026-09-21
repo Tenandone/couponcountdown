@@ -1,9 +1,9 @@
 import fs from 'node:fs/promises';
-import {authorize,collectStats,validStats} from './ga4-stats.mjs';
+import {authorize,collectStats,validStats,withGrowthCount} from './ga4-stats.mjs';
 const output='data/stats.json';
 try{
  const token=await authorize(process.env.GA4_SERVICE_ACCOUNT_JSON);
- const stats=await collectStats(token);
+ const stats=withGrowthCount(await collectStats(token));
  const previous=JSON.parse(await fs.readFile(output,'utf8').catch(()=>'null'));
  if(validStats(previous)&&previous.totalPageViews>0&&stats.totalPageViews===0)throw new Error('Unexpected empty lifetime report');
  await fs.mkdir('data',{recursive:true});await fs.writeFile(output+'.tmp',JSON.stringify(stats,null,2)+'\n');await fs.rename(output+'.tmp',output);

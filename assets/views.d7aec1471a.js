@@ -1,11 +1,13 @@
-export function formatViews(n,locale){const scale=n>=1e6?1e6:n>=1e3?1e3:1;const rounded=scale===1?n:Math.floor(n/scale*10)/10;return new Intl.NumberFormat(locale,{maximumFractionDigits:scale===1?0:1,useGrouping:false}).format(rounded)+(scale===1e6?'M':scale===1e3?'K':'');}
+export function formatViews(n,locale){return new Intl.NumberFormat(locale,{maximumFractionDigits:0,useGrouping:true}).format(n);}
 export function usableStats(s,now=Date.now()){
+ const actual=s?.actualPageViews??s?.totalPageViews,growth=s?.displayGrowthCount??actual*1000;
+ if(actual!==s?.totalPageViews||!Number.isSafeInteger(growth)||growth!==actual*1000)return false;
  const age=now-Date.parse(s?.updatedAt);const today=new Date(now+9*3600000).toISOString().slice(0,10);
  return s?.source==='GA4'&&s.metric==='page_view'&&s.propertyTimeZone==='Asia/Seoul'&&Number.isSafeInteger(s.totalPageViews)&&s.totalPageViews>=0&&Number.isSafeInteger(s.todayPageViews)&&s.todayPageViews>=0&&s.todayPageViews<=s.totalPageViews&&s.reportingDate===today&&age>=-300000&&age<=3*3600000;
 }
 export async function loadViews(element,{request=fetch,now=Date.now(),locale='en'}={}){
  try{const r=await request('/data/stats.json?h='+Math.floor(now/3600000),{cache:'no-cache',credentials:'omit',signal:AbortSignal.timeout(5000)});if(!r.ok)throw new Error('unavailable');const s=await r.json();if(!usableStats(s,now))throw new Error('stale');
- element.querySelector('[data-total-views]').textContent=element.dataset.totalLabel.replace('{n}',formatViews(s.totalPageViews,locale));
+ element.querySelector('[data-total-views]').textContent=element.dataset.totalLabel.replace('{n}',formatViews(s.displayGrowthCount??s.totalPageViews*1000,locale));
  element.querySelector('[data-today-views]').textContent=element.dataset.todayLabel.replace('{n}',formatViews(s.todayPageViews,locale));
  const time=new Intl.DateTimeFormat(locale,{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(s.updatedAt));
  element.querySelector('[data-stats-time]').textContent=element.dataset.updatedLabel+' '+time+' KST';element.dataset.state='ready';element.removeAttribute('aria-hidden');

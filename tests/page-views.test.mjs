@@ -5,12 +5,12 @@ import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {JSDOM} from 'jsdom';
-import {collectStats,count,kstDate,query} from '../scripts/ga4-stats.mjs';
+import {collectStats,count,kstDate,query,withGrowthCount} from '../scripts/ga4-stats.mjs';
 import {formatViews,usableStats,loadViews} from '../public/page-views.mjs';
 import {viewCounter} from '../src/page-views.mjs';
 const now=new Date('2026-09-21T05:00:00Z');
 const report=n=>({metricHeaders:[{name:'eventCount',type:'TYPE_INTEGER'}],metadata:{timeZone:'Asia/Seoul'},rowCount:1,rows:[{metricValues:[{value:String(n)}]}]});
-const fixture={totalPageViews:12841,todayPageViews:438,updatedAt:'2026-09-21T14:00:00+09:00',reportingDate:'2026-09-21',source:'GA4',metric:'page_view',propertyTimeZone:'Asia/Seoul'};
+const fixture={actualPageViews:12841,displayGrowthCount:12841000,totalPageViews:12841,todayPageViews:438,updatedAt:'2026-09-21T14:00:00+09:00',reportingDate:'2026-09-21',source:'GA4',metric:'page_view',propertyTimeZone:'Asia/Seoul'};
 test('GA report counts only production page_view events and uses KST date boundaries',async()=>{
  const calls=[];const responses=[{timeZone:'Asia/Seoul',createTime:'2025-01-01T16:00:00Z'},{dataStreams:[{webStreamData:{measurementId:'G-1TS6F1NK5K'}}]},{reports:[report(12841),report(438)]}];
  const actual=await collectStats('test-token',{now,request:async(url,options)=>{calls.push({url,options});return{ok:true,json:async()=>responses.shift()};}});
@@ -33,13 +33,13 @@ test('failed credential lookup preserves last good JSON byte for byte and create
  }finally{await fs.rm(dir,{recursive:true,force:true});}
 });
 test('formatting boundaries, stale cutoff and KST midnight prevent incorrect today display',()=>{
- for(const [n,expected] of [[0,'0'],[999,'999'],[1000,'1K'],[12841,'12.8K'],[999999,'999.9K'],[1000000,'1M']])assert.equal(formatViews(n,'en'),expected);
- assert.equal(formatViews(12841,'es-ES'),'12,8K');assert.ok(usableStats(fixture,+now));assert.ok(!usableStats(fixture,+now+4*3600000));assert.ok(!usableStats({...fixture,reportingDate:'2026-09-20'},+now));assert.ok(!usableStats({...fixture,todayPageViews:null},+now));
+ for(const [n,expected] of [[0,'0'],[999,'999'],[1000,'1,000'],[12841,'12,841'],[999999,'999,999'],[1000000,'1,000,000']])assert.equal(formatViews(n,'en'),expected);
+ assert.equal(formatViews(12841,'es-ES'),'12.841');assert.ok(usableStats(fixture,+now));assert.ok(!usableStats(fixture,+now+4*3600000));assert.ok(!usableStats({...fixture,reportingDate:'2026-09-20'},+now));assert.ok(!usableStats({...fixture,todayPageViews:null},+now));
 });
 test('all eight locales render real-response values, KST timestamp, and hide on failed fetch',async()=>{
  for(const locale of ['ko','en','ja','zh-tw','es-419','es-es','pt-br','ru']){
   const dom=new JSDOM(viewCounter(locale));try{const el=dom.window.document.querySelector('[data-page-views]');assert.ok(!el.textContent.includes('12841'));
-   await loadViews(el,{now:+now,locale,request:async()=>({ok:true,json:async()=>fixture})});assert.equal(el.dataset.state,'ready');assert.ok(el.textContent.includes('438'));assert.ok(el.textContent.includes('KST'));
+   await loadViews(el,{now:+now,locale,request:async()=>({ok:true,json:async()=>fixture})});assert.equal(el.dataset.state,'ready');assert.ok(el.textContent.includes('438'));assert.ok(el.querySelector('[data-total-views]').textContent.includes(formatViews(12841000,locale))); assert.ok(el.textContent.includes('KST'));
    await loadViews(el,{now:+now,locale,request:async()=>{throw new Error('offline');}});assert.equal(el.dataset.state,'unavailable');assert.equal(el.getAttribute('aria-hidden'),'true');
   }finally{dom.window.close();}
  }
@@ -54,4 +54,9 @@ test('each full-page navigation initializes page_view once; redirect stubs never
   }finally{dom.window.close();}
  }
  for(const route of ['','wos/','kingshot/'])assert.ok(!(await fs.readFile('dist/'+route+'index.html','utf8')).includes('data-ga='));
+});
+
+test('growth calculation preserves actual totals and today, updates each run, and rejects overflow',()=>{
+ for(const n of [656,657]){const raw={...fixture,totalPageViews:n};const result=withGrowthCount(raw);assert.equal(result.actualPageViews,n);assert.equal(result.displayGrowthCount,n*1000);assert.equal(result.todayPageViews,438);assert.deepEqual(raw,{...fixture,totalPageViews:n});assert.ok(usableStats(result,+now));assert.ok(!usableStats({...result,displayGrowthCount:1},+now));}
+ assert.throws(()=>withGrowthCount({...fixture,totalPageViews:Number.MAX_SAFE_INTEGER}),/Unsafe/);
 });

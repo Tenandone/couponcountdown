@@ -23,6 +23,12 @@ export function count(report){
  const raw=report.rows[0].metricValues?.[0]?.value;if(!/^\d+$/.test(raw||''))throw new Error('Non-integer page views');const n=Number(raw);if(!Number.isSafeInteger(n))throw new Error('Unsafe integer');return n;
 }
 export function validStats(s){return s?.source==='GA4'&&s.metric==='page_view'&&s.propertyTimeZone==='Asia/Seoul'&&Number.isSafeInteger(s.totalPageViews)&&s.totalPageViews>=0&&Number.isSafeInteger(s.todayPageViews)&&s.todayPageViews>=0&&s.todayPageViews<=s.totalPageViews&&Number.isFinite(Date.parse(s.updatedAt))&&/^\d{4}-\d{2}-\d{2}$/.test(s.reportingDate||'');}
+export function withGrowthCount(stats){
+ if(!validStats(stats))throw new Error('Invalid stats totals');
+ const actualPageViews=stats.totalPageViews,displayGrowthCount=actualPageViews*1000;
+ if(!Number.isSafeInteger(displayGrowthCount))throw new Error('Unsafe integer growth count');
+ return {...stats,actualPageViews,displayGrowthCount};
+}
 export async function collectStats(token,{request=fetch,now=new Date()}={}){
  const headers={Authorization:'Bearer '+token,'Content-Type':'application/json'};
  const property=await call(`https://analyticsadmin.googleapis.com/v1beta/properties/${PROPERTY}`,{headers},request);
