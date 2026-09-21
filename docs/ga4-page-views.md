@@ -1,6 +1,6 @@
 # GA4 page views deployment runbook
 
-Status: implemented on codex/ga4-page-views; real API verification and production release blocked until a GA4 read credential is provided. No production stats file or placeholder counts have been created.
+Status: real GA4 connection verified on 2026-09-21. GitHub manual verification run 35576469334 succeeded. Existing project turing-nature-473308-t4; dedicated service account has GA4 Viewer with cost/revenue restrictions and no Cloud IAM roles. Secret registered; downloaded key removed after encrypted transfer.
 
 ## One-time account setup
 
@@ -13,13 +13,13 @@ Status: implemented on codex/ga4-page-views; real API verification and productio
 
 The Data API eventCount metric is filtered to eventName=page_view and hostName in couponcountdown.com / www.couponcountdown.com. This includes hub, games, Markets, archives and locale pages, excluding previews. It does not estimate unconsented or blocked traffic. Total begins at the property's creation date; GA processing, historical availability and corrections affect totals. Today is the current KST calendar day, not a realtime API guarantee.
 
-The collector first reads the property timezone and validates the Measurement ID. It requires Asia/Seoul and verifies report metadata. If timezone differs it fails without replacing data: property-day aggregates cannot reliably be converted to KST after aggregation. Do not silently change the GA property timezone; resolve the reporting basis with the owner before activation. Current actual timezone is unverified without credentials.
+The collector first reads the property timezone and validates the Measurement ID. It requires Asia/Seoul and verifies report metadata. If timezone differs it fails without replacing data: property-day aggregates cannot reliably be converted to KST after aggregation. Do not silently change the GA property timezone; resolve the reporting basis with the owner before activation. Actual Admin API and report metadata both confirm Asia/Seoul.
 
 Public JSON fields: totalPageViews (integer), todayPageViews (integer), updatedAt (ISO8601 +09:00), reportingDate (KST YYYY-MM-DD), source=GA4, metric=page_view, propertyTimeZone, totalStartDate, staleAfterHours=3. No raw events, identifiers or credentials are published.
 
 ## Release sequence
 
-GitHub requires a workflow_dispatch workflow to be registered on the default branch. Once credentials are ready, register the manual-only/disabled-by-variable workflow and collector on main first (without exposing the counter). Run **Update GA4 page views** manually and inspect its real stats.json and success. Only after that succeeds merge the counter/build changes, run build/test and prepare:pages, push normally, verify the Pages SHA and production pages. Finally set GA4_STATS_ENABLED=true and verify a scheduled run. This bootstrap registration has NOT been performed.
+GitHub requires a workflow_dispatch workflow to be registered on the default branch. Once credentials are ready, register the manual-only/disabled-by-variable workflow and collector on main first (without exposing the counter). Run **Update GA4 page views** manually and inspect its real stats.json and success. Only after that succeeds merge the counter/build changes, run build/test and prepare:pages, push normally, verify the Pages SHA and production pages. Finally set GA4_STATS_ENABLED=true and verify a scheduled run. Manual verification registration was performed at 82cf1a4d98813ebc37c4626469b67f46e1632f65 without changing production HTML.
 
 Cron `0 * * * *` is UTC hourly, corresponding to every KST hour at :00. GitHub schedules can be delayed. Each run requests an OAuth token, two Admin resources and one batch containing two Data reports. No npm install, static generator or site build runs hourly. The existing legacy Pages main/root delivery still republishes the static files after only data/stats.json changes. CNAME, DNS and Pages source remain untouched.
 
@@ -29,7 +29,7 @@ API/auth/schema/timezone errors leave the existing file byte-for-byte unchanged 
 
 ## Verification
 
-31 automated tests passed, including API response mocks, production event filters, KST midnight, preserved fallback file, 8 locales, K/M formatting, and one GA config per full page navigation. Mock values exist only in test fixtures; they are not production stats. Real API requests, property timezone, actual totals, workflow_dispatch, scheduled execution and GA DebugView remain unverified until credentials are configured.
+31 automated tests passed, including API response mocks, production event filters, KST midnight, preserved fallback file, 8 locales, K/M formatting, and one GA config per full page navigation. Mock values exist only in test fixtures; they are not production stats. Real API and workflow_dispatch succeeded: 656 total / 7 today at 2026-09-21T17:10:07+09:00. Scheduled execution and GA DebugView receipt require separate verification.
 
 Official references: https://developers.google.com/analytics/devguides/reporting/data/v1/basics and https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1beta/properties
 
