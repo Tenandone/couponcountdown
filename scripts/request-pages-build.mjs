@@ -24,7 +24,8 @@ for(let attempt=0;attempt<24;attempt++){
     if(statuses[0]?.state==='success'){console.log('Pages deployment succeeded '+expected);process.exit(0);}
   }
   if(build.commit!==expected)continue;
-  if(build.status==='errored')throw new Error('Pages build failed');
+  // A superseded legacy build may be cancelled while its replacement deploys.
+  // Keep checking the matching deployment until the bounded deadline.
   if(build.status==='built'){console.log(`Pages built ${expected}`);process.exit(0);}
 }
 throw new Error('Pages did not confirm the expected snapshot within 6 minutes');
