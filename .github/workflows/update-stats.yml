@@ -16,6 +16,7 @@ jobs:
     permissions:
       contents: write
       pages: write
+      deployments: read
     steps:
       - uses: actions/checkout@v4
         with:
