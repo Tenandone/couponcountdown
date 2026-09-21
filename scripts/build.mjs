@@ -1,3 +1,4 @@
+import {validStats} from './ga4-stats.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
@@ -26,6 +27,9 @@ await fs.mkdir('dist/assets',{recursive:true});
 async function write(file,value){await fs.mkdir(path.dirname('dist/'+file),{recursive:true});await fs.writeFile('dist/'+file,value);}
 const assets={};
 for(const [key,file] of [['css','site.css'],['js','site.js']]){const content=await fs.readFile('public/'+file);const hash=createHash('sha256').update(content).digest('hex').slice(0,10);assets[key]=`/assets/site.${hash}.${key}`;await write(assets[key].slice(1),content);}
+const statsJS=await fs.readFile('public/page-views.mjs');
+assets.stats=`/assets/views.${createHash('sha256').update(statsJS).digest('hex').slice(0,10)}.js`;await write(assets.stats.slice(1),statsJS);
+try{const stats=JSON.parse(await fs.readFile('data/stats.json','utf8'));if(validStats(stats))await write('data/stats.json',JSON.stringify(stats,null,2)+'\n');}catch{/* No real GA4 data: do not generate a placeholder. */}
 const marketCSS=await fs.readFile('public/markets.css');
 assets.marketsCss=`/assets/markets.${createHash('sha256').update(marketCSS).digest('hex').slice(0,10)}.css`;
 await write(assets.marketsCss.slice(1),marketCSS);

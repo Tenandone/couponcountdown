@@ -41,6 +41,18 @@ document.querySelector('#run').onclick=async()=>{results.replaceChildren();try{
   }
   frame.style.width='390px';
  });
+ await check('Page views: all locales and mobile widths reserve space without overflow',async()=>{
+  for(const l of ['ko','en','ja','zh-tw','es-419','es-es','pt-br','ru'])for(const width of [320,375,390,430]){
+   frame.style.width=width+'px';doc=await load('/'+l+'/markets/?qa=1');
+   const el=doc.querySelector('[data-page-views]');const before=el.getBoundingClientRect().height;
+   const module=await import(doc.querySelector('script[src*="/assets/views."]').src);
+   const now=Date.now(),date=new Date(now+9*3600000).toISOString().slice(0,10);
+   await module.loadViews(el,{now,locale:doc.documentElement.lang,request:async()=>({ok:true,json:async()=>({source:'GA4',metric:'page_view',propertyTimeZone:'Asia/Seoul',totalPageViews:12841,todayPageViews:438,updatedAt:new Date(now).toISOString(),reportingDate:date})})});
+   assert(el.dataset.state==='ready','Counter not rendered '+l);
+   assert(el.getBoundingClientRect().height===before,'Counter shifted layout '+l+' '+width);
+   assert(doc.documentElement.scrollWidth<=doc.documentElement.clientWidth,'Counter overflow '+l+' '+width);
+  }
+ });
  await check('All seven asset routes retain source or explicit pending state',async()=>{
   for(const slug of ['bitcoin','ethereum','sp500','nasdaq','kospi','usd-krw','gold']){
    doc=await load('/ko/markets/'+slug+'/?qa=1');assert(doc.querySelector('h1'),'Missing page');

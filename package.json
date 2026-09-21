@@ -9,7 +9,7 @@
     "dev": "node scripts/serve.mjs",
     "test": "node --test tests/*.test.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "lint": "eslint src public/site.js scripts tests/*.mjs",
+    "lint": "eslint src public/site.js public/page-views.mjs scripts tests/*.mjs",
     "prepare:pages": "node scripts/prepare-pages.mjs"
   },
   "devDependencies": {

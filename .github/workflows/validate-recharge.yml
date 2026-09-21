@@ -1,7 +1,7 @@
 name: Validate recharge hub
 on:
   push:
-    branches: [codex/recharge-ga4-review, codex/markets-hub, main]
+    branches: [codex/recharge-ga4-review, codex/markets-hub, codex/ga4-page-views, main]
   pull_request:
     branches: [main]
 permissions:

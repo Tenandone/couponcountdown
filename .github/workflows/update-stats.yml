@@ -1,0 +1,42 @@
+name: Update GA4 page views
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: ga4-page-views
+  cancel-in-progress: false
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || vars.GA4_STATS_ENABLED == 'true')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Fetch verified totals (failure leaves last good JSON untouched)
+        run: node scripts/fetch-stats.mjs
+        env:
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+      - name: Commit only the public aggregate file
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/stats.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update verified GA4 page views'
+            git push origin HEAD:main
+          fi
+      - name: Publish existing Pages files without rebuilding the site
+        run: node scripts/request-pages-build.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
