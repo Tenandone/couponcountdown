@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 3,
+  "week": {
+    "id": "2026-09-28",
+    "start": "2026-09-28T00:00:00.000Z",
+    "endExclusive": "2026-10-05T00:00:00.000Z",
+    "endDate": "2026-10-04",
+    "nextEndExclusive": "2026-10-12T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "contextWeek": {
+    "id": "2026-09-21",
+    "start": "2026-09-21T00:00:00.000Z",
+    "endExclusive": "2026-09-28T00:00:00.000Z",
+    "endDate": "2026-09-27",
+    "nextEndExclusive": "2026-10-05T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "publishedAt": "2026-09-28T03:59:22.667Z",
+  "collectedAt": "2026-09-28T03:59:22.667Z",
+  "items": [
+    {
+      "asset": "bitcoin",
+      "slug": "bitcoin",
+      "symbol": "BTC",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-09-28",
+      "status": "ready",
+      "price": 83373,
+      "previousPrice": 81492,
+      "changePercent": 2.308202032101314,
+      "previousCollectedAt": "2026-09-21T03:37:23.308Z",
+      "collectedAt": "2026-09-28T03:59:22.667Z",
+      "observedAt": "2026-09-28T03:59:04Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "ethereum",
+      "slug": "ethereum",
+      "symbol": "ETH",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-09-28",
+      "status": "ready",
+      "price": 2652.350098,
+      "previousPrice": 2668.939941,
+      "changePercent": -0.6215892214413876,
+      "previousCollectedAt": "2026-09-21T03:37:23.308Z",
+      "collectedAt": "2026-09-28T03:59:22.667Z",
+      "observedAt": "2026-09-28T03:59:05Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "sp500",
+      "slug": "sp500",
+      "symbol": "S&P 500",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-09-28",
+      "status": "pending"
+    },
+    {
+      "asset": "nasdaq",
+      "slug": "nasdaq",
+      "symbol": "Nasdaq Composite",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-09-28",
+      "status": "pending"
+    },
+    {
+      "asset": "kospi",
+      "slug": "kospi",
+      "symbol": "KOSPI",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-09-28",
+      "status": "pending"
+    },
+    {
+      "asset": "usd-krw",
+      "slug": "usd-krw",
+      "symbol": "USD/KRW",
+      "assetType": "fx",
+      "currency": "KRW",
+      "unit": "per-usd",
+      "weekId": "2026-09-28",
+      "status": "ready",
+      "price": 1355.05,
+      "previousPrice": 1388.1,
+      "changePercent": -2.3809523809523725,
+      "previousCollectedAt": "2026-09-21T03:37:23.308Z",
+      "collectedAt": "2026-09-28T03:59:22.667Z",
+      "observedAt": "2026-09-25T00:00:00Z",
+      "source": {
+        "name": "ECB via Frankfurter",
+        "url": "https://www.ecb.europa.eu/stats/exchange_rates/html/index.en.html"
+      }
+    },
+    {
+      "asset": "gold",
+      "slug": "gold",
+      "symbol": "XAU",
+      "assetType": "commodity",
+      "currency": "USD",
+      "unit": "troy-oz",
+      "weekId": "2026-09-28",
+      "status": "ready",
+      "price": 4199.100098,
+      "previousPrice": 4366.600098,
+      "changePercent": -3.8359363404200653,
+      "previousCollectedAt": "2026-09-21T03:37:23.308Z",
+      "collectedAt": "2026-09-28T03:59:22.667Z",
+      "observedAt": "2026-09-28T03:59:04Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    }
+  ],
+  "issues": [],
+  "events": [],
+  "sourceStatus": [
+    {
+      "id": "cpi",
+      "status": "ok"
+    },
+    {
+      "id": "ppi",
+      "status": "ok"
+    },
+    {
+      "id": "employment",
+      "status": "ok"
+    },
+    {
+      "id": "fed",
+      "status": "ok"
+    },
+    {
+      "id": "bls-calendar",
+      "status": "failed"
+    },
+    {
+      "id": "fed-calendar",
+      "status": "ok"
+    }
+  ],
+  "publishable": true,
+  "usable": true
+}
