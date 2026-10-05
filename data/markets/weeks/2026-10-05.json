@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 3,
+  "week": {
+    "id": "2026-10-05",
+    "start": "2026-10-05T00:00:00.000Z",
+    "endExclusive": "2026-10-12T00:00:00.000Z",
+    "endDate": "2026-10-11",
+    "nextEndExclusive": "2026-10-19T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "contextWeek": {
+    "id": "2026-09-28",
+    "start": "2026-09-28T00:00:00.000Z",
+    "endExclusive": "2026-10-05T00:00:00.000Z",
+    "endDate": "2026-10-04",
+    "nextEndExclusive": "2026-10-12T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "publishedAt": "2026-10-05T04:22:30.047Z",
+  "collectedAt": "2026-10-05T04:22:30.047Z",
+  "items": [
+    {
+      "asset": "bitcoin",
+      "slug": "bitcoin",
+      "symbol": "BTC",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-10-05",
+      "status": "ready",
+      "price": 85855,
+      "previousPrice": 83373,
+      "changePercent": 2.9769829561128835,
+      "previousCollectedAt": "2026-09-28T03:59:22.667Z",
+      "collectedAt": "2026-10-05T04:22:30.047Z",
+      "observedAt": "2026-10-05T04:22:07Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "ethereum",
+      "slug": "ethereum",
+      "symbol": "ETH",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-10-05",
+      "status": "ready",
+      "price": 2707.550049,
+      "previousPrice": 2652.350098,
+      "changePercent": 2.081171374835611,
+      "previousCollectedAt": "2026-09-28T03:59:22.667Z",
+      "collectedAt": "2026-10-05T04:22:30.047Z",
+      "observedAt": "2026-10-05T04:22:07Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "sp500",
+      "slug": "sp500",
+      "symbol": "S&P 500",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-10-05",
+      "status": "pending"
+    },
+    {
+      "asset": "nasdaq",
+      "slug": "nasdaq",
+      "symbol": "Nasdaq Composite",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-10-05",
+      "status": "pending"
+    },
+    {
+      "asset": "kospi",
+      "slug": "kospi",
+      "symbol": "KOSPI",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-10-05",
+      "status": "pending"
+    },
+    {
+      "asset": "usd-krw",
+      "slug": "usd-krw",
+      "symbol": "USD/KRW",
+      "assetType": "fx",
+      "currency": "KRW",
+      "unit": "per-usd",
+      "weekId": "2026-10-05",
+      "status": "ready",
+      "price": 1348.28,
+      "previousPrice": 1355.05,
+      "changePercent": -0.49961256042212465,
+      "previousCollectedAt": "2026-09-28T03:59:22.667Z",
+      "collectedAt": "2026-10-05T04:22:30.047Z",
+      "observedAt": "2026-10-02T00:00:00Z",
+      "source": {
+        "name": "ECB via Frankfurter",
+        "url": "https://www.ecb.europa.eu/stats/exchange_rates/html/index.en.html"
+      }
+    },
+    {
+      "asset": "gold",
+      "slug": "gold",
+      "symbol": "XAU",
+      "assetType": "commodity",
+      "currency": "USD",
+      "unit": "troy-oz",
+      "weekId": "2026-10-05",
+      "status": "ready",
+      "price": 4133.200195,
+      "previousPrice": 4199.100098,
+      "changePercent": -1.5693815689553858,
+      "previousCollectedAt": "2026-09-28T03:59:22.667Z",
+      "collectedAt": "2026-10-05T04:22:30.047Z",
+      "observedAt": "2026-10-05T04:22:06Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    }
+  ],
+  "issues": [
+    {
+      "kind": "employment",
+      "title": "Both payroll employment (+29,000) and unemployment rate (4.2%) change little in September",
+      "sourceUrl": "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
+      "sourceName": "U.S. Bureau of Labor Statistics",
+      "publishedAt": "2026-10-02T11:51:08.289Z",
+      "scope": "shared-macro",
+      "feedId": "employment"
+    }
+  ],
+  "events": [],
+  "sourceStatus": [
+    {
+      "id": "cpi",
+      "status": "ok"
+    },
+    {
+      "id": "ppi",
+      "status": "ok"
+    },
+    {
+      "id": "employment",
+      "status": "ok"
+    },
+    {
+      "id": "fed",
+      "status": "ok"
+    },
+    {
+      "id": "bls-calendar",
+      "status": "failed"
+    },
+    {
+      "id": "fed-calendar",
+      "status": "ok"
+    }
+  ],
+  "publishable": true,
+  "usable": true
+}
