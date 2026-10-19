@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 3,
+  "week": {
+    "id": "2026-10-19",
+    "start": "2026-10-19T00:00:00.000Z",
+    "endExclusive": "2026-10-26T00:00:00.000Z",
+    "endDate": "2026-10-25",
+    "nextEndExclusive": "2026-11-02T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "contextWeek": {
+    "id": "2026-10-12",
+    "start": "2026-10-12T00:00:00.000Z",
+    "endExclusive": "2026-10-19T00:00:00.000Z",
+    "endDate": "2026-10-18",
+    "nextEndExclusive": "2026-10-26T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "publishedAt": "2026-10-19T03:30:33.706Z",
+  "collectedAt": "2026-10-19T03:30:33.706Z",
+  "items": [
+    {
+      "asset": "bitcoin",
+      "slug": "bitcoin",
+      "symbol": "BTC",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-10-19",
+      "status": "ready",
+      "price": 82467.796875,
+      "previousPrice": 83703.648438,
+      "changePercent": -1.4764608067417861,
+      "previousCollectedAt": "2026-10-12T04:37:13.277Z",
+      "collectedAt": "2026-10-19T03:30:33.706Z",
+      "observedAt": "2026-10-19T03:30:20Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "ethereum",
+      "slug": "ethereum",
+      "symbol": "ETH",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-10-19",
+      "status": "ready",
+      "price": 2422.169922,
+      "previousPrice": 2553.939941,
+      "changePercent": -5.159479942523837,
+      "previousCollectedAt": "2026-10-12T04:37:13.277Z",
+      "collectedAt": "2026-10-19T03:30:33.706Z",
+      "observedAt": "2026-10-19T03:30:20Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "sp500",
+      "slug": "sp500",
+      "symbol": "S&P 500",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-10-19",
+      "status": "pending"
+    },
+    {
+      "asset": "nasdaq",
+      "slug": "nasdaq",
+      "symbol": "Nasdaq Composite",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-10-19",
+      "status": "pending"
+    },
+    {
+      "asset": "kospi",
+      "slug": "kospi",
+      "symbol": "KOSPI",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-10-19",
+      "status": "pending"
+    },
+    {
+      "asset": "usd-krw",
+      "slug": "usd-krw",
+      "symbol": "USD/KRW",
+      "assetType": "fx",
+      "currency": "KRW",
+      "unit": "per-usd",
+      "weekId": "2026-10-19",
+      "status": "ready",
+      "price": 1332.1,
+      "previousPrice": 1341.49,
+      "changePercent": -0.6999679460898078,
+      "previousCollectedAt": "2026-10-12T04:37:13.277Z",
+      "collectedAt": "2026-10-19T03:30:33.706Z",
+      "observedAt": "2026-10-16T00:00:00Z",
+      "source": {
+        "name": "ECB via Frankfurter",
+        "url": "https://www.ecb.europa.eu/stats/exchange_rates/html/index.en.html"
+      }
+    },
+    {
+      "asset": "gold",
+      "slug": "gold",
+      "symbol": "XAU",
+      "assetType": "commodity",
+      "currency": "USD",
+      "unit": "troy-oz",
+      "weekId": "2026-10-19",
+      "status": "ready",
+      "price": 4180.299805,
+      "previousPrice": 4199.100098,
+      "changePercent": -0.4477219537813548,
+      "previousCollectedAt": "2026-10-12T04:37:13.277Z",
+      "collectedAt": "2026-10-19T03:30:33.706Z",
+      "observedAt": "2026-10-19T03:30:19Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    }
+  ],
+  "issues": [
+    {
+      "kind": "ppi",
+      "title": "PPI for final demand increases 1.3% in September; goods advance 2.6%, services rise 0.8%",
+      "sourceUrl": "https://www.bls.gov/news.release/archives/ppi_10152026.htm",
+      "sourceName": "U.S. Bureau of Labor Statistics",
+      "publishedAt": "2026-10-15T11:50:51.146Z",
+      "scope": "shared-macro",
+      "feedId": "ppi"
+    },
+    {
+      "kind": "cpi",
+      "title": "CPI for all items increases 0.6% in September; gasoline rises",
+      "sourceUrl": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "sourceName": "U.S. Bureau of Labor Statistics",
+      "publishedAt": "2026-10-14T11:50:31.200Z",
+      "scope": "shared-macro",
+      "feedId": "cpi"
+    },
+    {
+      "kind": "fed",
+      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+      "sourceName": "Federal Reserve Board",
+      "publishedAt": "2026-10-13T18:00:00.000Z",
+      "scope": "shared-macro",
+      "feedId": "fed"
+    }
+  ],
+  "events": [],
+  "sourceStatus": [
+    {
+      "id": "cpi",
+      "status": "ok"
+    },
+    {
+      "id": "ppi",
+      "status": "ok"
+    },
+    {
+      "id": "employment",
+      "status": "ok"
+    },
+    {
+      "id": "fed",
+      "status": "ok"
+    },
+    {
+      "id": "bls-calendar",
+      "status": "failed"
+    },
+    {
+      "id": "fed-calendar",
+      "status": "ok"
+    }
+  ],
+  "publishable": true,
+  "usable": true
+}
