@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 3,
+  "week": {
+    "id": "2026-10-26",
+    "start": "2026-10-26T00:00:00.000Z",
+    "endExclusive": "2026-11-02T00:00:00.000Z",
+    "endDate": "2026-11-01",
+    "nextEndExclusive": "2026-11-09T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "contextWeek": {
+    "id": "2026-10-19",
+    "start": "2026-10-19T00:00:00.000Z",
+    "endExclusive": "2026-10-26T00:00:00.000Z",
+    "endDate": "2026-10-25",
+    "nextEndExclusive": "2026-11-02T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "publishedAt": "2026-10-26T03:30:00.013Z",
+  "collectedAt": "2026-10-26T03:30:00.013Z",
+  "items": [
+    {
+      "asset": "bitcoin",
+      "slug": "bitcoin",
+      "symbol": "BTC",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-10-26",
+      "status": "ready",
+      "price": 79624,
+      "previousPrice": 82467.796875,
+      "changePercent": -3.4483725560299217,
+      "previousCollectedAt": "2026-10-19T03:30:33.706Z",
+      "collectedAt": "2026-10-26T03:30:00.013Z",
+      "observedAt": "2026-10-26T03:29:44Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "ethereum",
+      "slug": "ethereum",
+      "symbol": "ETH",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-10-26",
+      "status": "ready",
+      "price": 2309.550049,
+      "previousPrice": 2422.169922,
+      "changePercent": -4.64954469036628,
+      "previousCollectedAt": "2026-10-19T03:30:33.706Z",
+      "collectedAt": "2026-10-26T03:30:00.013Z",
+      "observedAt": "2026-10-26T03:29:45Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "sp500",
+      "slug": "sp500",
+      "symbol": "S&P 500",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-10-26",
+      "status": "pending"
+    },
+    {
+      "asset": "nasdaq",
+      "slug": "nasdaq",
+      "symbol": "Nasdaq Composite",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-10-26",
+      "status": "pending"
+    },
+    {
+      "asset": "kospi",
+      "slug": "kospi",
+      "symbol": "KOSPI",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-10-26",
+      "status": "pending"
+    },
+    {
+      "asset": "usd-krw",
+      "slug": "usd-krw",
+      "symbol": "USD/KRW",
+      "assetType": "fx",
+      "currency": "KRW",
+      "unit": "per-usd",
+      "weekId": "2026-10-26",
+      "status": "ready",
+      "price": 1324.45,
+      "previousPrice": 1332.1,
+      "changePercent": -0.574281210119354,
+      "previousCollectedAt": "2026-10-19T03:30:33.706Z",
+      "collectedAt": "2026-10-26T03:30:00.013Z",
+      "observedAt": "2026-10-23T00:00:00Z",
+      "source": {
+        "name": "ECB via Frankfurter",
+        "url": "https://www.ecb.europa.eu/stats/exchange_rates/html/index.en.html"
+      }
+    },
+    {
+      "asset": "gold",
+      "slug": "gold",
+      "symbol": "XAU",
+      "assetType": "commodity",
+      "currency": "USD",
+      "unit": "troy-oz",
+      "weekId": "2026-10-26",
+      "status": "ready",
+      "price": 4014,
+      "previousPrice": 4180.299805,
+      "changePercent": -3.9781789048022542,
+      "previousCollectedAt": "2026-10-19T03:30:33.706Z",
+      "collectedAt": "2026-10-26T03:30:00.013Z",
+      "observedAt": "2026-10-26T03:29:42Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    }
+  ],
+  "issues": [],
+  "events": [
+    {
+      "kind": "fomc",
+      "title": "FOMC meeting — final day",
+      "date": "2026-10-28",
+      "localTime": null,
+      "timezone": "America/New_York",
+      "sourceUrl": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "sourceName": "Federal Reserve Board",
+      "feedId": "fed-calendar"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "id": "cpi",
+      "status": "ok"
+    },
+    {
+      "id": "ppi",
+      "status": "ok"
+    },
+    {
+      "id": "employment",
+      "status": "ok"
+    },
+    {
+      "id": "fed",
+      "status": "ok"
+    },
+    {
+      "id": "bls-calendar",
+      "status": "failed"
+    },
+    {
+      "id": "fed-calendar",
+      "status": "ok"
+    }
+  ],
+  "publishable": true,
+  "usable": true
+}
