@@ -131,6 +131,15 @@ export async function authorize(raw,request=fetch,now=new Date(),options={}){
  if(typeof token?.access_token!=='string'||!token.access_token)throw collectionError('oauth','ACCESS_TOKEN');return token.access_token;
 }
 export function query(startDate,endDate){return {dateRanges:[{startDate,endDate}],metrics:[{name:'eventCount'}],dimensionFilter:{andGroup:{expressions:[{filter:{fieldName:'eventName',stringFilter:{matchType:'EXACT',value:'page_view',caseSensitive:true}}},{filter:{fieldName:'hostName',inListFilter:{values:['couponcountdown.com','www.couponcountdown.com'],caseSensitive:false}}}]}},keepEmptyRows:false,returnPropertyQuota:true};}
+function reportSchema(report,label){
+ const size=value=>value==null?'MISSING':!Array.isArray(value)?'MALFORMED':value.length===0?'ZERO':value.length===1?'ONE':'MULTIPLE';
+ const header=Array.isArray(report?.metricHeaders)?report.metricHeaders[0]:undefined;
+ const name=header?.name==null?'MISSING':header.name==='eventCount'?'EVENT_COUNT':'OTHER';
+ const type=header?.type==null?'MISSING':['TYPE_INTEGER','TYPE_FLOAT','METRIC_TYPE_UNSPECIFIED'].includes(header.type)?header.type:'OTHER';
+ const rows=report?.rowCount==null?'MISSING':report.rowCount===0?'ZERO':report.rowCount===1?'ONE':'OTHER';
+ const zone=report?.metadata?.timeZone==null?'MISSING':report.metadata.timeZone==='Asia/Seoul'?'KST':'OTHER';
+ return `${label}; headers=${size(report?.metricHeaders)}; name=${name}; type=${type}; rows=${size(report?.rows)}; rowCount=${rows}; timezone=${zone}`;
+}
 export function count(report){
  if(!Array.isArray(report?.metricHeaders)||report.metricHeaders.length!==1||report.metricHeaders[0]?.name!=='eventCount'||!['TYPE_INTEGER','TYPE_FLOAT'].includes(report.metricHeaders[0]?.type))throw collectionError('report','METRIC_SCHEMA');
  if(report.metadata?.subjectToThresholding||report.metadata?.dataLossFromOtherRow||report.metadata?.samplingMetadatas?.length)throw collectionError('report','REPORT_INCOMPLETE');
@@ -163,6 +172,7 @@ export async function collectStats(token,{request=fetch,now=new Date(),sleep=wai
  const today=kstDate(now),start=kstDate(new Date(property.createTime));
  const response=await requestJSON(`https://analyticsdata.googleapis.com/v1beta/properties/${PROPERTY}:batchRunReports`,{method:'POST',headers,body:JSON.stringify({requests:[query(start,today),query(today,today)]})},{...options,stage:'report'});
  if(!Array.isArray(response?.reports)||response.reports.length!==2)throw collectionError('report','MISSING_REPORTS');
+ for(const [index,report] of response.reports.entries())onDiagnostic?.({stage:'report',code:'REPORT_SCHEMA',summary:reportSchema(report,index===0?'LIFETIME':'TODAY')});
  const stats={totalPageViews:count(response.reports[0]),todayPageViews:count(response.reports[1]),updatedAt:kstTimestamp(now),reportingDate:today,source:'GA4',metric:'page_view',propertyTimeZone:'Asia/Seoul',totalStartDate:start,staleAfterHours:3};
  if(!validStats(stats))throw collectionError('stats','STATS_INVALID');
  for(const type of new Set(response.reports.map(report=>report.metricHeaders[0].type)))onDiagnostic?.({stage:'report',code:'METRIC_TYPE',type});

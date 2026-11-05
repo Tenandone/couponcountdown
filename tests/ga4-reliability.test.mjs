@@ -233,10 +233,14 @@ test('storage write and rename failures retain the old JSON and sanitize the I/O
 test('report diagnostics expose only the fixed metric-type enum, never response fields',async()=>{
  const diagnostics=[];const values=responses();values.report.reports[0].privateDetails=CANARY;values.report.reports[0].metadata.privateKey=PRIVATE_KEY;
  await collectStats(TOKEN,{now:NOW,request:fixtureRequest({values}),sleep:noSleep,onDiagnostic:value=>diagnostics.push(value)});
- assert.deepEqual(diagnostics,[{stage:'report',code:'METRIC_TYPE',type:'TYPE_FLOAT'}]);noLeaks(JSON.stringify(diagnostics));
+ assert.deepEqual(diagnostics,[
+  {stage:'report',code:'REPORT_SCHEMA',summary:'LIFETIME; headers=ONE; name=EVENT_COUNT; type=TYPE_FLOAT; rows=ONE; rowCount=ONE; timezone=KST'},
+  {stage:'report',code:'REPORT_SCHEMA',summary:'TODAY; headers=ONE; name=EVENT_COUNT; type=TYPE_FLOAT; rows=ONE; rowCount=ONE; timezone=KST'},
+  {stage:'report',code:'METRIC_TYPE',type:'TYPE_FLOAT'}
+ ]);noLeaks(JSON.stringify(diagnostics));
  const invalid=[];values.report.reports[0].metricHeaders[0].type=CANARY;
  const error=await rejection(()=>collectStats(TOKEN,{now:NOW,request:fixtureRequest({values}),sleep:noSleep,onDiagnostic:value=>invalid.push(value)}));
- assert.deepEqual(invalid,[]);noLeaks(safeDiagnostic(error));
+ assert.equal(invalid.length,2);assert.match(invalid[0].summary,/type=OTHER/);noLeaks(JSON.stringify(invalid));noLeaks(safeDiagnostic(error));
 });
 
 test('CLI failure logs never expose forged trusted-prefix errors, API bodies or signing material',async t=>{
