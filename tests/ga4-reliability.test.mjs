@@ -6,7 +6,7 @@ import path from 'node:path';
 import {generateKeyPairSync} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
-import {authorize,collectStats,count,query,requestJSON,safeDiagnostic,withGrowthCount} from '../scripts/ga4-stats.mjs';
+import {authorize,collectStats,count,dailyQuery,query,requestJSON,safeDiagnostic,verifyDailyReport,withGrowthCount} from '../scripts/ga4-stats.mjs';
 import {collectAndSave} from '../scripts/fetch-stats.mjs';
 
 // Synthetic credentials only. Every request and retry delay is replaced by a fixture.
@@ -25,7 +25,8 @@ const metric=(value,type='TYPE_INTEGER')=>({metricHeaders:[{name:'eventCount',ty
 const ok=value=>({ok:true,status:200,headers:new Headers(),json:async()=>value});
 const failed=(status,retryAfter)=>({ok:false,status,headers:new Headers(retryAfter===undefined?{}:{'Retry-After':retryAfter}),json:async()=>{throw new Error(CANARY);},text:async()=>CANARY});
 const responses=(total=126,today=0)=>({oauth:{access_token:TOKEN},property:{timeZone:'Asia/Seoul',createTime:'2025-01-01T16:00:00Z'},streams:{dataStreams:[{webStreamData:{measurementId:'G-1TS6F1NK5K'}}]},report:{reports:[metric(total,'TYPE_FLOAT'),metric(today,'TYPE_FLOAT')]}});
-const stageOf=url=>url.includes('oauth2.googleapis.com')?'oauth':url.includes('dataStreams')?'streams':url.includes(':batchRunReports')?'report':'property';
+const stageOf=url=>url.includes('oauth2.googleapis.com')?'oauth':url.includes('dataStreams')?'streams':url.includes(':batchRunReports')?'report':url.includes(':runReport')?'daily':'property';
+const dailyReport=rows=>({dimensionHeaders:[{name:'date'}],metricHeaders:[{name:'eventCount',type:'TYPE_FLOAT'}],metadata:{timeZone:'Asia/Seoul'},rowCount:rows.length,rows:rows.map(([date,value])=>({dimensionValues:[{value:date}],metricValues:[{value:String(value)}]}))});
 function fixtureRequest({stage,reply,values=responses(),calls=[]}={}){
  return async(url,options)=>{const current=stageOf(url);calls.push({stage:current,url,options});return current===stage?reply(url,options):ok(values[current]);};
 }
@@ -242,6 +243,183 @@ test('report diagnostics expose only the fixed metric-type enum, never response 
  const error=await rejection(()=>collectStats(TOKEN,{now:NOW,request:fixtureRequest({values}),sleep:noSleep,onDiagnostic:value=>invalid.push(value)}));
  assert.equal(invalid.length,2);assert.match(invalid[0].summary,/type=OTHER/);noLeaks(JSON.stringify(invalid));noLeaks(safeDiagnostic(error));
 });
+
+test('metadata-only today requires a separate daily report reconciled to the positive lifetime total',()=>temporary(async dir=>{
+ const empty={metadata:{timeZone:'Asia/Seoul'}};
+ assert.throws(()=>count(empty),error=>error.code==='METRIC_SCHEMA');assert.throws(()=>count(empty,{allowEmptyReport:true}),error=>error.code==='METRIC_SCHEMA');
+ const output=path.join(dir,'stats.json');await fs.writeFile(output,PRIOR_BYTES);const values={...responses(126,0),daily:dailyReport([['20261105','126.0']])},diagnostics=[],calls=[];values.report.reports[1]=empty;
+ await collectAndSave({output,credential:CREDENTIAL,request:fixtureRequest({values,calls}),now:NOW,sleep:noSleep,onDiagnostic:value=>diagnostics.push(value)});
+ const saved=JSON.parse(await fs.readFile(output,'utf8'));assert.equal(saved.totalPageViews,126);assert.equal(saved.actualPageViews,126);assert.equal(saved.displayGrowthCount,126000);assert.equal(saved.todayPageViews,0);
+ assert.equal(calls.length,5);assert.equal(calls.filter(c=>c.stage==='daily').length,1);assert.match(calls.at(-1).url,/properties\/528476729:runReport$/);assert.equal(calls.at(-1).options.method,'POST');assert.deepEqual(JSON.parse(calls.at(-1).options.body),{...query('2025-01-02','2026-11-06'),dimensions:[{name:'date'}],limit:250000});
+ assert.deepEqual(diagnostics[1],{stage:'report',code:'REPORT_SCHEMA',summary:'TODAY; headers=MISSING; name=MISSING; type=MISSING; rows=MISSING; rowCount=MISSING; timezone=KST'});
+ assert.deepEqual(diagnostics.filter(d=>d.code==='DAILY_RECHECK'),[{stage:'daily_report',code:'DAILY_RECHECK',result:'TODAY_ABSENT'}]);noLeaks(JSON.stringify(diagnostics));noLeaks(JSON.stringify(saved));
+}));
+
+test('metadata-only lifetime report never inherits the empty-today exception',()=>temporary(async dir=>{
+ const output=path.join(dir,'stats.json');await fs.writeFile(output,PRIOR_BYTES);const values=responses(126,1);values.report.reports[0]={metadata:{timeZone:'Asia/Seoul'}};
+ const error=await rejection(()=>collectAndSave({output,credential:CREDENTIAL,request:fixtureRequest({values}),now:NOW,sleep:noSleep}));
+ assert.equal(error.code,'METRIC_SCHEMA');noLeaks(safeDiagnostic(error));assert.equal(await fs.readFile(output,'utf8'),PRIOR_BYTES);
+}));
+
+test('ambiguous today recheck excludes null fields, partial schemas and incomplete or non-KST metadata',async t=>{
+ const cases=[
+  ['headers null',r=>{r.metricHeaders=null;},'METRIC_SCHEMA'],
+  ['headers empty',r=>{r.metricHeaders=[];},'METRIC_SCHEMA'],
+  ['headers secret',r=>{r.metricHeaders=CANARY;},'METRIC_SCHEMA'],
+  ['rows null',r=>{r.rows=null;},'METRIC_SCHEMA'],
+  ['rows empty',r=>{r.rows=[];},'METRIC_SCHEMA'],
+  ['rows malformed',r=>{r.rows={length:0,secret:PRIVATE_KEY};},'METRIC_SCHEMA'],
+  ['rowCount null',r=>{r.rowCount=null;},'METRIC_SCHEMA'],
+  ['rowCount zero',r=>{r.rowCount=0;},'METRIC_SCHEMA'],
+  ['rowCount secret',r=>{r.rowCount=TOKEN;},'METRIC_SCHEMA'],
+  ['metadata omitted',r=>{delete r.metadata;},'REPORT_TIMEZONE'],
+  ['metadata null',r=>{r.metadata=null;},'REPORT_TIMEZONE'],
+  ['timezone UTC',r=>{r.metadata.timeZone='UTC';},'REPORT_TIMEZONE'],
+  ['timezone secret',r=>{r.metadata.timeZone=CANARY;},'REPORT_TIMEZONE'],
+  ['thresholded',r=>{r.metadata.subjectToThresholding=true;},'REPORT_INCOMPLETE'],
+  ['sampled',r=>{r.metadata.samplingMetadatas=[{secret:PRIVATE_KEY}];},'REPORT_INCOMPLETE'],
+  ['data loss',r=>{r.metadata.dataLossFromOtherRow=true;},'REPORT_INCOMPLETE'],
+ ];
+ for(const [label,change,code]of cases)await t.test(label,()=>temporary(async dir=>{
+  const output=path.join(dir,'stats.json');await fs.writeFile(output,PRIOR_BYTES);const empty={metadata:{timeZone:'Asia/Seoul'}};change(empty);
+  assert.throws(()=>count(empty),error=>error.code===code);
+  const values=responses(126,1),diagnostics=[],calls=[];values.report.reports[1]=empty;
+  const error=await rejection(()=>collectAndSave({output,credential:CREDENTIAL,request:fixtureRequest({values,calls}),now:NOW,sleep:noSleep,onDiagnostic:value=>diagnostics.push(value)}));
+  assert.equal(error.code,code);assert.equal(calls.filter(c=>c.stage==='daily').length,0);noLeaks(safeDiagnostic(error));noLeaks(JSON.stringify(diagnostics));assert.ok(diagnostics.every(d=>d.code==='REPORT_SCHEMA'));assert.equal(await fs.readFile(output,'utf8'),PRIOR_BYTES);await assert.rejects(fs.access(output+'.tmp'));
+ }));
+});
+
+test('daily verification retains production filters, exact totals and actual today values',async()=>{
+ const range={startDate:'2025-01-02',endDate:'2026-11-06',lifetime:126};
+ assert.deepEqual(dailyQuery(range.startDate,range.endDate),{...query(range.startDate,range.endDate),dimensions:[{name:'date'}],limit:250000});
+ assert.equal(verifyDailyReport(dailyReport([['20261105','122.0'],['20261106','4.0']]),range),4);
+ assert.equal(verifyDailyReport(dailyReport([['20261105','126.0']]),range),0);
+ const values={...responses(126,1),daily:dailyReport([['20261105',122],['20261106',4]])};values.report.reports[1]={metadata:{timeZone:'Asia/Seoul'}};const diagnostics=[];
+ const stats=await collectStats(TOKEN,{request:fixtureRequest({values}),now:NOW,sleep:noSleep,onDiagnostic:d=>diagnostics.push(d)});
+ assert.equal(stats.totalPageViews,126);assert.equal(stats.todayPageViews,4);assert.deepEqual(diagnostics.filter(d=>d.code==='DAILY_RECHECK'),[{stage:'daily_report',code:'DAILY_RECHECK',result:'TODAY_PRESENT'}]);noLeaks(JSON.stringify(diagnostics));
+ const calls=[];await collectStats(TOKEN,{request:fixtureRequest({calls}),now:NOW,sleep:noSleep});assert.equal(calls.length,3);assert.equal(calls.filter(c=>c.stage==='daily').length,0);
+});
+
+test('invalid or unreconciled daily verification cannot overwrite the last good stats',async t=>{
+ const cases=[
+  ['sum mismatch',()=>dailyReport([['20261105',125]])],
+  ['empty daily report',()=>dailyReport([])],
+  ['rows omitted',r=>{delete r.rows;return r;}],
+  ['rows null',r=>({...r,rows:null})],
+  ['row count mismatch',r=>({...r,rowCount:2})],
+  ['duplicate dates with matching sum',()=>dailyReport([['20261105',63],['20261105',63]])],
+  ['invalid calendar date',()=>dailyReport([['20260230',126]])],
+  ['date wrong format',()=>dailyReport([['2026-11-05',126]])],
+  ['date before range',()=>dailyReport([['20250101',126]])],
+  ['date after range',()=>dailyReport([['20261107',126]])],
+  ['timezone wrong',r=>({...r,metadata:{timeZone:'UTC'}})],
+  ['thresholded',r=>({...r,metadata:{timeZone:'Asia/Seoul',subjectToThresholding:true}})],
+  ['sampled',r=>({...r,metadata:{timeZone:'Asia/Seoul',samplingMetadatas:[{secret:CANARY}]}})],
+  ['data loss',r=>({...r,metadata:{timeZone:'Asia/Seoul',dataLossFromOtherRow:true}})],
+  ['dimension name secret',r=>({...r,dimensionHeaders:[{name:CANARY}]})],
+  ['dimension headers omitted',r=>{delete r.dimensionHeaders;return r;}],
+  ['dimension headers null',r=>({...r,dimensionHeaders:null})],
+  ['metric name secret',r=>({...r,metricHeaders:[{name:CANARY,type:'TYPE_FLOAT'}]})],
+  ['metric type secret',r=>({...r,metricHeaders:[{name:'eventCount',type:PRIVATE_KEY}]})],
+  ['fractional count',()=>dailyReport([['20261105','126.0000000000000001']])],
+  ['unsafe rounded count',()=>dailyReport([['20261105','9007199254740991.1']])],
+  ['negative count',()=>dailyReport([['20261105','-126']])],
+  ['secret metric value',()=>dailyReport([['20261105',TOKEN]])],
+  ['missing row dimensions',r=>{delete r.rows[0].dimensionValues;return r;}],
+  ['multiple row dimensions',r=>{r.rows[0].dimensionValues.push({value:CANARY});return r;}],
+  ['multiple row metrics',r=>{r.rows[0].metricValues.push({value:CANARY});return r;}],
+  ['sum overflows safe integer',()=>dailyReport([['20261104','9007199254740991'],['20261105',1]])],
+ ];
+ for(const [label,change]of cases)await t.test(label,()=>temporary(async dir=>{
+  const output=path.join(dir,'stats.json');await fs.writeFile(output,PRIOR_BYTES);const values={...responses(126,1),daily:change(dailyReport([['20261105',126]]))};values.report.reports[1]={metadata:{timeZone:'Asia/Seoul'}};const diagnostics=[],calls=[];
+  const error=await rejection(()=>collectAndSave({output,credential:CREDENTIAL,request:fixtureRequest({values,calls}),now:NOW,sleep:noSleep,onDiagnostic:d=>diagnostics.push(d)}));
+  assert.equal(calls.filter(c=>c.stage==='daily').length,1);assert.deepEqual(diagnostics.filter(d=>d.code==='DAILY_RECHECK'),[]);noLeaks(JSON.stringify(diagnostics));noLeaks(safeDiagnostic(error));assert.equal(await fs.readFile(output,'utf8'),PRIOR_BYTES);await assert.rejects(fs.access(output+'.tmp'));
+ }));
+});
+
+test('daily verification HTTP failure is sanitized and retains prior JSON',()=>temporary(async dir=>{
+ const output=path.join(dir,'stats.json');await fs.writeFile(output,PRIOR_BYTES);const values=responses(126,1);values.report.reports[1]={metadata:{timeZone:'Asia/Seoul'}};const calls=[];
+ const error=await rejection(()=>collectAndSave({output,credential:CREDENTIAL,request:fixtureRequest({values,calls,stage:'daily',reply:async()=>failed(403)}),now:NOW,sleep:noSleep}));
+ assert.equal(calls.filter(c=>c.stage==='daily').length,1);assert.match(safeDiagnostic(error),/GA4:daily_report:HTTP_403/);noLeaks(safeDiagnostic(error));assert.equal(await fs.readFile(output,'utf8'),PRIOR_BYTES);
+}));
+
+test('an ambiguous today report with zero lifetime cannot trigger daily zero inference',()=>temporary(async dir=>{
+ const output=path.join(dir,'stats.json');await fs.writeFile(output,PRIOR_BYTES);const values={...responses(0,0),daily:dailyReport([])};values.report.reports[1]={metadata:{timeZone:'Asia/Seoul'}};const calls=[];
+ const error=await rejection(()=>collectAndSave({output,credential:CREDENTIAL,request:fixtureRequest({values,calls}),now:NOW,sleep:noSleep}));
+ assert.equal(calls.filter(c=>c.stage==='daily').length,0);noLeaks(safeDiagnostic(error));assert.equal(await fs.readFile(output,'utf8'),PRIOR_BYTES);
+}));
+
+test('REPORT_SCHEMA classifies malformed fields with fixed categories and preserves prior stats',async t=>{
+ const baseline={headers:'ONE',name:'EVENT_COUNT',type:'TYPE_FLOAT',rows:'ONE',rowCount:'ONE',timezone:'KST'};
+ const expected=(label,patch={})=>{const fields={...baseline,...patch};return label+'; '+Object.entries(fields).map(([key,value])=>key+'='+value).join('; ');};
+ const summaryPattern=/^(LIFETIME|TODAY); headers=(MISSING|MALFORMED|ZERO|ONE|MULTIPLE); name=(MISSING|EVENT_COUNT|OTHER); type=(MISSING|TYPE_INTEGER|TYPE_FLOAT|METRIC_TYPE_UNSPECIFIED|OTHER); rows=(MISSING|MALFORMED|ZERO|ONE|MULTIPLE); rowCount=(MISSING|ZERO|ONE|OTHER); timezone=(MISSING|KST|OTHER)$/;
+ const cases=[
+  ['headers omitted',r=>{delete r.metricHeaders;},{headers:'MISSING',name:'MISSING',type:'MISSING'},'METRIC_SCHEMA'],
+  ['headers null',r=>{r.metricHeaders=null;},{headers:'MISSING',name:'MISSING',type:'MISSING'},'METRIC_SCHEMA'],
+  ['headers object',r=>{r.metricHeaders={secret:CANARY};},{headers:'MALFORMED',name:'MISSING',type:'MISSING'},'METRIC_SCHEMA'],
+  ['headers string',r=>{r.metricHeaders=TOKEN;},{headers:'MALFORMED',name:'MISSING',type:'MISSING'},'METRIC_SCHEMA'],
+  ['headers empty',r=>{r.metricHeaders=[];},{headers:'ZERO',name:'MISSING',type:'MISSING'},'METRIC_SCHEMA'],
+  ['headers multiple',r=>{r.metricHeaders.push({name:CANARY,type:PRIVATE_KEY});},{headers:'MULTIPLE'},'METRIC_SCHEMA'],
+  ['header null',r=>{r.metricHeaders=[null];},{name:'MISSING',type:'MISSING'},'METRIC_SCHEMA'],
+  ['header secret string',r=>{r.metricHeaders=[CANARY];},{name:'MISSING',type:'MISSING'},'METRIC_SCHEMA'],
+  ['name omitted',r=>{delete r.metricHeaders[0].name;},{name:'MISSING'},'METRIC_SCHEMA'],
+  ['name null',r=>{r.metricHeaders[0].name=null;},{name:'MISSING'},'METRIC_SCHEMA'],
+  ['name secret',r=>{r.metricHeaders[0].name=TOKEN;},{name:'OTHER'},'METRIC_SCHEMA'],
+  ['name object',r=>{r.metricHeaders[0].name={secret:CANARY};},{name:'OTHER'},'METRIC_SCHEMA'],
+  ['type omitted',r=>{delete r.metricHeaders[0].type;},{type:'MISSING'},'METRIC_SCHEMA'],
+  ['type null',r=>{r.metricHeaders[0].type=null;},{type:'MISSING'},'METRIC_SCHEMA'],
+  ['type secret',r=>{r.metricHeaders[0].type=PRIVATE_KEY;},{type:'OTHER'},'METRIC_SCHEMA'],
+  ['type object',r=>{r.metricHeaders[0].type={secret:CANARY};},{type:'OTHER'},'METRIC_SCHEMA'],
+  ['type unspecified',r=>{r.metricHeaders[0].type='METRIC_TYPE_UNSPECIFIED';},{type:'METRIC_TYPE_UNSPECIFIED'},'METRIC_SCHEMA'],
+  ['rows omitted',r=>{delete r.rows;},{rows:'MISSING'},'REPORT_ROWS'],
+  ['rows null',r=>{r.rows=null;},{rows:'MISSING'},'REPORT_ROWS'],
+  ['rows object',r=>{r.rows={secret:CANARY};},{rows:'MALFORMED'},'REPORT_ROWS'],
+  ['rows false',r=>{r.rows=false;},{rows:'MALFORMED'},'REPORT_ROWS'],
+  ['rows secret string',r=>{r.rows='Bearer '+TOKEN;},{rows:'MALFORMED'},'REPORT_ROWS'],
+  ['rows array-like',r=>{r.rows={length:0,secret:PRIVATE_KEY};},{rows:'MALFORMED'},'REPORT_ROWS'],
+  ['rows empty but rowCount one',r=>{r.rows=[];},{rows:'ZERO'},'REPORT_ROWS'],
+  ['rows multiple',r=>{r.rows.push({metricValues:[{value:CANARY}]});},{rows:'MULTIPLE'},'REPORT_ROWS'],
+  ['rowCount omitted',r=>{delete r.rowCount;},{rowCount:'MISSING'},'REPORT_ROWS'],
+  ['rowCount null',r=>{r.rowCount=null;},{rowCount:'MISSING'},'REPORT_ROWS'],
+  ['rowCount secret',r=>{r.rowCount=CANARY;},{rowCount:'OTHER'},'REPORT_ROWS'],
+  ['timezone omitted',r=>{delete r.metadata.timeZone;},{timezone:'MISSING'},'REPORT_TIMEZONE'],
+  ['timezone null',r=>{r.metadata.timeZone=null;},{timezone:'MISSING'},'REPORT_TIMEZONE'],
+  ['timezone secret',r=>{r.metadata.timeZone=TOKEN;},{timezone:'OTHER'},'REPORT_TIMEZONE'],
+  ['timezone object',r=>{r.metadata.timeZone={secret:PRIVATE_KEY};},{timezone:'OTHER'},'REPORT_TIMEZONE'],
+  ['metadata null',r=>{r.metadata=null;},{timezone:'MISSING'},'REPORT_TIMEZONE'],
+  ['metric value secret',r=>{r.rows[0].metricValues[0].value=CANARY;},{},'COUNT_FORMAT'],
+ ];
+ for(const [label,change,shape,code]of cases)await t.test(label,()=>temporary(async dir=>{
+  const output=path.join(dir,'stats.json');await fs.writeFile(output,PRIOR_BYTES);
+  const values=responses(126,1);change(values.report.reports[1]);const diagnostics=[];
+  const error=await rejection(()=>collectAndSave({output,credential:CREDENTIAL,request:fixtureRequest({values}),now:NOW,sleep:noSleep,onDiagnostic:value=>diagnostics.push(value)}));
+  assert.equal(error.code,code);assert.deepEqual(diagnostics,[{stage:'report',code:'REPORT_SCHEMA',summary:expected('LIFETIME')},{stage:'report',code:'REPORT_SCHEMA',summary:expected('TODAY',shape)}]);
+  for(const diagnostic of diagnostics){assert.match(diagnostic.summary,summaryPattern);noLeaks(JSON.stringify(diagnostic));}
+  noLeaks(safeDiagnostic(error));assert.equal(await fs.readFile(output,'utf8'),PRIOR_BYTES);await assert.rejects(fs.access(output+'.tmp'));
+ }));
+});
+
+test('missing, malformed or null report containers cannot leak payloads through diagnostics',async t=>{
+ const cases=[['reports omitted',{}],['reports null',{reports:null}],['reports secret',{reports:CANARY}],['reports object',{reports:{length:2,secret:PRIVATE_KEY}}],['null report',{reports:[metric(126,'TYPE_FLOAT'),null]}]];
+ for(const [label,report]of cases)await t.test(label,()=>temporary(async dir=>{
+  const output=path.join(dir,'stats.json');await fs.writeFile(output,PRIOR_BYTES);const values={...responses(),report},diagnostics=[];
+  const error=await rejection(()=>collectAndSave({output,credential:CREDENTIAL,request:fixtureRequest({values}),now:NOW,sleep:noSleep,onDiagnostic:value=>diagnostics.push(value)}));
+  assert.equal(error.code,label==='null report'?'METRIC_SCHEMA':'MISSING_REPORTS');
+  if(label==='null report')assert.deepEqual(diagnostics[1],{stage:'report',code:'REPORT_SCHEMA',summary:'TODAY; headers=MISSING; name=MISSING; type=MISSING; rows=MISSING; rowCount=MISSING; timezone=MISSING'});
+  else assert.deepEqual(diagnostics,[]);
+  noLeaks(JSON.stringify(diagnostics));noLeaks(safeDiagnostic(error));assert.equal(await fs.readFile(output,'utf8'),PRIOR_BYTES);
+ }));
+});
+
+test('CLI REPORT_SCHEMA logs classify secret-bearing fields without printing the response',()=>temporary(async dir=>{
+ const output=path.join(dir,'data','stats.json');await fs.mkdir(path.dirname(output),{recursive:true});await fs.writeFile(output,PRIOR_BYTES);
+ const values=responses();values.report.reports[1]={metricHeaders:[{name:CANARY,type:PRIVATE_KEY}],rows:{secret:'Bearer '+TOKEN},rowCount:EMAIL,metadata:{timeZone:CANARY},rawResponse:CANARY};
+ const loader=path.join(dir,'mock-schema-fetch.mjs');await fs.writeFile(loader,`const values=${JSON.stringify(values)};globalThis.fetch=async(url)=>{const stage=url.includes('oauth2.googleapis.com')?'oauth':url.includes('dataStreams')?'streams':url.includes(':batchRunReports')?'report':'property';return {ok:true,status:200,headers:new Headers(),json:async()=>values[stage]};};\n`);
+ const result=spawnSync(process.execPath,['--import',pathToFileURL(loader).href,path.resolve('scripts/fetch-stats.mjs')],{cwd:dir,env:{...process.env,GA4_SERVICE_ACCOUNT_JSON:CREDENTIAL},encoding:'utf8',timeout:5000});
+ assert.equal(result.error,undefined);assert.equal(result.status,1);noLeaks(result.stdout+result.stderr);
+ assert.match(result.stdout,/\[GA4:report:REPORT_SCHEMA\] TODAY; headers=ONE; name=OTHER; type=OTHER; rows=MALFORMED; rowCount=OTHER; timezone=OTHER/);
+ assert.match(result.stderr,/\[GA4:report:REPORT_TIMEZONE\]/);assert.ok(!result.stdout.includes('[GA4:report:METRIC_TYPE]'));assert.equal(await fs.readFile(output,'utf8'),PRIOR_BYTES);
+}));
 
 test('CLI failure logs never expose forged trusted-prefix errors, API bodies or signing material',async t=>{
  const script=path.resolve('scripts/fetch-stats.mjs');

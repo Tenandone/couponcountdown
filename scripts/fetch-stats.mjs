@@ -28,9 +28,10 @@ export async function collectAndSave({output='data/stats.json',credential=proces
 
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  try{
-  await collectAndSave({onDiagnostic:({stage,code,type,summary})=>{
+  await collectAndSave({onDiagnostic:({stage,code,type,summary,result})=>{
    if(stage==='report'&&code==='REPORT_SCHEMA')console.log(`[GA4:report:REPORT_SCHEMA] ${summary}`);
    if(stage==='report'&&code==='METRIC_TYPE'&&['TYPE_INTEGER','TYPE_FLOAT'].includes(type))console.log(`[GA4:report:METRIC_TYPE] ${type}`);
+   if(stage==='daily_report'&&code==='DAILY_RECHECK'&&['TODAY_PRESENT','TODAY_ABSENT'].includes(result))console.log(`[GA4:daily_report:DAILY_RECHECK] ${result}`);
   }});
   console.log('Verified GA4 page_view aggregates saved; no credentials written.');
  }catch(error){

@@ -4,7 +4,7 @@ export const PROPERTY='528476729';
 export const kstDate=(now=new Date())=>new Date(+now+9*3600000).toISOString().slice(0,10);
 export const kstTimestamp=(now=new Date())=>new Date(+now+9*3600000).toISOString().slice(0,19)+'+09:00';
 const encode=x=>Buffer.from(JSON.stringify(x)).toString('base64url');
-const STAGES=new Set(['oauth','property','streams','report','stats','storage','collection']);
+const STAGES=new Set(['oauth','property','streams','report','daily_report','stats','storage','collection']);
 const MESSAGES=Object.freeze({
  CREDENTIAL_MISSING:'GA4_SERVICE_ACCOUNT_JSON missing',
  CREDENTIAL_JSON:'Invalid service account JSON',
@@ -35,6 +35,10 @@ const MESSAGES=Object.freeze({
  REPORT_INCOMPLETE:'Incomplete or sampled report',
  REPORT_TIMEZONE:'Report timezone must be Asia/Seoul',
  REPORT_ROWS:'Unexpected aggregate rows',
+ DAILY_DIMENSION:'Unexpected daily report dimensions',
+ DAILY_ROWS:'Incomplete or malformed daily report rows',
+ DAILY_DATE:'Invalid, duplicate or out-of-range daily report date',
+ DAILY_TOTAL:'Daily report total does not match the verified positive lifetime total',
  COUNT_FORMAT:'Non-integer page views',
  COUNT_RANGE:'Unsafe integer',
  STATS_INVALID:'Invalid stats totals',
@@ -131,6 +135,7 @@ export async function authorize(raw,request=fetch,now=new Date(),options={}){
  if(typeof token?.access_token!=='string'||!token.access_token)throw collectionError('oauth','ACCESS_TOKEN');return token.access_token;
 }
 export function query(startDate,endDate){return {dateRanges:[{startDate,endDate}],metrics:[{name:'eventCount'}],dimensionFilter:{andGroup:{expressions:[{filter:{fieldName:'eventName',stringFilter:{matchType:'EXACT',value:'page_view',caseSensitive:true}}},{filter:{fieldName:'hostName',inListFilter:{values:['couponcountdown.com','www.couponcountdown.com'],caseSensitive:false}}}]}},keepEmptyRows:false,returnPropertyQuota:true};}
+export function dailyQuery(startDate,endDate){return {...query(startDate,endDate),dimensions:[{name:'date'}],limit:250000};}
 function reportSchema(report,label){
  const size=value=>value==null?'MISSING':!Array.isArray(value)?'MALFORMED':value.length===0?'ZERO':value.length===1?'ONE':'MULTIPLE';
  const header=Array.isArray(report?.metricHeaders)?report.metricHeaders[0]:undefined;
@@ -140,20 +145,57 @@ function reportSchema(report,label){
  const zone=report?.metadata?.timeZone==null?'MISSING':report.metadata.timeZone==='Asia/Seoul'?'KST':'OTHER';
  return `${label}; headers=${size(report?.metricHeaders)}; name=${name}; type=${type}; rows=${size(report?.rows)}; rowCount=${rows}; timezone=${zone}`;
 }
-export function count(report){
- if(!Array.isArray(report?.metricHeaders)||report.metricHeaders.length!==1||report.metricHeaders[0]?.name!=='eventCount'||!['TYPE_INTEGER','TYPE_FLOAT'].includes(report.metricHeaders[0]?.type))throw collectionError('report','METRIC_SCHEMA');
- if(report.metadata?.subjectToThresholding||report.metadata?.dataLossFromOtherRow||report.metadata?.samplingMetadatas?.length)throw collectionError('report','REPORT_INCOMPLETE');
- if(report.metadata?.timeZone!=='Asia/Seoul')throw collectionError('report','REPORT_TIMEZONE');
- if(report.rows!=null&&!Array.isArray(report.rows))throw collectionError('report','REPORT_ROWS');
- if((report.rowCount??0)===0&&!report.rows?.length)return 0;
- if(!Array.isArray(report.rows)||report.rows.length!==1||report.rowCount!==1||!Array.isArray(report.rows[0]?.metricValues)||report.rows[0].metricValues.length!==1)throw collectionError('report','REPORT_ROWS');
- const raw=report.rows[0].metricValues[0].value;
- if(typeof raw!=='string'||!/^\d+(?:\.0+)?$/.test(raw))throw collectionError('report','COUNT_FORMAT');
+function validateReportMetadata(report,stage='report'){
+ if(!report||typeof report!=='object'||Array.isArray(report))throw collectionError(stage,'METRIC_SCHEMA');
+ if(report.metadata?.subjectToThresholding||report.metadata?.dataLossFromOtherRow||report.metadata?.samplingMetadatas?.length)throw collectionError(stage,'REPORT_INCOMPLETE');
+ if(report.metadata?.timeZone!=='Asia/Seoul')throw collectionError(stage,'REPORT_TIMEZONE');
+}
+function validateMetricHeader(report,stage='report'){
+ if(!Array.isArray(report.metricHeaders)||report.metricHeaders.length!==1||report.metricHeaders[0]?.name!=='eventCount'||!['TYPE_INTEGER','TYPE_FLOAT'].includes(report.metricHeaders[0]?.type))throw collectionError(stage,'METRIC_SCHEMA');
+}
+function exactCount(raw,stage='report'){
+ if(typeof raw!=='string'||!/^\d+(?:\.0+)?$/.test(raw))throw collectionError(stage,'COUNT_FORMAT');
  // Validate the original decimal before converting: Number() can round an
  // unsafe integer or a tiny fractional suffix into an apparently valid count.
  const integer=raw.split('.')[0].replace(/^0+(?=\d)/,'');
- if(integer.length>16||BigInt(integer)>BigInt(Number.MAX_SAFE_INTEGER))throw collectionError('report','COUNT_RANGE');
+ if(integer.length>16||BigInt(integer)>BigInt(Number.MAX_SAFE_INTEGER))throw collectionError(stage,'COUNT_RANGE');
  return Number(integer);
+}
+export function count(report){
+ validateReportMetadata(report);
+ validateMetricHeader(report);
+ if(report.rows!=null&&!Array.isArray(report.rows))throw collectionError('report','REPORT_ROWS');
+ if((report.rowCount??0)===0&&!report.rows?.length)return 0;
+ if(!Array.isArray(report.rows)||report.rows.length!==1||report.rowCount!==1||!Array.isArray(report.rows[0]?.metricValues)||report.rows[0].metricValues.length!==1)throw collectionError('report','REPORT_ROWS');
+ return exactCount(report.rows[0].metricValues[0]?.value);
+}
+function validCalendarDate(value){
+ if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;
+ const date=new Date(value+'T00:00:00Z');
+ return Number.isFinite(+date)&&date.toISOString().slice(0,10)===value;
+}
+export function verifyDailyReport(report,{startDate,endDate,lifetime}={}){
+ const stage='daily_report';
+ validateReportMetadata(report,stage);
+ validateMetricHeader(report,stage);
+ if(!Number.isSafeInteger(lifetime)||lifetime<=0)throw collectionError(stage,'DAILY_TOTAL');
+ if(!validCalendarDate(startDate)||!validCalendarDate(endDate)||startDate>endDate)throw collectionError(stage,'DAILY_DATE');
+ if(!Array.isArray(report.dimensionHeaders)||report.dimensionHeaders.length!==1||report.dimensionHeaders[0]?.name!=='date')throw collectionError(stage,'DAILY_DIMENSION');
+ if(!Array.isArray(report.rows)||report.rows.length===0||report.rows.length>250000||report.rowCount!==report.rows.length)throw collectionError(stage,'DAILY_ROWS');
+ const dates=new Set(),first=startDate.replaceAll('-',''),last=endDate.replaceAll('-','');
+ let total=0,today=0;
+ for(const row of report.rows){
+  if(!Array.isArray(row?.dimensionValues)||row.dimensionValues.length!==1||!Array.isArray(row.metricValues)||row.metricValues.length!==1)throw collectionError(stage,'DAILY_ROWS');
+  const date=row.dimensionValues[0]?.value;
+  if(typeof date!=='string'||!/^\d{8}$/.test(date)||!validCalendarDate(date.slice(0,4)+'-'+date.slice(4,6)+'-'+date.slice(6,8))||date<first||date>last||dates.has(date))throw collectionError(stage,'DAILY_DATE');
+  dates.add(date);
+  const value=exactCount(row.metricValues[0]?.value,stage);
+  total+=value;
+  if(!Number.isSafeInteger(total))throw collectionError(stage,'COUNT_RANGE');
+  if(date===last)today=value;
+ }
+ if(total!==lifetime)throw collectionError(stage,'DAILY_TOTAL');
+ return today;
 }
 export function validStats(s){return s?.source==='GA4'&&s.metric==='page_view'&&s.propertyTimeZone==='Asia/Seoul'&&Number.isSafeInteger(s.totalPageViews)&&s.totalPageViews>=0&&Number.isSafeInteger(s.todayPageViews)&&s.todayPageViews>=0&&s.todayPageViews<=s.totalPageViews&&Number.isFinite(Date.parse(s.updatedAt))&&/^\d{4}-\d{2}-\d{2}$/.test(s.reportingDate||'');}
 export function withGrowthCount(stats){
@@ -173,8 +215,20 @@ export async function collectStats(token,{request=fetch,now=new Date(),sleep=wai
  const response=await requestJSON(`https://analyticsdata.googleapis.com/v1beta/properties/${PROPERTY}:batchRunReports`,{method:'POST',headers,body:JSON.stringify({requests:[query(start,today),query(today,today)]})},{...options,stage:'report'});
  if(!Array.isArray(response?.reports)||response.reports.length!==2)throw collectionError('report','MISSING_REPORTS');
  for(const [index,report] of response.reports.entries())onDiagnostic?.({stage:'report',code:'REPORT_SCHEMA',summary:reportSchema(report,index===0?'LIFETIME':'TODAY')});
- const stats={totalPageViews:count(response.reports[0]),todayPageViews:count(response.reports[1]),updatedAt:kstTimestamp(now),reportingDate:today,source:'GA4',metric:'page_view',propertyTimeZone:'Asia/Seoul',totalStartDate:start,staleAfterHours:3};
+ const totalPageViews=count(response.reports[0]),todayReport=response.reports[1];
+ let todayPageViews;
+ // A metadata-only response is ambiguous. Re-query the identical lifetime
+ // filters by date and require a complete, matching total before deriving today.
+ if(todayReport&&typeof todayReport==='object'&&!Array.isArray(todayReport)&&todayReport.metricHeaders===undefined&&todayReport.rows===undefined&&todayReport.rowCount===undefined){
+  validateReportMetadata(todayReport);
+  if(totalPageViews<=0)throw collectionError('daily_report','DAILY_TOTAL');
+  const daily=await requestJSON(`https://analyticsdata.googleapis.com/v1beta/properties/${PROPERTY}:runReport`,{method:'POST',headers,body:JSON.stringify(dailyQuery(start,today))},{...options,stage:'daily_report'});
+  todayPageViews=verifyDailyReport(daily,{startDate:start,endDate:today,lifetime:totalPageViews});
+  const todayPresent=daily.rows.some(row=>row.dimensionValues[0].value===today.replaceAll('-',''));
+  onDiagnostic?.({stage:'daily_report',code:'DAILY_RECHECK',result:todayPresent?'TODAY_PRESENT':'TODAY_ABSENT'});
+ }else todayPageViews=count(todayReport);
+ const stats={totalPageViews,todayPageViews,updatedAt:kstTimestamp(now),reportingDate:today,source:'GA4',metric:'page_view',propertyTimeZone:'Asia/Seoul',totalStartDate:start,staleAfterHours:3};
  if(!validStats(stats))throw collectionError('stats','STATS_INVALID');
- for(const type of new Set(response.reports.map(report=>report.metricHeaders[0].type)))onDiagnostic?.({stage:'report',code:'METRIC_TYPE',type});
+ for(const type of new Set(response.reports.map(report=>report.metricHeaders?.[0]?.type).filter(type=>['TYPE_INTEGER','TYPE_FLOAT'].includes(type))))onDiagnostic?.({stage:'report',code:'METRIC_TYPE',type});
  return stats;
 }
