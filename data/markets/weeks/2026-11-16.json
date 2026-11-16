@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 3,
+  "week": {
+    "id": "2026-11-16",
+    "start": "2026-11-16T00:00:00.000Z",
+    "endExclusive": "2026-11-23T00:00:00.000Z",
+    "endDate": "2026-11-22",
+    "nextEndExclusive": "2026-11-30T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "contextWeek": {
+    "id": "2026-11-09",
+    "start": "2026-11-09T00:00:00.000Z",
+    "endExclusive": "2026-11-16T00:00:00.000Z",
+    "endDate": "2026-11-15",
+    "nextEndExclusive": "2026-11-23T00:00:00.000Z",
+    "timezone": "UTC"
+  },
+  "publishedAt": "2026-11-16T05:01:49.672Z",
+  "collectedAt": "2026-11-16T05:01:49.672Z",
+  "items": [
+    {
+      "asset": "bitcoin",
+      "slug": "bitcoin",
+      "symbol": "BTC",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-11-16",
+      "status": "ready",
+      "price": 64760.539062,
+      "previousPrice": 78421.617188,
+      "changePercent": -17.420041330249948,
+      "previousCollectedAt": "2026-11-02T04:43:16.493Z",
+      "collectedAt": "2026-11-16T05:01:49.672Z",
+      "observedAt": "2026-11-16T05:01:28Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "ethereum",
+      "slug": "ethereum",
+      "symbol": "ETH",
+      "assetType": "crypto",
+      "currency": "USD",
+      "unit": "coin",
+      "weekId": "2026-11-16",
+      "status": "ready",
+      "price": 1816.819946,
+      "previousPrice": 2301.610107,
+      "changePercent": -21.063087945503177,
+      "previousCollectedAt": "2026-11-02T04:43:16.493Z",
+      "collectedAt": "2026-11-16T05:01:49.672Z",
+      "observedAt": "2026-11-16T05:01:29Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    },
+    {
+      "asset": "sp500",
+      "slug": "sp500",
+      "symbol": "S&P 500",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-11-16",
+      "status": "pending"
+    },
+    {
+      "asset": "nasdaq",
+      "slug": "nasdaq",
+      "symbol": "Nasdaq Composite",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-11-16",
+      "status": "pending"
+    },
+    {
+      "asset": "kospi",
+      "slug": "kospi",
+      "symbol": "KOSPI",
+      "assetType": "index",
+      "currency": null,
+      "unit": "points",
+      "weekId": "2026-11-16",
+      "status": "pending"
+    },
+    {
+      "asset": "usd-krw",
+      "slug": "usd-krw",
+      "symbol": "USD/KRW",
+      "assetType": "fx",
+      "currency": "KRW",
+      "unit": "per-usd",
+      "weekId": "2026-11-16",
+      "status": "ready",
+      "price": 1337.13,
+      "previousPrice": 1335.27,
+      "changePercent": 0.13929767013414196,
+      "previousCollectedAt": "2026-11-02T04:43:16.493Z",
+      "collectedAt": "2026-11-16T05:01:49.672Z",
+      "observedAt": "2026-11-13T00:00:00Z",
+      "source": {
+        "name": "ECB via Frankfurter",
+        "url": "https://www.ecb.europa.eu/stats/exchange_rates/html/index.en.html"
+      }
+    },
+    {
+      "asset": "gold",
+      "slug": "gold",
+      "symbol": "XAU",
+      "assetType": "commodity",
+      "currency": "USD",
+      "unit": "troy-oz",
+      "weekId": "2026-11-16",
+      "status": "ready",
+      "price": 3867.800049,
+      "previousPrice": 3901.800049,
+      "changePercent": -0.8713926796098614,
+      "previousCollectedAt": "2026-11-02T04:43:16.493Z",
+      "collectedAt": "2026-11-16T05:01:49.672Z",
+      "observedAt": "2026-11-16T05:01:28Z",
+      "source": {
+        "name": "Gold API",
+        "url": "https://gold-api.com/"
+      }
+    }
+  ],
+  "issues": [
+    {
+      "kind": "ppi",
+      "title": "PPI for final demand increases 0.3% in October; goods advance 0.5%, services rise 0.2%",
+      "sourceUrl": "https://www.bls.gov/news.release/archives/ppi_11132026.htm",
+      "sourceName": "U.S. Bureau of Labor Statistics",
+      "publishedAt": "2026-11-13T12:50:34.956Z",
+      "scope": "shared-macro",
+      "feedId": "ppi"
+    },
+    {
+      "kind": "fed",
+      "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+      "sourceName": "Federal Reserve Board",
+      "publishedAt": "2026-11-12T17:45:00.000Z",
+      "scope": "shared-macro",
+      "feedId": "fed"
+    },
+    {
+      "kind": "cpi",
+      "title": "CPI for all items increases 0.4% in October; shelter rises",
+      "sourceUrl": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+      "sourceName": "U.S. Bureau of Labor Statistics",
+      "publishedAt": "2026-11-10T12:55:47.272Z",
+      "scope": "shared-macro",
+      "feedId": "cpi"
+    }
+  ],
+  "events": [],
+  "sourceStatus": [
+    {
+      "id": "cpi",
+      "status": "ok"
+    },
+    {
+      "id": "ppi",
+      "status": "ok"
+    },
+    {
+      "id": "employment",
+      "status": "ok"
+    },
+    {
+      "id": "fed",
+      "status": "ok"
+    },
+    {
+      "id": "bls-calendar",
+      "status": "failed"
+    },
+    {
+      "id": "fed-calendar",
+      "status": "ok"
+    }
+  ],
+  "publishable": true,
+  "usable": true
+}
